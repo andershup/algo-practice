@@ -1,6 +1,11 @@
-const numbers = [1, 3, 4, 6, 5]
+function capitalize (str) {
+    str = str.split(' ') 
+    for(let i = 0 ; i < str.length ; i ++ ) {
+        str[i] =  str[i][0].toUpperCase() + str[i].substr(1)
 
-numbers.reduce((accumulator, currentItem ) => {
-   return accumulator+currentItem},0)
+    }
+    return str.join(' ')
+    
+}
 
-console.log(numbers)
+console.log(capitalize('it was a nice sunny day!'))
