@@ -1,10 +1,22 @@
-function harmlessRansomNote(note, magazineText) {
-    note = note.split(' ')
-    magazineText = magazineText.split(' ')
-  for(i = 0 ; i < Math.max(note.length, magazineText.length) ; i ++) 
-  {
-    const filtered = 
-}
+function harmlessRansomNote(noteText, magazineText) {
+    const noteArray = noteText.split(' ')
+    const magazineArray = magazineText.split(' ')
+    const magazineObj = {}
+
+    magazineArray.forEach(word => { if(!magazineObj[word]) magazineObj[word] = 0;
+        magazineObj[word]++
+    }
+    ) 
+    let noteIsPossible = true
+      
+    noteArray.forEach(word => {
+        if(magazineObj[word]) { magazineObj[word]--
+        if(magazineObj[word] < 0) noteIsPossible = false
+        } else noteIsPossible = false
+    }
+        )  
+        return noteIsPossible 
+
 }
 
-harmlessRansomNote('this is my simple note', 'this is my simple note lets try with a different ')
+console.log(harmlessRansomNote('this is my my simple note', 'this is my simple note lets try with a different '))
