@@ -1,11 +1,10 @@
-function capitalize (str) {
-    str = str.split(' ') 
-    for(let i = 0 ; i < str.length ; i ++ ) {
-        str[i] =  str[i][0].toUpperCase() + str[i].substr(1)
-
-    }
-    return str.join(' ')
-    
+function harmlessRansomNote(note, magazineText) {
+    note = note.split(' ')
+    magazineText = magazineText.split(' ')
+  for(i = 0 ; i < Math.max(note.length, magazineText.length) ; i ++) 
+  {
+    const filtered = 
+}
 }
 
-console.log(capitalize('it was a nice sunny day!'))
+harmlessRansomNote('this is my simple note', 'this is my simple note lets try with a different ')
