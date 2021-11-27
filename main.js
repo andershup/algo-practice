@@ -1,22 +1,20 @@
- function ceasarCipher (str, num) {
-     let lowerCaseString = str.toLowerCase()
-     const alphabet = 'abcdefghijklmnopqrstuvxyz'.split('')
-     let newString = ''
+function ceasarCipher(str, num) {
+    let newString = str.toLowerCase()
+    let alphabet = 'abcdefghijklmnopqrstuvxyz'.split('')
+    let resultString = ''
 
-     for (let i = 0 ; i < str.length ; i ++) {
-         let currentChar = lowerCaseString[i]
-         if(str[i] === '') {
-             newString += currentChar
-             continue
-         }
-         let currentLetterIndex = alphabet.indexOf(currentChar)
-         let newIndex = currentLetterIndex + num
-
-         console.log(currentLetterIndex) 
-         console.log(newIndex) 
-         console.log(newString)
-         return newString += alphabet[newIndex]
+    for(i = 0 ; i < str.length; i ++ ) {
+        let currentLetter = newString[i]
+        if(currentLetter ===  ' ') {
+            resultString += currentLetter
+            continue
         }
- }
+        let currentIndex = alphabet.indexOf(currentLetter)
+        console.log(currentIndex)
+        let newIndex = currentIndex + num
+        resultString += alphabet[newIndex]
+        console.log(resultString)
+    }
+}
 
- console.log(ceasarCipher('abcdefg', 3))
+console.log(ceasarCipher('abc  defg', 10))
