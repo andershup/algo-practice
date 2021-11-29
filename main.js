@@ -1,12 +1,6 @@
-
-
-
-
-
-
 // function getMean (arr) {
 //     let total  = 0
-//     let result 
+//     let result
 //     console.log(arr)
 //     for (let i = 0 ; i < arr.length  ; i++) {
 //         total += arr[i]
@@ -29,12 +23,11 @@
 //         let upperMedian = newArray[(arr.length/2)-1]
 //         console.log(upperMedian)
 //         medianResult = ((lowerMedian + upperMedian) / 2)
-//         return medianResult 
+//         return medianResult
 //     }
 // }
 
 // console.log(getMedian([1,5,6,7,8,9]))
-
 
 // function getMode(array) {
 //     const modeObj = {}
@@ -44,7 +37,7 @@
 //         modeObj[number]++
 //     })
 
-//     let maxFrequency = 0 
+//     let maxFrequency = 0
 //     let modes = []
 //     for(let number in modeObj) {
 //         if(modeObj[number] > maxFrequency) {
@@ -53,10 +46,9 @@
 //         }
 //     }
 //     return modes
-   
+
 //     console.log(modeObj)
-        
-    
+
 // }
 
 // console.log(getMode([1,1,1,1,1,2,3,4,4,4,4,4,4,4,5,6,7,8,9,9,9,,]))
@@ -64,7 +56,7 @@
 // function twoSum(numArray, sum) {
 //     var pairs = [];
 //     var hashTable = [];
-   
+
 //     for (var i = 0; i < numArray.length; i++) {
 //       var currNum = numArray[i];
 //       var counterpart = sum - currNum;
@@ -73,10 +65,10 @@
 //       }
 //       hashTable.push(currNum);
 //     }
-    
+
 //     return pairs;
 //   }
-   
+
 //   twoSum([1, 6, 4, 5, 3, 3], 7);
 
 //   function factorial (num) {
@@ -84,8 +76,25 @@
 //           return num
 //       }
 //       else {
-//           return num * factorial(num - 1) 
+//           return num * factorial(num - 1)
 //       }
 //   }
-  
+
 //   console.log(factorial(4))
+
+// function binarySearch(numArray, key) {
+//   var middleIdx = Math.floor(numArray.length / 2);
+//   var middleElem = numArray[middleIdx];
+//   console.log(middleElem);
+//   console.log(middleElem);
+//   if (middleElem === key) return true;
+//   else if (middleElem < key && numArray.length > 1) {
+//     return binarySearch(numArray.splice(middleIdx, numArray.length), key);
+//   } else if (middleElem > key && numArray.length > 1) {
+//     return binarySearch(numArray.splice(0, middleIdx), key);
+//   } else return console.log('it ends up here');
+// }
+
+// console.log(binarySearch([1, 2, 3, 4, 6], 3));
+
+
