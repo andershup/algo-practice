@@ -104,17 +104,38 @@
 
 // console.log(fibonacci(9))
 
-function bubleUpSort(arr) {
-    for (let  i = arr.length ; i > 0 ; i--) {
-        for (j = 0 ; j < i ; j++) {
-            if(arr[j] > arr[j+1]) {
-                let temp = arr[j]
-                arr[j] = arr[j+1]
-                arr[j+1] = temp
-            }
-        }
-    }
-    return arr
+// function bubleUpSort(arr) {
+//     for (let  i = arr.length ; i > 0 ; i--) {
+//         for (j = 0 ; j < i ; j++) {
+//             if(arr[j] > arr[j+1]) {
+//                 let temp = arr[j]
+//                 arr[j] = arr[j+1]
+//                 arr[j+1] = temp
+//             }
+//         }
+//     }
+//     return arr
+// }
+
+// console.log(bubleUpSort([2,5,7,3,4,6]))
+
+function mergeSortedArr (arr) {
+    const middleElem = Math.floor(arr.length/2)
+    const firstHalf = arr.slice(0, middleElem)
+    const secondHalf = arr.splice(middleElem)
+    
 }
 
-console.log(bubleUpSort([2,5,7,3,4,6]))
+function merge(array1, array2) {
+    const result = []
+    while(array1.length && array2.length) {
+        let smallest;
+        if(array1[0] < array2[0]) {
+            smallest = array1.shift()
+        } else {
+            smallest = array2.shift()
+        } result.push(smallest)
+    } 
+}
+
+console.log(mergeSortedArr(([1,4,5,7,9,10, 2,6,8,11])))
