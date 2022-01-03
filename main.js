@@ -119,23 +119,40 @@
 
 // console.log(bubleUpSort([2,5,7,3,4,6]))
 
-function mergeSortedArr (arr) {
-    const middleElem = Math.floor(arr.length/2)
-    const firstHalf = arr.slice(0, middleElem)
-    const secondHalf = arr.splice(middleElem)
+// function mergeSortedArr (arr) {
+//     const middleElem = Math.floor(arr.length/2)
+//     const firstHalf = arr.slice(0, middleElem)
+//     const secondHalf = arr.splice(middleElem)
     
-}
+// }
 
-function merge(array1, array2) {
-    const result = []
-    while(array1.length && array2.length) {
-        let smallest;
-        if(array1[0] < array2[0]) {
-            smallest = array1.shift()
+// function merge(array1, array2) {
+//     const result = []
+//     while(array1.length && array2.length) {
+//         let smallest;
+//         if(array1[0] < array2[0]) {
+//             smallest = array1.shift()
+//         } else {
+//             smallest = array2.shift()
+//         } result.push(smallest)
+//     } 
+// }
+
+// console.log(mergeSortedArr(([1,4,5,7,9,10, 2,6,8,11])))
+
+function fizzbuzz (num) {
+   
+    for(i = 0; i <= num; i++) {
+        if(i > 0  && i % 3 === 0) {
+            console.log('fizz')
+        }
+        else if(i > 0 && i % 5 === 0) {
+            console.log('buzz')
         } else {
-            smallest = array2.shift()
-        } result.push(smallest)
-    } 
+        console.log(i)
+    }
+} 
+
 }
 
-console.log(mergeSortedArr(([1,4,5,7,9,10, 2,6,8,11])))
+fizzbuzz(20)
