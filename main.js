@@ -140,19 +140,48 @@
 
 // console.log(mergeSortedArr(([1,4,5,7,9,10, 2,6,8,11])))
 
-function fizzbuzz (num) {
+// function fizzbuzz (num) {
    
-    for(i = 0; i <= num; i++) {
-        if(i > 0  && i % 3 === 0) {
-            console.log('fizz')
-        }
-        else if(i > 0 && i % 5 === 0) {
-            console.log('buzz')
-        } else {
-        console.log(i)
-    }
-} 
+//     for(i = 0; i <= num; i++) {
+//         if(i > 0  && i % 3 === 0) {
+//             console.log('fizz')
+//         }
+//         else if(i > 0 && i % 5 === 0) {
+//             console.log('buzz')
+//         } else {
+//         console.log(i)
+//     }
+// } 
 
+// }
+
+// fizzbuzz(20)
+
+function harmlessRansomNote (note, magazine) {
+  let noteArray = note.split(' ')
+  let magazineArray = magazine.split(' ')
+  const magazineObj = {}
+    magazineArray.forEach(word => {
+        if(!magazineObj[word])    magazineObj[word] = 0
+         
+            magazineObj[word] ++
+        })
+   
+
+    let noteIsPossible = true;
+
+    noteArray.forEach(word => {
+        if(magazineObj[word]) {
+            magazineObj[word]--
+            if(magazineObj[word] < 0) {
+                noteIsPossible = false
+            }
+        }
+        else noteIsPossible = false;
+    })
+    return noteIsPossible
+
+    
 }
 
-fizzbuzz(20)
+console.log(harmlessRansomNote('this is a secret note for you from a admirer', 'puerto rico is a place of great wonder and excitement it has many secret waterfall locations that i am an admirer of you must hike quite a distance to find the secret places as they are far from populated areas but it is worth the effort a tip i have for you is to go early in the morning when it is not so hot out also note that you must wear hiking boots this is one of the best places i have ever visited'));
