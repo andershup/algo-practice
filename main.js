@@ -223,3 +223,30 @@
 // }
 
 // console.log(isPalindrome('race car'))
+
+
+// function ceaserCipher (str, num) {
+//     const stringArray = str.toLowerCase().split('')
+//     let newString = ''
+//     const alphabetArray = 'abcdefghijklmnopqrstuvxyz'.split('')
+
+//     for(i = 0 ; i < stringArray.length ; i ++ ) {
+//         let  currentLetter = stringArray[i]
+//         console.log(currentLetter)
+//   /*       if(currentLetter === ' ') {
+//             newString += currentLetter[i]
+//             continue
+//         } */
+//         let currentIndex = alphabetArray.indexOf(currentLetter)
+//         console.log(currentIndex)
+//         let newIndex = currentIndex + num 
+//         console.log(newIndex)
+//         newString += alphabetArray[newIndex]
+
+//     }
+//      console.log(newString)
+// }
+
+
+
+// console.log(ceaserCipher('abcdefg', 3))
