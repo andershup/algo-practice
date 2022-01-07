@@ -157,31 +157,69 @@
 
 // fizzbuzz(20)
 
-function harmlessRansomNote (note, magazine) {
-  let noteArray = note.split(' ')
-  let magazineArray = magazine.split(' ')
-  const magazineObj = {}
-    magazineArray.forEach(word => {
-        if(!magazineObj[word])    magazineObj[word] = 0
+// function harmlessRansomNote (note, magazine) {
+//   let noteArray = note.split(' ')
+//   let magazineArray = magazine.split(' ')
+//   const magazineObj = {}
+//     magazineArray.forEach(word => {
+//         if(!magazineObj[word])    magazineObj[word] = 0
          
-            magazineObj[word] ++
-        })
+//             magazineObj[word] ++
+//         })
    
 
-    let noteIsPossible = true;
+//     let noteIsPossible = true;
 
-    noteArray.forEach(word => {
-        if(magazineObj[word]) {
-            magazineObj[word]--
-            if(magazineObj[word] < 0) {
-                noteIsPossible = false
-            }
-        }
-        else noteIsPossible = false;
-    })
-    return noteIsPossible
+//     noteArray.forEach(word => {
+//         if(magazineObj[word]) {
+//             magazineObj[word]--
+//             if(magazineObj[word] < 0) {
+//                 noteIsPossible = false
+//             }
+//         }
+//         else noteIsPossible = false;
+//     })
+//     return noteIsPossible
 
     
-}
+// }
 
-console.log(harmlessRansomNote('this is a secret note for you from a admirer', 'puerto rico is a place of great wonder and excitement it has many secret waterfall locations that i am an admirer of you must hike quite a distance to find the secret places as they are far from populated areas but it is worth the effort a tip i have for you is to go early in the morning when it is not so hot out also note that you must wear hiking boots this is one of the best places i have ever visited'));
+// console.log(harmlessRansomNote('this is a secret note for you from a admirer', 'puerto rico is a place of great wonder and excitement it has many secret waterfall locations that i am an admirer of you must hike quite a distance to find the secret places as they are far from populated areas but it is worth the effort a tip i have for you is to go early in the morning when it is not so hot out also note that you must wear hiking boots this is one of the best places i have ever visited'));
+
+
+// function isPalindrome(string) {
+//     string = string.toLowerCase();
+//     const characterArray = string.split('');
+//     const allowedCharacters = 'abcdefghijklmnopqrstuvxyz'.split('')
+
+//     const lettersArray = []
+
+//     characterArray.forEach(element => { if(allowedCharacters.indexOf(element) > -1) {
+//         lettersArray.push(element)
+//     }
+
+// })
+
+// return lettersArray.join('') === lettersArray.reverse().join('')
+        
+//     }
+
+// console.log(isPalindrome("race car"))
+
+// function isPalindrome (string) {
+//     string = string.toLowerCase()
+//     const stringArray = string.split('')
+//     const allowedCharacters = 'abcdefghijklmnopqrstuvxyz'.split('')
+
+//     const newStringArray = []
+
+//     stringArray.forEach(element => { if(allowedCharacters.indexOf(element) > -1) {
+//         newStringArray.push(element)
+//     }
+// })
+        
+// return newStringArray.join('') === newStringArray.reverse().join('')
+
+// }
+
+// console.log(isPalindrome('race car'))
