@@ -225,28 +225,51 @@
 // console.log(isPalindrome('race car'))
 
 
-function ceaserSipher (str, num) {
-    const strArray = str.split('')
-    console.log(strArray)
-    const alphabetArray = 'abcdefghijklmnopqrstuvwxyz'.split('')
-    console.log(alphabetArray)
+// function ceaserSipher (str, num) {
+//     const strArray = str.split('')
+//     console.log(strArray)
+//     const alphabetArray = 'abcdefghijklmnopqrstuvwxyz'.split('')
+//     console.log(alphabetArray)
 
-    let brandNewString = ''
-    console.log(brandNewString)
-    for(i = 0 ; i < strArray.length ; i ++ ) {
-        let currentLetter = strArray[i]
-        if(currentLetter === ' ') {
-            brandNewString += currentLetter
-            continue 
-        }
-        let currentIndexInAlphabet = alphabetArray.indexOf(currentLetter)
-        let newIndex = currentIndexInAlphabet + num
-        brandNewString += alphabetArray[newIndex]
-    }
-    return brandNewString
-}
+//     let brandNewString = ''
+//     console.log(brandNewString)
+//     for(i = 0 ; i < strArray.length ; i ++ ) {
+//         let currentLetter = strArray[i]
+//         if(currentLetter === ' ') {
+//             brandNewString += currentLetter
+//             continue 
+//         }
+//         let currentIndexInAlphabet = alphabetArray.indexOf(currentLetter)
+//         let newIndex = currentIndexInAlphabet + num
+//         brandNewString += alphabetArray[newIndex]
+//     }
+//     return brandNewString
+// }
 
-console.log(ceaserSipher('abcdefg', 5))
+// console.log(ceaserSipher('abcdefg', 5))
+
+
+// function reverseWords(str) {
+//     const strArray = str.split(' ')
+//     const newArray = []
+//     console.log(strArray)
+
+//     strArray.forEach(word => {
+//       let newWordOrder = ""
+//       for(i = word.length - 1 ; i >= 0 ; i--) {
+//           newWordOrder += word[i]
+//           console.log(newWordOrder)
+//       } 
+//       newArray.push(newWordOrder)
+//     });
+//     return newArray.join(' ')
+    
+// }
+
+
+// console.log(reverseWords('hi there this is my string'))
+        
+
 
 
 
