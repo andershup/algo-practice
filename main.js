@@ -225,28 +225,28 @@
 // console.log(isPalindrome('race car'))
 
 
-// function ceaserCipher (str, num) {
-//     const stringArray = str.toLowerCase().split('')
-//     let newString = ''
-//     const alphabetArray = 'abcdefghijklmnopqrstuvxyz'.split('')
+function ceaserSipher (str, num) {
+    const strArray = str.split('')
+    console.log(strArray)
+    const alphabetArray = 'abcdefghijklmnopqrstuvwxyz'.split('')
+    console.log(alphabetArray)
 
-//     for(i = 0 ; i < stringArray.length ; i ++ ) {
-//         let  currentLetter = stringArray[i]
-//         console.log(currentLetter)
-//   /*       if(currentLetter === ' ') {
-//             newString += currentLetter[i]
-//             continue
-//         } */
-//         let currentIndex = alphabetArray.indexOf(currentLetter)
-//         console.log(currentIndex)
-//         let newIndex = currentIndex + num 
-//         console.log(newIndex)
-//         newString += alphabetArray[newIndex]
+    let brandNewString = ''
+    console.log(brandNewString)
+    for(i = 0 ; i < strArray.length ; i ++ ) {
+        let currentLetter = strArray[i]
+        if(currentLetter === ' ') {
+            brandNewString += currentLetter
+            continue 
+        }
+        let currentIndexInAlphabet = alphabetArray.indexOf(currentLetter)
+        let newIndex = currentIndexInAlphabet + num
+        brandNewString += alphabetArray[newIndex]
+    }
+    return brandNewString
+}
 
-//     }
-//      console.log(newString)
-// }
+console.log(ceaserSipher('abcdefg', 5))
 
 
 
-// console.log(ceaserCipher('abcdefg', 3))
