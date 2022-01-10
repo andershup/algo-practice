@@ -280,4 +280,57 @@
 
 // console.log(reversedArray([1, 2, 3, 4, 5, 6]))
 
+function getMean(array) {
+    let sum = 0
+    array.forEach(num => {
+        sum +=  num 
+    })
+    let result = sum / array.length
+    return result 
+}
+
+function getMedian (array) {
+    array = array.sort()
+    if(array.length % 2 !== 0) {
+
+        return array[Math.floor(array.length/2)]
+    }
+    else {
+        const higherNumber = array[Math.ceil(array.length/2)]
+        console.log(higherNumber)
+        const lowerNumber = array[Math.floor(array.length/2)-1]
+        console.log(lowerNumber)
+        result =  (higherNumber + lowerNumber) /2
+        return result
+    }
+    
+}
+
+function getMode (array) {
+  if(array.length === 0) {
+      return null
+  }
+  const modeMap = {}
+  //Populating this new object
+  array.forEach(num => {
+      if(!modeMap[num]) modeMap[num] = 0
+      modeMap[num] ++   
+  })
+
+// Creating an array of nodes
+let maxFrequency = 0
+const nodeArray = []
+  for(num in modeMap) {
+    nodeArray.push( )
+  }
+   
+}
+
+function getMeanMedianMode() {
+    return {
+        mean: getMean, 
+        median: getMedian,
+        mode: getMode 
+    }
+}
 
