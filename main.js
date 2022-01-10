@@ -269,7 +269,15 @@
 
 // console.log(reverseWords('hi there this is my string'))
         
+// function reversedArray(arr) {
+// for(i = 0 ; i < arr.length ; i++) {
+//     let tempVar = arr[i]
+//     arr[i] = arr[arr.length - 1 - i]
+//     arr[arr.length -1 - i] = tempVar
+// }
+// return arr 
+// }
 
-
+// console.log(reversedArray([1, 2, 3, 4, 5, 6]))
 
 
