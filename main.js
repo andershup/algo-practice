@@ -306,25 +306,35 @@ function getMedian (array) {
     
 }
 
-function getMode (array) {
-  if(array.length === 0) {
-      return null
-  }
-  const modeMap = {}
-  //Populating this new object
-  array.forEach(num => {
-      if(!modeMap[num]) modeMap[num] = 0
-      modeMap[num] ++   
-  })
-
-// Creating an array of nodes
-let maxFrequency = 0
-const nodeArray = []
-  for(num in modeMap) {
-    nodeArray.push( )
-  }
-   
+function getMode(array) {
+    if(array.length === 0) {
+        return null
+    }
+    const modeObj = {}
+    let maxFrequency = 0
+    let modeArray = []
+    array.forEach(num => {
+        if(!modeObj[num]) {
+            modeObj[num] = 0 
+        }
+        modeObj[num] ++
+        console.log(modeObj)
+    })
+    for(let num in modeObj) {
+        if(modeObj[num] > maxFrequency) {
+          modeArray = [num]
+          console.log(num)
+          maxFrequency = modeObj[num]
+        }
+    
+    else if(modeObj[num] === maxFrequency) {
+        modeArray.push()
+    }
 }
+
+}
+
+// getMode([1,1,1,1,1,1,2,3,4,5,6,7,7,1,1,1,1,7,7,7,7,7,7,7,7,])
 
 function getMeanMedianMode() {
     return {
