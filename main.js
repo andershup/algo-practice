@@ -347,19 +347,35 @@
 
 
 
-function twoSum (numArray, num) {
-    let pairs = []
-    let hashTable = []
+// function twoSum (numArray, num) {
+//     let pairs = []
+//     let hashTable = []
 
-    for(i = 0 ; i < numArray.length ; i ++) {
-        let currentNumber = numArray[i]
-        let oppositeNumber = num -  currentNumber
-        if(hashTable.indexOf(oppositeNumber) !== -1) {
-            pairs.push([currentNumber, oppositeNumber])
-        } 
-        hashTable.push(currentNumber)
-    } return pairs
-}
+//     for(i = 0 ; i < numArray.length ; i ++) {
+//         let currentNumber = numArray[i]
+//         let oppositeNumber = num -  currentNumber
+//         if(hashTable.indexOf(oppositeNumber) !== -1) {
+//             pairs.push([currentNumber, oppositeNumber])
+//         } 
+//         hashTable.push(currentNumber)
+//     } return pairs
+// }
 
-console.log(twoSum([8,2,3,5,4,5,6], 10))
+// console.log(twoSum([8,2,3,5,4,5,6], 10))
 
+
+
+// function binarySearch (numArray, key) {
+//     let middleInx = Math.floor(numArray.length/2)
+//     let middleElem = numArray[middleInx]
+//     if(middleElem === key) return true
+//     else if(middleElem < key && numArray.length > 1) {
+//         return binarySearch(numArray.splice(middleInx, numArray.length), key)
+//     }
+//     else if(middleElem > key && numArray.length > 1) {
+//         return binarySearch(numArray.splice(0, middleInx), key)
+//     }
+//     else return false
+// }
+
+// console.log(binarySearch([2,3,5,6,7,8,10,12,50,60], 12))
