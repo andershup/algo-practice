@@ -280,67 +280,86 @@
 
 // console.log(reversedArray([1, 2, 3, 4, 5, 6]))
 
-function getMean(array) {
-    let sum = 0
-    array.forEach(num => {
-        sum +=  num 
-    })
-    let result = sum / array.length
-    return result 
-}
+// function getMean(array) {
+//     let sum = 0
+//     array.forEach(num => {
+//         sum +=  num 
+//     })
+//     let result = sum / array.length
+//     return result 
+// }
 
-function getMedian (array) {
-    array = array.sort()
-    if(array.length % 2 !== 0) {
+// function getMedian (array) {
+//     array = array.sort()
+//     if(array.length % 2 !== 0) {
 
-        return array[Math.floor(array.length/2)]
-    }
-    else {
-        const higherNumber = array[Math.ceil(array.length/2)]
-        console.log(higherNumber)
-        const lowerNumber = array[Math.floor(array.length/2)-1]
-        console.log(lowerNumber)
-        result =  (higherNumber + lowerNumber) /2
-        return result
-    }
+//         return array[Math.floor(array.length/2)]
+//     }
+//     else {
+//         const higherNumber = array[Math.ceil(array.length/2)]
+//         console.log(higherNumber)
+//         const lowerNumber = array[Math.floor(array.length/2)-1]
+//         console.log(lowerNumber)
+//         result =  (higherNumber + lowerNumber) /2
+//         return result
+//     }
     
-}
+// }
 
-function getMode(array) {
-    if(array.length === 0) {
-        return null
-    }
-    const modeObj = {}
-    let maxFrequency = 0
-    let modeArray = []
-    array.forEach(num => {
-        if(!modeObj[num]) {
-            modeObj[num] = 0 
-        }
-        modeObj[num] ++
-        console.log(modeObj)
-    })
-    for(let num in modeObj) {
-        if(modeObj[num] > maxFrequency) {
-          modeArray = [num]
-          console.log(num)
-          maxFrequency = modeObj[num]
-        }
+// function getMode(array) {
+//     if(array.length === 0) {
+//         return null
+//     }
+//     const modeObj = {}
+//     let maxFrequency = 0
+//     let modeArray = []
+//     array.forEach(num => {
+//         if(!modeObj[num]) {
+//             modeObj[num] = 0 
+//         }
+//         modeObj[num] ++
+//         console.log(modeObj)
+//     })
+//     for(let num in modeObj) {
+//         if(modeObj[num] > maxFrequency) {
+//           modeArray = [num]
+//           console.log(num)
+//           maxFrequency = modeObj[num]
+//         }
     
-    else if(modeObj[num] === maxFrequency) {
-        modeArray.push()
-    }
+//     else if(modeObj[num] === maxFrequency) {
+//         modeArray.push()
+//     }
+// }
+
+// }
+
+// // getMode([1,1,1,1,1,1,2,3,4,5,6,7,7,1,1,1,1,7,7,7,7,7,7,7,7,])
+
+// function getMeanMedianMode() {
+//     return {
+//         mean: getMean, 
+//         median: getMedian,
+//         mode: getMode 
+//     }
+// }
+
+
+
+
+function twoSum (numArray, num) {
+    let pairs = []
+    let hashTable = []
+
+    for(i = 0 ; i < numArray.length ; i ++) {
+        let currentNumber = numArray[i]
+        let oppositeNumber = num -  currentNumber
+        if(hashTable.indexOf(oppositeNumber) !== -1) {
+            pairs.push([currentNumber, oppositeNumber])
+        } 
+        hashTable.push(currentNumber)
+    } return pairs
 }
 
-}
-
-// getMode([1,1,1,1,1,1,2,3,4,5,6,7,7,1,1,1,1,7,7,7,7,7,7,7,7,])
-
-function getMeanMedianMode() {
-    return {
-        mean: getMean, 
-        median: getMedian,
-        mode: getMode 
-    }
-}
+console.log(twoSum([8,2,3,5,4,5,6], 10))
 
