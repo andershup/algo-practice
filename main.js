@@ -379,3 +379,32 @@
 // }
 
 // console.log(binarySearch([2,3,5,6,7,8,10,12,50,60], 12))
+
+// function harmlessRansomNote(note, magazine) {
+//     let noteArray = note.split(' ')
+//     let magazineArray = magazine.split(' ')
+//     let hashTable = {}
+
+//     magazineArray.forEach(word => {
+//         if(!hashTable[word]) hashTable[word]= 0
+//         hashTable[word]++
+//     });
+//     console.log(hashTable)
+
+//     let noteIsPossible = true
+
+//     noteArray.forEach(word => {
+//         if(hashTable[word]) {
+//             hashTable[word]--
+//             if(hashTable[word]<0) noteIsPossible = false
+//         }
+//         else noteIsPossible = false
+//     })
+
+//     return noteIsPossible
+
+
+// }
+
+
+// console.log(harmlessRansomNote('this is a secret secret note for you from an admirer', 'puerto rico is a place of great wonder and excitement it has many  waterfall locations that i am an admirer of you must hike quite a distance to find the secret places as they are far from populated areas but it is worth the effort a tip i have for you is to go early in the morning when it is not so hot out also note that you must wear hiking boots this is one of the best places i have ever visited'));
