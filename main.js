@@ -427,3 +427,20 @@
 // }
 // console.log(isPalindrome('race car'))
 
+// function isPalindrome(str) {
+//     strArray = str.split('')
+//     allowedChar = 'abcdefghijklmnopqrstuvwxy'.split('')
+//     hashTable = []
+//     strArray.forEach(letter => {
+//         if(allowedChar.indexOf(letter) > -1) {
+//             hashTable.push(letter) 
+
+//         }
+//         console.log(hashTable)
+        
+//     })
+//     return hashTable.join() === strArray.reverse().join()
+// }
+
+// console.log(isPalindrome('racecar'))
+
