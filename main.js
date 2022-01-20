@@ -28,17 +28,39 @@
 
 // console.log(reverseWord('this is my new string'))
 
-function twoSum(array, sum) {
-    let pairs = []
-    let hashTable = []
-    for(i = 0 ; i < array.length ; i ++) {
-        let currentNumber = array[i]
-        let counterpart = sum - currentNumber
-        if(hashTable.indexOf(counterpart) !== -1) {
-            pairs.push([currentNumber, counterpart])
-        }
-        hashTable.push(currentNumber)
-    }
-    return pairs
-}
-console.log(twoSum([1,2,3,4,5,6,7,8,9], 5))
+// function twoSum(array, sum) {
+//     let pairs = []
+//     let hashTable = []
+//     for(i = 0 ; i < array.length ; i ++) {
+//         let currentNumber = array[i]
+//         let counterpart = sum - currentNumber
+//         if(hashTable.indexOf(counterpart) !== -1) {
+//             pairs.push([currentNumber, counterpart])
+//         }
+//         hashTable.push(currentNumber)
+//     }
+//     return pairs
+// }
+// console.log(twoSum([1,2,3,4,5,6,7,8,9], 5))
+
+// function factoral (num) {
+//     if(num === 1) {
+//         return num 
+//     }
+//     else {
+//         return num * factoral(num - 1) 
+//     }
+// }
+
+// console.log(factoral(5))
+
+// function factoral(num) {
+//     if(num === 1) {
+//         return num 
+//     }
+//     else {
+//         return factoral(num - 1) 
+//     }
+// }
+
+// console.log(factoral(5))
