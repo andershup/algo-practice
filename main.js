@@ -63,4 +63,18 @@
 //     }
 // }
 
-// console.log(factoral(5))
+// // console.log(factoral(5))
+
+// function fibonacci (position) {
+//     let currentNumber = 
+// }
+
+
+
+let myString = 'this is the unly un-bugging Nunes and her nuw partner is do'
+let myRegex = /.un/ig
+let result = myString.match(myRegex)
+
+console.log(result)
+
+
