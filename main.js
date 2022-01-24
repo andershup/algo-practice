@@ -71,10 +71,16 @@
 
 
 
-let myString = 'this is the unly un-bugging Nunes and her nuw partner is do'
-let myRegex = /.un/ig
+// let myString = 'this is the unly un-bugging Nunes and her nuw partner is do 99 more problems and 5 6 44 m 4 3 77'
+// let myRegex = /[^a-g1-6]/ig
+// let replaced = myString.replace(/[0-9a-g]/ig, "Z")
+// let result = myString.match(myRegex)
+
+// console.log(result)
+// console.log(replaced)
+
+let myString = 'smississippis'
+let myRegex = /m*/g
 let result = myString.match(myRegex)
-
 console.log(result)
-
 
