@@ -79,8 +79,31 @@
 // console.log(result)
 // console.log(replaced)
 
-let myString = 'smississippis'
-let myRegex = /m*/g
-let result = myString.match(myRegex)
-console.log(result)
+// let myString = 'smississippis'
+// let myRegex = /m*/g
+// let result = myString.match(myRegex)
+// console.log(result)
 
+function harmlessRansomNote(note, article) {
+    let noteArray = note.toLowerCase().split(' ')
+    let articleArray = article.toLowerCase().split(' ')
+    let newArray = []
+    let hashTable = {}
+    articleArray.forEach(word => {
+        if(!hashTable[word]) hashTable[word] = 0
+        hashTable[word]++
+    })
+    let noteIsPossible = false
+    noteArray.forEach(word => {
+        if(hashTable[word] > -1) {
+            hashTable[word]--
+                if(hashTable[word] > -1) noteIsPossible = true
+        }
+        else noteIsPossible = false
+    })
+    console.log(hashTable)
+        return noteIsPossible
+    }
+
+
+console.log(harmlessRansomNote('this is the text I want', 'this will be the magazine note with lots of text i is  '))
