@@ -84,26 +84,44 @@
 // let result = myString.match(myRegex)
 // console.log(result)
 
-function harmlessRansomNote(note, article) {
-    let noteArray = note.toLowerCase().split(' ')
-    let articleArray = article.toLowerCase().split(' ')
-    let newArray = []
-    let hashTable = {}
-    articleArray.forEach(word => {
-        if(!hashTable[word]) hashTable[word] = 0
-        hashTable[word]++
-    })
-    let noteIsPossible = false
-    noteArray.forEach(word => {
-        if(hashTable[word] > -1) {
-            hashTable[word]--
-                if(hashTable[word] > -1) noteIsPossible = true
-        }
-        else noteIsPossible = false
-    })
-    console.log(hashTable)
-        return noteIsPossible
+// function harmlessRansomNote(note, article) {
+//     let noteArray = note.toLowerCase().split(' ')
+//     let articleArray = article.toLowerCase().split(' ')
+//     let newArray = []
+//     let hashTable = {}
+//     articleArray.forEach(word => {
+//         if(!hashTable[word]) hashTable[word] = 0
+//         hashTable[word]++
+//     })
+//     let noteIsPossible = false
+//     noteArray.forEach(word => {
+//         if(hashTable[word] > -1) {
+//             hashTable[word]--
+//                 if(hashTable[word] > -1) noteIsPossible = true
+//         }
+//         else noteIsPossible = false
+//     })
+//     console.log(hashTable)
+//         return noteIsPossible
+//     }
+
+
+// console.log(harmlessRansomNote('this is the text I want', 'this will be the magazine note with lots of text i is  '))
+
+
+function ceasarSipher(str, num) {
+    let newString = str.split('')
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+    let resultString = ''
+
+    for(i = 0 ; i < str.length ; i ++){ 
+        let currentIndex = alphabet.indexOf(newString[i])
+        // console.log(currentIndex)
+        let newIndex = currentIndex + num
+        // console.log(newIndex)
+        let result = alphabet[newIndex]
+        resultString += result
     }
-
-
-console.log(harmlessRansomNote('this is the text I want', 'this will be the magazine note with lots of text i is  '))
+    return resultString 
+}
+console.log(ceasarSipher('abcde', 3))
