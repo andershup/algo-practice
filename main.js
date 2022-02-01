@@ -108,20 +108,19 @@
 
 // console.log(harmlessRansomNote('this is the text I want', 'this will be the magazine note with lots of text i is  '))
 
+function reversedWords (str) {
+    let newString = str.split(' ')
+    let reversedWordsArray = []
 
-function ceasarSipher(str, num) {
-    let newString = str.split('')
-    let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
-    let resultString = ''
-
-    for(i = 0 ; i < str.length ; i ++){ 
-        let currentIndex = alphabet.indexOf(newString[i])
-        // console.log(currentIndex)
-        let newIndex = currentIndex + num
-        // console.log(newIndex)
-        let result = alphabet[newIndex]
-        resultString += result
-    }
-    return resultString 
+    newString.forEach(word => {
+        let thisWord = ''
+        for( i = word.length-1 ; i >= 0 ; i --) {
+            let currentLetter = word[i]
+            thisWord+= currentLetter
+        }
+        reversedWordsArray.push(thisWord)
+    })
+    return reversedWordsArray.join(' ')
 }
-console.log(ceasarSipher('abcde', 3))
+
+console.log(reversedWords('this is the string i want reversed'))
