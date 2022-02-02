@@ -106,21 +106,23 @@
 //     }
 
 
-// console.log(harmlessRansomNote('this is the text I want', 'this will be the magazine note with lots of text i is  '))
 
-function reversedWords (str) {
-    let newString = str.split(' ')
-    let reversedWordsArray = []
+// function reversedArray(array) {
+//     for(i = 0 ; i < array.length ; i++) {
+//         let tempVar = array[i]
+//         console.log(tempVar)
+//         let opposite = array.length - i
+//         console.log(opposite)
+        
+//         console.log(tempVar)
+//     }
+// }
 
-    newString.forEach(word => {
-        let thisWord = ''
-        for( i = word.length-1 ; i >= 0 ; i --) {
-            let currentLetter = word[i]
-            thisWord+= currentLetter
-        }
-        reversedWordsArray.push(thisWord)
-    })
-    return reversedWordsArray.join(' ')
-}
+// console.log(reversedArray([1,2,3,4,5,6,7,8]))
 
-console.log(reversedWords('this is the string i want reversed'))
+// let arrayOne = [1,2,3,4,5,6,7,8]
+
+
+// let arrayTwo = arrayOne.concat().reverse()
+// console.log(arrayOne)
+// console.log(arrayTwo)
