@@ -84,26 +84,46 @@
 // let result = myString.match(myRegex)
 // console.log(result)
 
-function harmlessRansomNote(note, article) {
-    let noteArray = note.toLowerCase().split(' ')
-    let articleArray = article.toLowerCase().split(' ')
-    let newArray = []
-    let hashTable = {}
-    articleArray.forEach(word => {
-        if(!hashTable[word]) hashTable[word] = 0
-        hashTable[word]++
-    })
-    let noteIsPossible = false
-    noteArray.forEach(word => {
-        if(hashTable[word] > -1) {
-            hashTable[word]--
-                if(hashTable[word] > -1) noteIsPossible = true
-        }
-        else noteIsPossible = false
-    })
-    console.log(hashTable)
-        return noteIsPossible
+// function harmlessRansomNote(note, article) {
+//     let noteArray = note.toLowerCase().split(' ')
+//     let articleArray = article.toLowerCase().split(' ')
+//     let newArray = []
+//     let hashTable = {}
+//     articleArray.forEach(word => {
+//         if(!hashTable[word]) hashTable[word] = 0
+//         hashTable[word]++
+//     })
+//     let noteIsPossible = false
+//     noteArray.forEach(word => {
+//         if(hashTable[word] > -1) {
+//             hashTable[word]--
+//                 if(hashTable[word] > -1) noteIsPossible = true
+//         }
+//         else noteIsPossible = false
+//     })
+//     console.log(hashTable)
+//         return noteIsPossible
+//     }
+
+
+// console.log(harmlessRansomNote('this is the text I want', 'this will be the magazine note with lots of text i is  '))
+
+function reversedWords(str) {
+    let newString = str.split(' ')
+    let finishedString = []
+
+newString.forEach(word => {
+    let indivdualWord = ''
+    // for(i = word.length-1 ; i >=0 ; i--) {
+    for(i = word.length-1; i >= 0 ; i--) {
+        console.log(word[i])
+        indivdualWord += word[i]
     }
+    finishedString.push(indivdualWord)
+})
+    return finishedString.join(' ')
+}
+
+console.log(reversedWords('this is the string i want to do'))
 
 
-console.log(harmlessRansomNote('this is the text I want', 'this will be the magazine note with lots of text i is  '))
