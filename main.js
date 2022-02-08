@@ -126,3 +126,14 @@
 // let arrayTwo = arrayOne.concat().reverse()
 // console.log(arrayOne)
 // console.log(arrayTwo)
+
+function reversedArray(array) {
+    for(i = 0 ; i < array.length/2; i++) {
+        let tempVar = array[i]
+        array[i] = array[(array.length-1) -i]
+        array[(array.length - 1) - i] = tempVar
+    }
+    return array
+}
+
+console.log(reversedArray([1,2,3,4,5,6,7]))
