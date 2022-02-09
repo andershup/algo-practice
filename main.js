@@ -183,13 +183,24 @@
 //     }
 // }
 
-function reverseArray(array) {
-    for(i = 0 ; i < array.length/2 ; i++) {
-        let tempVar = array[i]
-        array[i] = array[array.length -1 -i]
-        array[array.length - 1 - i] = tempVar
+// function reverseArray(array) {
+//     for(i = 0 ; i < array.length/2 ; i++) {
+//         let tempVar = array[i]
+//         array[i] = array[array.length -1 -i]
+//         array[array.length - 1 - i] = tempVar
+//     }
+//     return array 
+// }
+
+// console.log(reverseArray([1,2,3,4,5,6,7]))
+
+function reversedArray(arr) {
+    for(i = 0 ; i < arr.length/2 ; i ++) {
+        let tempVar = arr[i]
+        arr[i] = arr[arr.length - 1 - i]
+        arr[arr.length - 1 - i] = tempVar
     }
-    return array 
+    return arr
 }
 
-console.log(reverseArray([1,2,3,4,5,6,7]))
+console.log(reversedArray([1,2,3,4,5,6,7,8,9]))
