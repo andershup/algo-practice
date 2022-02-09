@@ -194,13 +194,59 @@
 
 // console.log(reverseArray([1,2,3,4,5,6,7]))
 
-function reversedArray(arr) {
-    for(i = 0 ; i < arr.length/2 ; i ++) {
-        let tempVar = arr[i]
-        arr[i] = arr[arr.length - 1 - i]
-        arr[arr.length - 1 - i] = tempVar
-    }
-    return arr
+function getMean(arr) {
+    let sum = 0 
+    arr.forEach(num => {
+        sum += num
+    })
+    let result = sum / arr.length
+    return result 
 }
 
-console.log(reversedArray([1,2,3,4,5,6,7,8,9]))
+function getMedian(arr) {
+    let result
+    arr.sort(function(a,b) { a - b})
+    if(arr.length % 2 !== 0) {
+        let result = arr[(arr.length-1) / 2]
+        return result 
+    }
+    else {
+        let topNumber = arr[Math.ceil(arr.length/2)]
+      
+        console.log(topNumber)
+        let bottomNumber = arr[Math.floor((arr.length-1)/2)]
+        console.log(bottomNumber)
+        let result = (topNumber + bottomNumber) /2
+        return result
+    }
+    
+}
+// console.log(getMedian([1,2,3,5,6,7,8,9,10]))
+
+function getMedian(arr) {
+    arrObject = {}
+    arr.forEach(num => {
+        if(!arrObject[num]) arrObject[num] = 0 
+        arrObject[num] ++
+    })
+    console.log(arrObject)
+    let maxNumber = 0
+    let modes = []
+    for(num in arrObject) {
+        if(arrObject[num] > maxNumber) {
+            modes = [num]
+            maxNumber = arrObject[num] 
+        }
+    }
+    return modes 
+}
+
+console.log(getMedian([1,2,2,3,4,5,5,5,6,7,8,8,8,8,8,8]))
+
+function meanMedianMode(arr) {
+    return {
+        mean: getMean(),
+        median: getMedian(),
+        mode: getMode()
+    }
+}
