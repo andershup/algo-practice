@@ -35,3 +35,54 @@
 // }
 
 // console.log(reverseArray([1,2,3,4,5,6,7,8,9]))
+
+const getMean = (arr) => {
+    let sum = 0
+    arr.forEach(num => {
+        sum += num
+    })
+    return sum/arr.length
+}
+
+const getMedian = (arr) => {
+    arr.sort((a,b) => a - b)
+    if(arr.length % 2 !== 0) {
+        let result = arr[Math.floor(arr.length/2)]
+        return result 
+    }
+   
+    let upperNumber = arr[Math.floor(arr.length/2)]
+    let lowerNumber = arr[Math.floor((arr.length-1)/2)]
+    return (upperNumber + lowerNumber) / 2
+}
+
+const getMode = (arr) => {
+    let hashTable = {}
+    arr.forEach(num => {
+        if(!hashTable[num]) hashTable[num] = 0 
+        hashTable[num]++
+    })
+ 
+    console.log(hashTable)
+    let maxNumber = 0 
+    for(property in hashTable) {
+      
+      if(hashTable[property] >= maxNumber) {
+          maxNumber = property
+      }
+        
+        
+    }
+    return maxNumber
+
+}
+
+console.log(getMode([1,2,3,3,3,3,4,5,6,7,8,9,10,11,11,11,11,11,12]))
+
+const meanMedianMode = (arr) => {
+    return {
+        mean: getMean(arr),
+        median: getMedian(arr),
+        mode: getMode(arr)
+    }
+}
