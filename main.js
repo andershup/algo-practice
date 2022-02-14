@@ -10,6 +10,7 @@
 //       }
 //       return hash;
 //     }
+
   
 
 // }
@@ -21,68 +22,13 @@
 //   myHashTable.set('apples', 9)
 //  console.log(myHashTable.get('apples'))
 
-
-
-// const reverseArray = (arr) => {
-//     for(let i = 0 ; i < arr.length/2 ; i++) {
-//         let tempVar = arr[i]
-//         arr[i] = arr[arr.length -1 - i]
-//         console.log(arr[i])
-//         arr[arr.length -1 - i] = tempVar
-//     }
-//     return arr
-
-// }
-
-// console.log(reverseArray([1,2,3,4,5,6,7,8,9]))
-
-const getMean = (arr) => {
-    let sum = 0
-    arr.forEach(num => {
-        sum += num
-    })
-    return sum/arr.length
-}
-
-const getMedian = (arr) => {
-    arr.sort((a,b) => a - b)
-    if(arr.length % 2 !== 0) {
-        let result = arr[Math.floor(arr.length/2)]
-        return result 
+function fibonacciRecorsion(n) {
+    if(n < 2) {
+        console.log('this is n:',n)
+        return n
     }
-   
-    let upperNumber = arr[Math.floor(arr.length/2)]
-    let lowerNumber = arr[Math.floor((arr.length-1)/2)]
-    return (upperNumber + lowerNumber) / 2
+    console.log('this is big n',n)
+    return fibonacciRecorsion(n-1) + fibonacciRecorsion(n-2)
 }
+console.log('answer:', fibonacciRecorsion(8))
 
-const getMode = (arr) => {
-    let hashTable = {}
-    arr.forEach(num => {
-        if(!hashTable[num]) hashTable[num] = 0 
-        hashTable[num]++
-    })
- 
-    console.log(hashTable)
-    let maxNumber = 0 
-    for(property in hashTable) {
-      
-      if(hashTable[property] >= maxNumber) {
-          maxNumber = property
-      }
-        
-        
-    }
-    return maxNumber
-
-}
-
-console.log(getMode([1,2,3,3,3,3,4,5,6,7,8,9,10,11,11,11,11,11,12]))
-
-const meanMedianMode = (arr) => {
-    return {
-        mean: getMean(arr),
-        median: getMedian(arr),
-        mode: getMode(arr)
-    }
-}
