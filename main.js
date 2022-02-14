@@ -22,13 +22,31 @@
 //   myHashTable.set('apples', 9)
 //  console.log(myHashTable.get('apples'))
 
-function fibonacciRecorsion(n) {
-    if(n < 2) {
-        console.log('this is n:',n)
-        return n
-    }
-    console.log('this is big n',n)
-    return fibonacciRecorsion(n-1) + fibonacciRecorsion(n-2)
-}
-console.log('answer:', fibonacciRecorsion(8))
+// function fibonacciRecorsion(n) {
+//     if(n < 2) {
+//         console.log('this is n:',n)
+//         return n
+//     }
+//     console.log('this is big n',n)
+//     return fibonacciRecorsion(n-1) + fibonacciRecorsion(n-2)
+// }
+// console.log('answer:', fibonacciRecorsion(8))
 
+
+const twoSum = (arr, sum) => {
+    let resultArray = []
+    let tempArray = []
+    for(let i = 0 ; i < arr.length ; i ++)
+    {
+        let currentNumber = arr[i]
+        let opposite = sum - currentNumber
+        if(tempArray.indexOf(opposite) !== -1) {
+            resultArray.push([currentNumber, opposite])
+        }
+        tempArray.push(currentNumber)
+        console.log(currentNumber)
+    }
+    return resultArray
+}
+
+console.log(twoSum([1,2,3,4,5,6,7], 10))
