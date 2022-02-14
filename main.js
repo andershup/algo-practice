@@ -11,6 +11,8 @@
 //       return hash;
 //     }
 
+
+
   
 
 // }
@@ -33,20 +35,44 @@
 // console.log('answer:', fibonacciRecorsion(8))
 
 
-const twoSum = (arr, sum) => {
-    let resultArray = []
-    let tempArray = []
-    for(let i = 0 ; i < arr.length ; i ++)
-    {
-        let currentNumber = arr[i]
-        let opposite = sum - currentNumber
-        if(tempArray.indexOf(opposite) !== -1) {
-            resultArray.push([currentNumber, opposite])
-        }
-        tempArray.push(currentNumber)
-        console.log(currentNumber)
-    }
-    return resultArray
-}
+// const twoSum = (arr, sum) => {
+//     let resultArray = []
+//     let tempArray = []
+//     for(let i = 0 ; i < arr.length ; i ++)
+//     {
+//         let currentNumber = arr[i]
+//         let opposite = sum - currentNumber
+//         if(tempArray.indexOf(opposite) !== -1) {
+//             resultArray.push([currentNumber, opposite])
+//         }
+//         tempArray.push(currentNumber)
+//         console.log(currentNumber)
+//     }
+//     return resultArray
+// }
 
-console.log(twoSum([1,2,3,4,5,6,7], 10))
+// console.log(twoSum([1,2,3,4,5,6,7], 10))
+
+// const factoral = (num) => {
+//     if(num === 2) {
+//         return 2
+//     }
+//     return num * factoral(num - 1)
+// }
+// console.log(factoral(4))
+
+// const fibonacciRecorsion = (num) => {
+//     if(num < 2) {
+//         return num 
+//     }
+//     return fibonacciRecorsion(num-1) + fibonacciRecorsion(num-2)
+// }
+
+// console.log(fibonacciRecorsion(6))
+
+const recursion = (num) => {
+   
+    if(num < 3) return 1 
+    return num - recursion(num -1)
+}
+console.log(recursion(8))
