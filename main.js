@@ -162,10 +162,9 @@ class LinkedList {
     this.length ++
     return this
   }
-  printList() {
-    console.log(this.head)
-    const array = []
+  printToList() {
     let currentNode = this.head
+    let array = []
     while(currentNode !== null) {
       array.push(currentNode.value)
       currentNode = currentNode.next
@@ -173,16 +172,22 @@ class LinkedList {
     return array 
   }
   insert(index, value) {
-    let array = []
-    const newNode = new Node(value)
-    let currentNode = this.head
-    while(currentNode !== null) {
-      array.push(currentNode.value)
-      currentNode = currentNode.next
-    }
-
+    const newNode = new Node(value) 
+    const leader = this.traverse(index-1)
+    const pointerHolder = leader.next
+    leader.next = newNode
+    newNode.next = pointerHolder
+    return this.printToList()
     
-
+  }
+  traverse(index) {
+    let counter = 0 
+    let currentNode = this.head
+    while(counter !== index) {
+      currentNode = currentNode.next
+      counter++
+    }
+    return currentNode
   }
 }
 
@@ -191,6 +196,5 @@ const myNewList = new LinkedList(10)
 myNewList.append(55)
 myNewList.append(555)
 myNewList.prepend(22)
-console.log(myNewList)
-// console.log(myNewList.insert(2,22))
-console.log(myNewList.printList())
+console.log(myNewList.printToList())
+console.log(myNewList.insert(2,22))
