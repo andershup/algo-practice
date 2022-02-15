@@ -70,9 +70,67 @@
 
 // console.log(fibonacciRecorsion(6))
 
-const recursion = (num) => {
-   
-    if(num < 3) return 1 
-    return num - recursion(num -1)
-}
-console.log(recursion(8))
+
+
+//Implement a function that reverses a string using iteration...and then recursion!
+
+// function reverseStringRecursive (str) {
+//     if (str === "") {
+//       return "";
+//     } else {
+//       console.log(str.substr(1), '+', str.charAt(0))
+      
+//       return reverseStringRecursive(str.substr(1)) + str.charAt(0);
+//     }
+//   }
+  
+//  console.log( reverseStringRecursive('abcdefg'));
+// const reverseString = (str) => {
+    
+//     if(str === '') {
+//         return ''
+//     } else {
+//     return reverseString(str.substr(1)) + str.charAt(0)
+// }
+// }
+
+// console.log(reverseString('yoyo mastery'))
+
+// class Node {
+//     constructor(value){
+//       this.value = value;
+//       this.next = null;
+// }
+// }
+
+// class Stack {
+//   constructor(){
+//     this.top = null;
+//     this.bottom = null;
+//     this.length = 0;
+//   }
+//   peek() {
+//   }
+//   push(value){
+//   }
+//   pop(){
+//   }
+//   //isEmpty
+// }
+
+// const myStack = new Stack();
+
+
+
+
+//Discord
+//Udemy
+//google
+
+// const stringReversal = (str) => {
+//   if(str === '') {
+//     return ''
+//   }
+//   return stringReversal(str.substr(1)) + str.charAt()
+// }
+
