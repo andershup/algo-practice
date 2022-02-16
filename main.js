@@ -133,68 +133,78 @@
 //   }
 //   return stringReversal(str.substr(1)) + str.charAt()
 // }
-class Node {
-  constructor(value) {
-    this.value = value
-    this.next = null
-  }
-}
-class LinkedList {
-  constructor(value) {
-    this.head = {
-      value,
-      next: null
-    }
-    this.tail = this.head
-    this.length = 1 
-  }
-  append(value) {
-    const newNode = new Node(value)
-    this.tail.next = newNode
-    this.tail = newNode
-    this.length++
-    return this
-  }
-  prepend(value) {
-    const newNode = new Node(value)
-    newNode.next = this.head
-    this.head = newNode
-    this.length ++
-    return this
-  }
-  printToList() {
-    let currentNode = this.head
-    let array = []
-    while(currentNode !== null) {
-      array.push(currentNode.value)
-      currentNode = currentNode.next
-    }
-    return array 
-  }
-  insert(index, value) {
-    const newNode = new Node(value) 
-    const leader = this.traverse(index-1)
-    const pointerHolder = leader.next
-    leader.next = newNode
-    newNode.next = pointerHolder
-    return this.printToList()
+// class Node {
+//   constructor(value) {
+//     this.value = value
+//     this.next = null
+//   }
+// }
+// class LinkedList {
+//   constructor(value) {
+//     this.head = {
+//       value,
+//       next: null
+//     }
+//     this.tail = this.head
+//     this.length = 1 
+//   }
+//   append(value) {
+//     const newNode = new Node(value)
+//     this.tail.next = newNode
+//     this.tail = newNode
+//     this.length++
+//     return this
+//   }
+//   prepend(value) {
+//     const newNode = new Node(value)
+//     newNode.next = this.head
+//     this.head = newNode
+//     this.length ++
+//     return this
+//   }
+//   printToList() {
+//     let currentNode = this.head
+//     let array = []
+//     while(currentNode !== null) {
+//       array.push(currentNode.value)
+//       currentNode = currentNode.next
+//     }
+//     return array 
+//   }
+//   insert(index, value) {
+//     const newNode = new Node(value) 
+//     const leader = this.traverse(index-1)
+//     const pointerHolder = leader.next
+//     leader.next = newNode
+//     newNode.next = pointerHolder
+//     return this.printToList()
     
+//   }
+//   traverse(index) {
+//     let counter = 0 
+//     let currentNode = this.head
+//     while(counter !== index) {
+//       currentNode = currentNode.next
+//       counter++
+//     }
+//     return currentNode
+//   }
+// }
+
+
+// const myNewList = new LinkedList(10)
+// myNewList.append(55)
+// myNewList.append(555)
+// myNewList.prepend(22)
+// console.log(myNewList.printToList())
+// console.log(myNewList.insert(2,22))
+
+let counter = 0 
+function inception() {
+  if(counter > 3) {
+    return 'done'
   }
-  traverse(index) {
-    let counter = 0 
-    let currentNode = this.head
-    while(counter !== index) {
-      currentNode = currentNode.next
-      counter++
-    }
-    return currentNode
-  }
+  counter ++
+   return inception()
 }
-
-
-const myNewList = new LinkedList(10)
-myNewList.append(55)
-myNewList.append(555)
-myNewList.prepend(22)
-console.log(myNewList.printToList())
-console.log(myNewList.insert(2,22))
+console.log(inception())
