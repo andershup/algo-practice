@@ -75,6 +75,7 @@
 //Implement a function that reverses a string using iteration...and then recursion!
 
 // function reverseStringRecursive (str) {
+//   debugger
 //     if (str === "") {
 //       return "";
 //     } else {
@@ -85,6 +86,9 @@
 //   }
   
 //  console.log( reverseStringRecursive('abcdefg'));
+
+
+
 // const reverseString = (str) => {
     
 //     if(str === '') {
@@ -133,78 +137,146 @@
 //   }
 //   return stringReversal(str.substr(1)) + str.charAt()
 // }
-// class Node {
-//   constructor(value) {
-//     this.value = value
-//     this.next = null
-//   }
-// }
-// class LinkedList {
-//   constructor(value) {
-//     this.head = {
-//       value,
-//       next: null
-//     }
-//     this.tail = this.head
-//     this.length = 1 
-//   }
-//   append(value) {
-//     const newNode = new Node(value)
-//     this.tail.next = newNode
-//     this.tail = newNode
-//     this.length++
-//     return this
-//   }
-//   prepend(value) {
-//     const newNode = new Node(value)
-//     newNode.next = this.head
-//     this.head = newNode
-//     this.length ++
-//     return this
-//   }
-//   printToList() {
-//     let currentNode = this.head
-//     let array = []
-//     while(currentNode !== null) {
-//       array.push(currentNode.value)
-//       currentNode = currentNode.next
-//     }
-//     return array 
-//   }
-//   insert(index, value) {
-//     const newNode = new Node(value) 
-//     const leader = this.traverse(index-1)
-//     const pointerHolder = leader.next
-//     leader.next = newNode
-//     newNode.next = pointerHolder
-//     return this.printToList()
-    
-//   }
-//   traverse(index) {
-//     let counter = 0 
-//     let currentNode = this.head
-//     while(counter !== index) {
-//       currentNode = currentNode.next
-//       counter++
-//     }
-//     return currentNode
-//   }
-// }
 
 
-// const myNewList = new LinkedList(10)
-// myNewList.append(55)
-// myNewList.append(555)
-// myNewList.prepend(22)
-// console.log(myNewList.printToList())
-// console.log(myNewList.insert(2,22))
-
-let counter = 0 
-function inception() {
-  if(counter > 3) {
-    return 'done'
+class Node {
+  constructor(value) {
+    this.value = value
+    this.next = null
   }
-  counter ++
-   return inception()
 }
-console.log(inception())
+class LinkedList {
+  constructor(value) {
+    this.head = {
+      value,
+      next: null
+    }
+    this.tail = this.head
+    this.length = 1 
+  }
+  // append(value) {
+  //   const newNode = new Node(value)
+  //   this.tail.next = newNode
+  //   this.tail = newNode
+  //   this.length++
+  //   return this
+  // }
+  // prepend(value) {
+  //   const newNode = new Node(value)
+  //   newNode.next = this.head
+  //   this.head = newNode
+  //   this.length ++
+  //   return this
+  // }
+  // printToList() {
+  //   let currentNode = this.head
+  //   let array = []
+  //   while(currentNode !== null) {
+  //     array.push(currentNode.value)
+  //     currentNode = currentNode.next
+  //   }
+  //   return array 
+  // }
+  // insert(index, value) {
+  //   const newNode = new Node(value) 
+  //   const leader = this.traverse(index-1)
+  //   const pointerHolder = leader.next
+  //   leader.next = newNode
+  //   newNode.next = pointerHolder
+  //   return this.printToList()
+    
+  // }
+  // traverse(index) {
+  //   let counter = 0 
+  //   let currentNode = this.head
+  //   while(counter !== index) {
+  //     currentNode = currentNode.next
+  //     counter++
+  //   }
+  //   return currentNode
+  // }
+  append(value) {
+    let newNode = new Node(value)
+    this.tail.next = newNode
+    this.tail = newNode
+    this.length ++
+    return this
+  }
+  prepend(value) {
+    let newNode = new Node(value)
+    newNode.next = this.head
+    this.head = newNode
+    this.length ++
+    return this
+  }
+  printToList() {
+    let array = []
+    let currentNode = this.head
+    console.log(currentNode)
+    while(currentNode !== null) {
+      array.push(currentNode.value)
+      currentNode = currentNode.next
+    }
+    return array
+  }
+  traverse(index) {
+    let counter = 0 
+    let currentNode = this.head
+    while(counter !== index) {
+      currentNode = currentNode.next
+      counter ++
+    }
+    return currentNode
+  }
+  insert(index, value) {
+   
+    let currentNode = new Node(value)
+    let leader = this.traverse(index-1)
+    let afterNodeHolder = leader.next
+    currentNode = leader.next
+    currentNode.next = afterNodeHolder
+    return currentNode
+  }
+}
+
+
+const myNewList = new LinkedList(10)
+
+myNewList.append(555)
+myNewList.append(5)
+myNewList.append(55)
+myNewList.prepend(22)
+console.log(myNewList.printToList())
+console.log(myNewList.insert(2,22))
+
+
+
+// COME BACK TO THIS ONE AND REVERSE THE INCEPTION() AND 'ITERATE' ORDER
+// let counter = 0 
+// function inception() {
+//   debugger
+//   if(counter > 3) {
+//     return 'done'
+//   }
+//   counter ++
+//    return  inception() + 'iterate' 
+// }
+// console.log(inception())
+
+// const fibonacci = (num) =>  {
+//     if(num <2) {
+//       return num 
+//     }
+//     return fibonacci(num -1) + fibonacci(num -2)
+// }
+
+// console.log(fibonacci(4))
+
+// const factoral = (num) => {
+//   if(num < 2) {
+//     return num
+//   }
+//   return num *  factoral(num -1)
+// }
+
+// console.log(factoral(4))
