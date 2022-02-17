@@ -61,14 +61,14 @@
 
   
 
-}
+// }
 
   
-  const myHashTable = new HashTable(5);
-  myHashTable.set('grapes', 10000)
- console.log( myHashTable.get('grapes'))
-  myHashTable.set('apples', 9)
- console.log(myHashTable.get('apples'))
+//   const myHashTable = new HashTable(5);
+//   myHashTable.set('grapes', 10000)
+//  console.log( myHashTable.get('grapes'))
+//   myHashTable.set('apples', 9)
+//  console.log(myHashTable.get('apples'))
 
 // function fibonacciRecorsion(n) {
 //     if(n < 2) {
@@ -340,6 +340,13 @@ class LinkedList  {
     this.length ++
     return this
   }
+  remove(index) {
+    const leader = this.traverse(index - 1)
+    const nodeToRemove = leader.next
+    leader.next = nodeToRemove.next 
+    this.length --
+    return this.printToList()
+  }
   
 }
 
@@ -349,7 +356,8 @@ myNewList.append(555)
 // myNewList.append(5)
 // myNewList.append(55)
 myNewList.prepend(22)
-console.log(myNewList.insert(2,22))
+myNewList.insert(2,22)
+console.log(myNewList.remove(2))
 console.log(myNewList.printToList())
 
 
