@@ -238,16 +238,73 @@
 //     return currentNode
 //   }
 // }
-
+// class Node {
+//   constructor(value) {
+//     this.value = value,
+//     this.next = null
+//   }
+// }
+// class LinkedList  {
+//   constructor(value) {
+//     this.head = {
+//       value,
+//       next: null
+//     }  
+//     this.tail = this.head
+//     this.length = 1
+//   }
+//   printToList () {
+//     let currentNode = this.head
+//     let array = []
+//     while(currentNode !== null) {
+//       array.push(currentNode.value)
+//       currentNode = currentNode.next  
+//     }
+//     return array
+//   }
+//   append(value) {
+//     let newNode = new Node(value)
+//     this.tail.next = newNode
+//     this.tail = newNode
+//     this.length ++
+//     return this
+//   }
+//   prepend (value) {
+//     let newNode = new Node(value)
+//     newNode.next = this.head 
+//     this.head = newNode
+//     this.length ++
+//     return this
+//   }
+//   traverse(index) { 
+//     let indexNode = this.head
+//     let counter = 0
+//     while(counter !== index) {
+//       indexNode = indexNode.next
+//       counter ++
+//     }
+//     return indexNode
+//   }
+//   insert(index, value) {
+//     let newNode = new Node(value)
+//     let leader = this.traverse(index - 1)
+//     let follower = leader.next
+//     leader.next = newNode
+//     newNode.next = follower
+//     this.length ++
+//     return this
+//   }
+  
+// }
 
 // const myNewList = new LinkedList(10)
 
 // myNewList.append(555)
-// myNewList.append(5)
-// myNewList.append(55)
+// // myNewList.append(5)
+// // myNewList.append(55)
 // myNewList.prepend(22)
-// console.log(myNewList.printToList())
 // console.log(myNewList.insert(2,22))
+// console.log(myNewList.printToList())
 
 
 
@@ -281,9 +338,27 @@
 
 // console.log(factoral(4))
 
-function recursiveString (str) {
-  if(str === '') return ''
-  return recursiveString(str.substr(1)) + str.charAt(0)
-}
+// function recursiveString (str) {
+//   if(str === '') return ''
+//   return recursiveString(str.substr(1)) + str.charAt(0)
+// }
 
-console.log(recursiveString('this is hello'))
+// console.log(recursiveString('this is hello'))
+
+// const twoSum = (array, sum) =>  {
+//   let pairs = []
+//   let HashTable = []
+
+//   for(let i = 0 ; i < array.length ; i ++) {
+//     let currentNumber = array[i]
+//     let opposite = sum - currentNumber
+//     if(HashTable[opposite] !== -1 && currentNumber !== opposite) {
+//       pairs.push([currentNumber, opposite])
+//     }
+//     HashTable.push(currentNumber)
+//   }
+//   return pairs 
+// }
+
+// console.log(twoSum([1,2,3,4,5,5,6,7,8,9],10))
+
