@@ -284,81 +284,85 @@
 //     return currentNode
 //   }
 // }
-class Node {
-  constructor(value) {
-    this.value = value,
-    this.next = null
-  }
-}
-class LinkedList  {
-  constructor(value) {
-    this.head = {
-      value,
-      next: null
-    }  
-    this.tail = this.head
-    this.length = 1
-  }
-  printToList () {
-    let currentNode = this.head
-    let array = []
-    while(currentNode !== null) {
-      array.push(currentNode.value)
-      currentNode = currentNode.next  
-    }
-    return array
-  }
-  append(value) {
-    let newNode = new Node(value)
-    this.tail.next = newNode
-    this.tail = newNode
-    this.length ++
-    return this
-  }
-  prepend (value) {
-    let newNode = new Node(value)
-    newNode.next = this.head 
-    this.head = newNode
-    this.length ++
-    return this
-  }
-  traverse(index) { 
-    let indexNode = this.head
-    let counter = 0
-    while(counter !== index) {
-      indexNode = indexNode.next
-      counter ++
-    }
-    return indexNode
-  }
-  insert(index, value) {
-    let newNode = new Node(value)
-    let leader = this.traverse(index - 1)
-    let follower = leader.next
-    leader.next = newNode
-    newNode.next = follower
-    this.length ++
-    return this
-  }
-  remove(index) {
-    const leader = this.traverse(index - 1)
-    const nodeToRemove = leader.next
-    leader.next = nodeToRemove.next 
-    this.length --
-    return this.printToList()
-  }
+// class Node {
+//   constructor(value) {
+//     this.value = value,
+//     this.next = null 
+//   }
+// }
+// class LinkedList  {
+//   constructor(value) {
+//     this.head = {
+//       value,
+//       next: null
+//     }  
+//     this.tail = this.head
+//     this.length = 1
+//   }
+//   printToList () {
+//     let currentNode = this.head
+//     let array = []
+//     while(currentNode !== null) {
+//       array.push(currentNode.value)
+//       currentNode = currentNode.next  
+//     }
+//     return array
+//   }
+//   append(value) {
+//     let newNode = new Node(value)
+//     this.tail.next = newNode
+//     this.tail = newNode
+//     this.length ++
+//     return this
+//   }
+//   prepend (value) {
+//     let newNode = new Node(value)
+//     newNode.next = this.head  
+//     this.head = newNode
+//     this.length ++
+//     return this
+//   }
+//   traverse(index) { 
+//     let indexNode = this.head
+//     let counter = 0
+//     while(counter !== index) {
+//       indexNode = indexNode.next
+//       counter ++
+//     }
+//     return indexNode
+//   }
+//   insert(index, value) {
+//     let newNode = new Node(value)
+//     let leader = this.traverse(index - 1)
+//     let follower = leader.next
+//     leader.next = newNode
+//     newNode.next = follower
   
-}
+//     this.length ++
+//     return this
+//   }
+//   remove(index) {
+//     const leader = this.traverse(index - 1)
+//     const nodeToRemove = leader.next
+//     const follower = nodeToRemove.next 
+//     leader.next = follower 
+//     this.length --
+//     return this.printToList()
+//   }
 
-const myNewList = new LinkedList(10)
+  
+// }
 
-myNewList.append(555)
-// myNewList.append(5)
-// myNewList.append(55)
-myNewList.prepend(22)
-myNewList.insert(2,22)
-console.log(myNewList.remove(2))
-console.log(myNewList.printToList())
+// const myNewList = new LinkedList(10)
+
+// console.log(myNewList.append(555))
+// console.log(myNewList.append(5))
+// // myNewList.append(55)
+// console.log(myNewList.prepend(22))
+// console.log(myNewList.insert(2,777))
+// console.log(myNewList.remove(2))
+// console.log(myNewList.printToList())
+// console.log(myNewList.reverse())
 
 
 
