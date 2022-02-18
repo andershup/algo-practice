@@ -420,3 +420,11 @@
 
 // console.log(twoSum([1,2,3,4,5,5,6,7,8,9],10))
 
+
+
+function recursiveStrReversing(str) {
+    if(str === '') return ''
+    return recursiveStrReversing(str.substr(1)) + str.charAt(0)
+}
+
+console.log(recursiveStrReversing('abcdefghijklmn'))
