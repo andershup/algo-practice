@@ -147,36 +147,42 @@
 
 // console.log(reverseString('yoyo mastery'))
 
-// class Node {
-//     constructor(value){
-//       this.value = value;
-//       this.next = null;
-// }
-// }
+class Node {
+    constructor(value){
+      this.value = value;
+      this.next = null;
+}
+}
 
-// class Stack {
-//   constructor(){
-//     this.top = null;
-//     this.bottom = null;
-//     this.length = 0;
-//   }
-//   peek() {
-//   }
-//   push(value){
-//   }
-//   pop(){
-//   }
-//   //isEmpty
-// }
+class Stack {
+  constructor(){
+    this.top = null;
+    this.bottom = null;
+    this.length = 0;
+  }
+  peek() {
+  }
+  push(value){
+   
 
-// const myStack = new Stack();
+  }
+  pop(){
+   
+  }
+  //isEmpty
+}
+
+const myStack = new Stack();
+console.log(myStack.push('Discord'))
+console.log(myStack.push('Udemy'))
+console.log(myStack.push('google'))
+console.log(myStack.pop())
 
 
 
-
-//Discord
-//Udemy
-//google
+// Discord
+// Udemy
+// google
 
 // const stringReversal = (str) => {
 //   if(str === '') {
@@ -201,47 +207,47 @@
 //     this.tail = this.head
 //     this.length = 1 
 //   }
-//   // append(value) {
-//   //   const newNode = new Node(value)
-//   //   this.tail.next = newNode
-//   //   this.tail = newNode
-//   //   this.length++
-//   //   return this
-//   // }
-//   // prepend(value) {
-//   //   const newNode = new Node(value)
-//   //   newNode.next = this.head
-//   //   this.head = newNode
-//   //   this.length ++
-//   //   return this
-//   // }
-//   // printToList() {
-//   //   let currentNode = this.head
-//   //   let array = []
-//   //   while(currentNode !== null) {
-//   //     array.push(currentNode.value)
-//   //     currentNode = currentNode.next
-//   //   }
-//   //   return array 
-//   // }
-//   // insert(index, value) {
-//   //   const newNode = new Node(value) 
-//   //   const leader = this.traverse(index-1)
-//   //   const pointerHolder = leader.next
-//   //   leader.next = newNode
-//   //   newNode.next = pointerHolder
-//   //   return this.printToList()
+//   append(value) {
+//     const newNode = new Node(value)
+//     this.tail.next = newNode
+//     this.tail = newNode
+//     this.length++
+//     return this
+//   }
+//   prepend(value) {
+//     const newNode = new Node(value)
+//     newNode.next = this.head
+//     this.head = newNode
+//     this.length ++
+//     return this
+//   }
+//   printToList() {
+//     let currentNode = this.head
+//     let array = []
+//     while(currentNode !== null) {
+//       array.push(currentNode.value)
+//       currentNode = currentNode.next
+//     }
+//     return array 
+//   }
+//   insert(index, value) {
+//     const newNode = new Node(value) 
+//     const leader = this.traverse(index-1)
+//     const pointerHolder = leader.next
+//     leader.next = newNode
+//     newNode.next = pointerHolder
+//     return this.printToList()
     
-//   // }
-//   // traverse(index) {
-//   //   let counter = 0 
-//   //   let currentNode = this.head
-//   //   while(counter !== index) {
-//   //     currentNode = currentNode.next
-//   //     counter++
-//   //   }
-//   //   return currentNode
-//   // }
+//   }
+//   traverse(index) {
+//     let counter = 0 
+//     let currentNode = this.head
+//     while(counter !== index) {
+//       currentNode = currentNode.next
+//       counter++
+//     }
+//     return currentNode
+//   }
 //   append(value) {
 //     let newNode = new Node(value)
 //     this.tail.next = newNode
@@ -267,6 +273,9 @@
 //     return array
 //   }
 //   traverse(index) {
+//     if(index < 1) {
+//       return this.head 
+//     }
 //     let counter = 0 
 //     let currentNode = this.head
 //     while(counter !== index) {
@@ -284,83 +293,7 @@
 //     currentNode.next = afterNodeHolder
 //     return currentNode
 //   }
-// }
-// class Node {
-//   constructor(value) {
-//     this.value = value,
-//     this.next = null
- 
-//   }
-// }
-// class LinkedList  {
-//   constructor(value) {
-//     this.head = {
-//       value,
-//       next: null,
-    
-//     }  
-//     this.tail = this.head
-//     this.length = 1
-//   }
-//   printToList () {
-//     let currentNode = this.head
-//     let array = []
-//     while(currentNode !== null) {
-//       array.push(currentNode.value)
-//       currentNode = currentNode.next  
-//     }
-//     return array
-//   }
-//   append(value) {
-//     let newNode = new Node(value)
-//     this.tail.next = newNode
-//     this.tail = newNode
-//     this.length ++
-//     return this
-//   }
-//   prepend (value) {
-//     let newNode = new Node(value)
-//     newNode.next = this.head  
-//     this.head = newNode
-//     this.length ++
-//     return this
-//   }
-//   traverse(index) { 
-//     let indexNode = this.head
-//     let counter = 0
-//     while(counter !== index) {
-//       indexNode = indexNode.next
-//       counter ++
-//     }
-//     return indexNode
-//   }
-//   insert(index, value) {
-//     let newNode = new Node(value)
-//     let leader = this.traverse(index - 1)
-//     let follower = leader.next
-//     leader.next = newNode
-//     newNode.next = follower
-  
-  
-//     this.length ++
-//     return this
- // }
-//   remove(index) {
-//     const leader = this.traverse(index - 1)
-//     const nodeToRemove = leader.next
-//     const follower = nodeToRemove.next
-   
-//     leader.next = follower 
-//     this.length --
-//     return this.printToList()
-//   }
- /*    remove (index) {
-        let leader = this.traverse(index - 1)
-        let nodeToRemove = leader.next
-        let follower = nodeToRemove.next
-        leader.next = follower
-        this.length --
-        return this  */
+
 
 
    // }
@@ -381,8 +314,20 @@
     //     this.head = first  
     //     return this
     //     }
-        
-   // }
+
+//     remove(index) {
+//       if(index === 0) {
+//         this.head = this.head.next 
+//       }
+   
+//       let leader = this.traverse(index - 1)
+//       let follower = this.traverse(index).next 
+//       leader.next = follower
+//     }
+
+
+    
+// } 
 
   
 
@@ -394,9 +339,10 @@
 // myNewList.append(55)
 // console.log(myNewList.prepend(22))
 // // console.log(myNewList.insert(2,777))
-// // console.log(myNewList.remove(3))
 // console.log(myNewList.printToList())
-// console.log(myNewList.reverse())
+// console.log(myNewList.remove(4))
+// // console.log(myNewList.reverse())
+// console.log(myNewList.printToList())
 
 
 
@@ -463,12 +409,12 @@
 
 // console.log(recursiveStrReversing('abcdefghijklmn'))
 
-const fibonacciRecorsion = (num) =>  {
-    if(num < 2) return num
-    return fibonacciRecorsion(num -1) + fibonacciRecorsion(num - 2) 
-}
+// const fibonacciRecorsion = (num) =>  {
+//     if(num < 2) return num
+//     return fibonacciRecorsion(num -1) + fibonacciRecorsion(num - 2) 
+// }
 
-console.log(fibonacciRecorsion(8))
+// console.log(fibonacciRecorsion(8))
 
 // function factoralRecursion (num) {
 //     debugger
@@ -486,17 +432,10 @@ console.log(fibonacciRecorsion(8))
   //Udemy
   //google
 
-function recursiveString (str) {
-  if(str === '') return ''
-  return recursiveString(str.substr(1)) + str.charAt(0)
-}
+// function recursiveFactorial(num) {
+//   if(num === 0) return 1
+//   return recursiveFactorial(num -1) * num
+// }
 
-console.log(recursiveString('abcdefg'))
-
-function fibonacci(num) {
-  if(num < 2) return num
-  return fibonacci(num - 1) + fibonacci(num -2)
-}
-
-console.log(fibonacci(8))
+// console.log(recursiveFactorial(5))
   
