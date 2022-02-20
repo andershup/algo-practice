@@ -10,9 +10,11 @@
 //       }
 //       return hash;
 //     }
-//     // set(key, value) {
+
+//     // set(key , value) {
 //     //   let address = this._hash(key)
-//     //   if(!this.data[address]) {
+//     //   if(!this.data[address])
+//     //   {
 //     //     this.data[address] = []
 //     //   }
 //     //   this.data[address].push([key, value])
@@ -20,41 +22,40 @@
 //     // }
 //     // get(key) {
 //     //   let address = this._hash(key)
-//     //   const currentBucket = this.data[address]
-//     //   if(currentBucket) {
-//     //       for(let i = 0 ; i < currentBucket.length ; i ++) {
-//     //       if(currentBucket[i][0] === key)
+//     //   let currentBucket = this.data[address]
+//     //   if(currentBucket) 
+//     //   {
+//     //     for(let i = 0 ; i < currentBucket.length ; i ++) 
+//     //     {
+//     //       if(currentBucket[i][0] === key) 
 //     //       {
 //     //         return currentBucket[i][1]
+//     //       } else 
+//     //       {
+//     //         return 'data does not exist'
 //     //       }
 //     //     }
 //     //   }
 //     // }
-//     set(key , value) {
-//       let address = this._hash(key)
-//       if(!this.data[address])
-//       {
-//         this.data[address] = []
-//       }
-//       this.data[address].push([key, value])
-//       return this.data
-//     }
-//     get(key) {
-//       let address = this._hash(key)
-//       let currentBucket = this.data[address]
-//       if(currentBucket) 
-//       {
-//         for(let i = 0 ; i < currentBucket.length ; i ++) 
-//         {
-//           if(currentBucket[i][0] === key) 
-//           {
-//             return currentBucket[i][1]
-//           } else 
-//           {
-//             return 'data does not exist'
-//           }
+//     set(key,value) {
+//         let address = this._hash(key)
+//         if(!this.data[address]) {
+//             this.data[address] = []
 //         }
-//       }
+//         this.data[address].push([key, value])
+//         return this
+//     }
+//     get(key)  {
+//         let address = this._hash(key) 
+//         let currentBucket = this.data[address]
+//         if(currentBucket) {
+//             for(let i = 0 ; i < currentBucket.length ; i ++) {
+//                 if(currentBucket[i][0] === key) {
+//                     return currentBucket[i][1]
+//                 }
+//             } 
+//         } else return false 
+        
 //     }
 
 
@@ -65,7 +66,7 @@
 
   
 //   const myHashTable = new HashTable(5);
-//   myHashTable.set('grapes', 10000)
+// console.log(  myHashTable.set('grapes', 10000))
 //  console.log( myHashTable.get('grapes'))
 //   myHashTable.set('apples', 9)
 //  console.log(myHashTable.get('apples'))
@@ -287,14 +288,16 @@
 // class Node {
 //   constructor(value) {
 //     this.value = value,
-//     this.next = null 
+//     this.next = null
+ 
 //   }
 // }
 // class LinkedList  {
 //   constructor(value) {
 //     this.head = {
 //       value,
-//       next: null
+//       next: null,
+    
 //     }  
 //     this.tail = this.head
 //     this.length = 1
@@ -338,29 +341,60 @@
 //     leader.next = newNode
 //     newNode.next = follower
   
+  
 //     this.length ++
 //     return this
-//   }
+ // }
 //   remove(index) {
 //     const leader = this.traverse(index - 1)
 //     const nodeToRemove = leader.next
-//     const follower = nodeToRemove.next 
+//     const follower = nodeToRemove.next
+   
 //     leader.next = follower 
 //     this.length --
 //     return this.printToList()
 //   }
+ /*    remove (index) {
+        let leader = this.traverse(index - 1)
+        let nodeToRemove = leader.next
+        let follower = nodeToRemove.next
+        leader.next = follower
+        this.length --
+        return this  */
+
+
+   // }
+    // reverse () {
+    //   if(!this.head.next) {
+    //       return this.head
+    //   }
+    //     let first = this.head 
+    //     this.tail = this.head  
+    //     let second = first.next
+    //     while(second) {
+    //         const temp = second.next
+    //         second.next = first 
+    //         first = second
+    //         second = temp
+    //     }
+    //     this.head.next = null
+    //     this.head = first  
+    //     return this
+    //     }
+        
+   // }
 
   
-// }
+
 
 // const myNewList = new LinkedList(10)
 
 // console.log(myNewList.append(555))
 // console.log(myNewList.append(5))
-// // myNewList.append(55)
+// myNewList.append(55)
 // console.log(myNewList.prepend(22))
-// console.log(myNewList.insert(2,777))
-// console.log(myNewList.remove(2))
+// // console.log(myNewList.insert(2,777))
+// // console.log(myNewList.remove(3))
 // console.log(myNewList.printToList())
 // console.log(myNewList.reverse())
 
@@ -422,9 +456,47 @@
 
 
 
-function recursiveStrReversing(str) {
-    if(str === '') return ''
-    return recursiveStrReversing(str.substr(1)) + str.charAt(0)
+// function recursiveStrReversing(str) {
+//     if(str === '') return ''
+//     return recursiveStrReversing(str.substr(1)) + str.charAt(0)
+// }
+
+// console.log(recursiveStrReversing('abcdefghijklmn'))
+
+const fibonacciRecorsion = (num) =>  {
+    if(num < 2) return num
+    return fibonacciRecorsion(num -1) + fibonacciRecorsion(num - 2) 
 }
 
-console.log(recursiveStrReversing('abcdefghijklmn'))
+console.log(fibonacciRecorsion(8))
+
+// function factoralRecursion (num) {
+//     debugger
+//     if(num === 0) {
+//         return 1 
+//     }
+//     return factoralRecursion(num - 1) * num 
+// }
+
+// console.log(factoralRecursion(4))
+
+  
+  
+  //Discord
+  //Udemy
+  //google
+
+function recursiveString (str) {
+  if(str === '') return ''
+  return recursiveString(str.substr(1)) + str.charAt(0)
+}
+
+console.log(recursiveString('abcdefg'))
+
+function fibonacci(num) {
+  if(num < 2) return num
+  return fibonacci(num - 1) + fibonacci(num -2)
+}
+
+console.log(fibonacci(8))
+  
