@@ -122,8 +122,11 @@
 //Implement a function that reverses a string using iteration...and then recursion!
 
 // function reverseStringRecursive (str) {
-//   debugger
+//   let t0 = performance.now()
+ 
 //     if (str === "") {
+//       let t1 = performance.now()
+//       console.log('to get to the top of the stack took ' + (t1 - t0) +             ' milliseconds')
 //       return "";
 //     } else {
 //       console.log(str.substr(1), '+', str.charAt(0))
@@ -147,36 +150,36 @@
 
 // console.log(reverseString('yoyo mastery'))
 
-class Node {
-    constructor(value){
-      this.value = value;
-      this.next = null;
-}
-}
+// class Node {
+//     constructor(value){
+//       this.value = value;
+//       this.next = null;
+// }
+// }
 
-class Stack {
-  constructor(){
-    this.top = null;
-    this.bottom = null;
-    this.length = 0;
-  }
-  peek() {
-  }
-  push(value){
+// class Stack {
+//   constructor(){
+//     this.top = null;
+//     this.bottom = null;
+//     this.length = 0;
+//   }
+//   peek() {
+//   }
+//   push(value){
    
 
-  }
-  pop(){
+//   }
+//   pop(){
    
-  }
-  //isEmpty
-}
+//   }
+//   //isEmpty
+// }
 
-const myStack = new Stack();
-console.log(myStack.push('Discord'))
-console.log(myStack.push('Udemy'))
-console.log(myStack.push('google'))
-console.log(myStack.pop())
+// const myStack = new Stack();
+// console.log(myStack.push('Discord'))
+// console.log(myStack.push('Udemy'))
+// console.log(myStack.push('google'))
+// console.log(myStack.pop())
 
 
 
@@ -438,4 +441,27 @@ console.log(myStack.pop())
 // }
 
 // console.log(recursiveFactorial(5))
-  
+
+const meanMedianMode = (array) => {
+  return {
+    mean: getMean(array),
+    median: getMedian(array),
+    mode: getMode(array)
+  }
+}
+
+const getMean = (array) => {
+  sum = 0
+  length = array.length
+  array.forEach(element => {
+    sum += element  
+  });
+  let mean = sum / length
+  return mean 
+}
+
+// console.log(getMean([1,2,3,4,5,6,7,8,9,10]))
+
+
+
+
