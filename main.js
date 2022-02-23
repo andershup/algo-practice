@@ -454,27 +454,144 @@
 
 // console.log(recursiveString('abcdefgh'))
 
-const twoSum = ( array, sum ) => {
-  
-  let HashTable = []
-  let pairs = []
-  for(let i = 0 ; i < array.length ; i ++) {
-    let currentNumber = array[i]
-    let opposite = sum - currentNumber
-    if(HashTable[opposite]) {
-      pairs.push([currentNumber,opposite])
-    }
-    HashTable.push(currentNumber)
+
+
+// class LinkedList {
+//   constructor(value) {
+//     this.head = {
+//       value: value,
+//       next: null
+//     };
+//     this.tail = this.head;
+//     this.length = 1;
+//   }
+//   append(value) {
+//     const newNode = {
+//       value: value,
+//       next: null
+//     }
+//     this.tail.next = newNode;
+//     this.tail = newNode;
+//     this.length++;
+//     return this;
+//   }
+//   prepend(value) {
+//     const newNode = {
+//       value: value,
+//       next: null
+//     }
+//     newNode.next = this.head;
+//     this.head = newNode;
+//     this.length++;
+//     return this;
+//   }
+//   printList() {
+//     const array = [];
+//     let currentNode = this.head;
+//     while(currentNode !== null){
+//         array.push(currentNode.value)
+//         currentNode = currentNode.next
+//     }
+//     return array;
+//   }
+//   insert(index, value){
+//     //Check for proper parameters;
+//     if(index >= this.length) {
+//       console.log('yes')
+//       return this.append(value);
+//     }
+    
+//     const newNode = {
+//       value: value,
+//       next: null
+//     }
+//     const leader = this.traverseToIndex(index-1);
+//     const holdingPointer = leader.next;
+//     leader.next = newNode;
+//     newNode.next = holdingPointer;
+//     this.length++;
+//     return this.printList();
+//   }
+  // traverseToIndex(index) {
+  //   //Check parameters
+  //   let counter = 0;
+  //   let currentNode = this.head;
+  //   while(counter !== index){
+  //     currentNode = currentNode.next;
+  //     counter++;
+  //   }
+  //   return currentNode;
+//   }
+
+// }
+
+// let myLinkedList = new LinkedList(10);
+// myLinkedList.append(5);
+// myLinkedList.append(16);myLinkedList.prepend(1);
+// myLinkedList.insert(2, 99);
+// myLinkedList.insert(20, 88);
+// console.log(myLinkedList.printList())
+// // console.log(myLinkedList.remove(2))
+// console.log(myLinkedList.reverse())
+
+// var bunny = {
+//   name: 'Usagi',
+//   showName: function() {
+//     alert(this.name);
+//   }
+// };
+// bunny.showName()
+
+
+// var bunny = {
+//   name: 'Usagi',
+//   tasks: ['transform', 'eat cake', 'blow kisses'],
+//   showTasks: function() {
+//     this.tasks.forEach(function(task) {
+//       alert(this.name + " wants to " + task);
+//     });
+//   }
+// };
+
+// bunny.showTasks();
+
+class Node {
+  constructor(value){
+    this.value = value;
+    this.next = null;
   }
-return pairs 
 }
 
-console.log(twoSum([1,2,3,4,5,6,7,8,9], 10))
+class Stack {
+  constructor(){
+   this.array = []
+  }
+  peek() {
+    return this.array[this.array.length-1]
+  }
+  push(value) {
+    return this.array.push(value)
+  }
+  pop(value) {
+    return this.array.pop()
+  }
 
-const factoralRecursion = num => {
-  if(num < 2) return num
-  return factoralRecursion(num -1) * num
+  //isEmpty
 }
 
-console.log(factoralRecursion(4))
+const myStack = new Stack();
+console.log(myStack.peek())
+console.log(myStack.push('google'))
+console.log(myStack.push('udemy'))
+console.log(myStack.push('discord'))
+console.log(myStack.peek())
+console.log(myStack.pop())
+console.log(myStack.pop())
+console.log(myStack.pop())
 
+
+
+
+//Discord
+//Udemy
+//google
