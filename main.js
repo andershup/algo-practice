@@ -166,12 +166,13 @@
 //   peek() {
 //   }
 //   push(value){
-   
+  
 
 //   }
 //   pop(){
-   
+ 
 //   }
+  
 //   //isEmpty
 // }
 
@@ -442,43 +443,14 @@
 
 // console.log(recursiveFactorial(5))
 
-const meanMedianMode = (array) => {
-  return {
-    mean: getMean(array),
-    median: getMedian(array),
-    mode: getMode(array)
-  }
-}
-
-const getMean = (array) => {
-  sum = 0
-  length = array.length
-  array.forEach(element => {
-    sum += element  
-  });
-  let mean = sum / length
-  return mean 
-}
 
 // console.log(getMean([1,2,3,4,5,6,7,8,9,10]))
 
 
+// const recursiveString = str => {
+//   if(str === '') return ''
+//   return recursiveString(str.substr(1)) + str.charAt(0)
+// }
 
+// console.log(recursiveString('abcdefgh'))
 
-// What is the Big O of the below function? (Hint, you may want to go line by line)
-function anotherFunChallenge(input) {
-  let a = 5;
-  let b = 10;
-  let c = 50;
-  for (let i = 0; i < input; i++) {
-    let x = i + 1;
-    let y = i + 2;
-    let z = i + 3;
-
-  }
-  for (let j = 0; j < input; j++) {
-    let p = j * 2;
-    let q = j * 2;
-  }
-  let whoAmI = "I don't know";
-}
