@@ -554,44 +554,52 @@
 // };
 
 // bunny.showTasks();
-
 class Node {
-  constructor(value){
-    this.value = value;
-    this.next = null;
+  constructor(value)  {
+    this.value = value
+    this.next = null 
   }
 }
 
-class Stack {
-  constructor(){
-   this.array = []
+
+class Queue {
+  constructor() {
+    this.first = null
+    this.last  = null
+    this.length = 0
   }
   peek() {
-    return this.array[this.array.length-1]
+    return this.first
   }
-  push(value) {
-    return this.array.push(value)
+  enqueue(value) {
+    let newNode = new Node(value)
+    if(this.length === 0) {
+      this.first = newNode
+      this.last = newNode
+      this.length ++
+      return this
+    }
+    else 
+    {
+   this.last.next = newNode
+  this.last = newNode
+    this.length ++
+    return this
+    }
   }
-  pop(value) {
-    return this.array.pop()
+ 
+  dequeue() {
+    this.first = this.first.next 
+    this.length --
+    return this
   }
-
-  //isEmpty
 }
 
-const myStack = new Stack();
-console.log(myStack.peek())
-console.log(myStack.push('google'))
-console.log(myStack.push('udemy'))
-console.log(myStack.push('discord'))
-console.log(myStack.peek())
-console.log(myStack.pop())
-console.log(myStack.pop())
-console.log(myStack.pop())
-
-
-
-
-//Discord
-//Udemy
-//google
+const myQueue = new Queue()
+console.log(myQueue.enqueue('joy'))
+console.log(myQueue.enqueue('matt'))
+console.log(myQueue.enqueue('pavel'))
+console.log(myQueue.enqueue('samir'))
+// console.log(myQueue.dequeue())
+// console.log(myQueue.dequeue())
+console.log(myQueue.peek())
