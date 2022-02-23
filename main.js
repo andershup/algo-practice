@@ -454,3 +454,27 @@
 
 // console.log(recursiveString('abcdefgh'))
 
+const twoSum = ( array, sum ) => {
+  
+  let HashTable = []
+  let pairs = []
+  for(let i = 0 ; i < array.length ; i ++) {
+    let currentNumber = array[i]
+    let opposite = sum - currentNumber
+    if(HashTable[opposite]) {
+      pairs.push([currentNumber,opposite])
+    }
+    HashTable.push(currentNumber)
+  }
+return pairs 
+}
+
+console.log(twoSum([1,2,3,4,5,6,7,8,9], 10))
+
+const factoralRecursion = num => {
+  if(num < 2) return num
+  return factoralRecursion(num -1) * num
+}
+
+console.log(factoralRecursion(4))
+
