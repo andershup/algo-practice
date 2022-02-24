@@ -553,53 +553,84 @@
 //   }
 // };
 
-// bunny.showTasks();
+
 class Node {
-  constructor(value)  {
+  constructor(value) {
     this.value = value
-    this.next = null 
+    this.above = null
+    this.below = null
   }
 }
 
-
-class Queue {
+class Stack {
   constructor() {
-    this.first = null
-    this.last  = null
+    this.top = null
+    this.bottom = null
     this.length = 0
   }
-  peek() {
-    return this.first
-  }
-  enqueue(value) {
-    let newNode = new Node(value)
-    if(this.length === 0) {
-      this.first = newNode
-      this.last = newNode
-      this.length ++
-      return this
-    }
-    else 
-    {
-   this.last.next = newNode
-  this.last = newNode
+push(value) {
+  let newNode = new Node(value)
+  if(this.length === 0) {
+    this.top = newNode
+    this.bottom = newNode
+    this.top.below = newNode
     this.length ++
     return this
-    }
   }
- 
-  dequeue() {
-    this.first = this.first.next 
-    this.length --
+  else 
+  {
+    this.bottom.below = newNode
+    newNode.above = this.bottom 
+    this.bottom = newNode
+    this.length ++
     return this
   }
 }
+pop() 
+{
+  let topVarTemp = this.top
+  this.top = this.top.below
 
-const myQueue = new Queue()
-console.log(myQueue.enqueue('joy'))
-console.log(myQueue.enqueue('matt'))
-console.log(myQueue.enqueue('pavel'))
-console.log(myQueue.enqueue('samir'))
-// console.log(myQueue.dequeue())
-// console.log(myQueue.dequeue())
-console.log(myQueue.peek())
+  return topVarTemp
+}
+reverse() {
+  let first  = this.bottom 
+  let second = this.bottom.above
+  this.bottom = this.top 
+this.top = first 
+
+ /*  this.bottom = this.top 
+  this.top = this.bottom */
+  while(second) {
+    let tempVar = second.above
+    second.above = first
+    first = second   
+    second = tempVar
+
+  }
+  return this 
+
+}
+traverse(index) {
+  if(index < 1) {
+    return this
+  }
+  let counter = 0 
+  let currentNode = this.bottom
+  while(index !== counter) {
+    currentNode = currentNode.above
+    counter ++
+  }
+  return currentNode
+}
+
+}
+
+const myStack = new Stack()
+myStack.push(5)
+myStack.push(55)
+myStack.push(555)
+myStack.push(5555)
+// console.log(myStack.pop())
+// console.log(myStack.reverse())
+console.log(myStack.traverse(2))
