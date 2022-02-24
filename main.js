@@ -554,83 +554,156 @@
 // };
 
 
+
 class Node {
-  constructor(value) {
-    this.value = value
-    this.above = null
-    this.below = null
+  constructor(value){
+    this.left = null;
+    this.right = null;
+    this.value = value;
   }
 }
 
-class Stack {
-  constructor() {
-    this.top = null
-    this.bottom = null
-    this.length = 0
+class BinarySearchTree {
+  constructor(){
+    this.root = null;
   }
-push(value) {
-  let newNode = new Node(value)
-  if(this.length === 0) {
-    this.top = newNode
-    this.bottom = newNode
-    this.top.below = newNode
-    this.length ++
-    return this
-  }
-  else 
-  {
-    this.bottom.below = newNode
-    newNode.above = this.bottom 
-    this.bottom = newNode
-    this.length ++
-    return this
+  insert(value){
+    let newNode = new Node(value)
+    if(this.root === null) {
+      this.root = newNode
+    }
+    else 
+    {
+      let currentNode = this.root
+      while(true) 
+      {
+        if(value < currentNode.value) {
+          if(!currentNode.left) {
+            currentNode.left = newNode
+            return this
+          }
+          currentNode = currentNode.left
+      }
+      if(value > currentNode.value) 
+      {
+        if(!currentNode.right) 
+        {
+          currentNode.right = newNode
+          return this
+        }
+        currentNode = currentNode.right 
+        
+      }
+      
+    }
+    return this 
   }
 }
-pop() 
-{
-  let topVarTemp = this.top
-  this.top = this.top.below
-
-  return topVarTemp
-}
-reverse() {
-  let first  = this.bottom 
-  let second = this.bottom.above
-  this.bottom = this.top 
-this.top = first 
-
- /*  this.bottom = this.top 
-  this.top = this.bottom */
-  while(second) {
-    let tempVar = second.above
-    second.above = first
-    first = second   
-    second = tempVar
-
+  lookup(value){
+    if(!this.root) {
+      return false
+    }
+    let currentNode = this.root
+    let parentNode = null
+    while(currentNode) 
+    {
+      if(currentNode.value === value) 
+      {
+        return currentNode 
+      }
+      else if(value < currentNode.value ) 
+      {
+        
+        currentNode = currentNode.left
+      }
+      else if(value > currentNode.value) 
+      {
+        
+        currentNode = currentNode.right
+      }
+    }
+    return false 
   }
-  return this 
+  remove(value) {
+    let currentNode = this.root
+    let parentNode = null
+    while(currentNode) 
+    {
+      if(value < currentNode.value)
+      {
+        parentNode = currentNode
 
-}
-traverse(index) {
-  if(index < 1) {
-    return this
+        currentNode = currentNode.left
+      }
+      else if(value > currentNode.value)
+      {
+        parentNode = currentNode
+        currentNode = currentNode.right
+      }
+      else if(value === currentNode.value) 
+      {
+        // so from here we go to work
+
+        // if current has no right child
+        if(currentNode.right === null) {
+          if(parentNode === null) {
+            this.root = currentNode.left
+          }
+          else {
+            if(currentNode.value > parentNode.value) {
+            parentNode.right = currentNode.left 
+          }
+          if(currentNode.value < parentNode.value) {
+            parentNode.left = currentNode.left
+          }
+        }
+      }
+      //if currentNode has no left child
+        if(currentNode.left === null) {
+          if(parentNode === null) {
+            this.root = currentNode.right
+          }
+          else 
+          {
+            if(currentNode.value > parentNode.value) 
+            {
+              parentNode.right = currentNode.right
+            }
+            if(currentNode.value < parentNode.value) 
+            {
+              parentNode.left = currentNode.right 
+            }
+          }
+        }
+        // if currentNode has two children
+        
+      
+   
+      return this 
+    }
+    return false 
   }
-  let counter = 0 
-  let currentNode = this.bottom
-  while(index !== counter) {
-    currentNode = currentNode.above
-    counter ++
-  }
-  return currentNode
 }
 
-}
+const tree = new BinarySearchTree();
+console.log(tree.insert(9))
+console.log(tree.insert(4))
+console.log(tree.insert(6))
+console.log(tree.insert(20))
+console.log(tree.insert(170))
+console.log(tree.insert(15))
+console.log(tree.insert(1))
+console.log(tree.lookup(11))
+console.log(tree.remove(170))
+JSON.stringify(traverse(tree.root))
 
-const myStack = new Stack()
-myStack.push(5)
-myStack.push(55)
-myStack.push(555)
-myStack.push(5555)
-// console.log(myStack.pop())
-// console.log(myStack.reverse())
-console.log(myStack.traverse(2))
+//     9
+//  4     20
+//1  6  15  170
+
+function traverse(node) {
+  const tree = { value: node.value };
+  tree.left = node.left === null ? null : traverse(node.left);
+  tree.right = node.right === null ? null : traverse(node.right);
+  return tree;
+}
