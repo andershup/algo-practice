@@ -741,22 +741,128 @@
 // }
 // console.log(secondOne(myArray, mySecondArray))
 
-const  mode = array => {
-  let map = {}
-  for(let i = 0 ; i < array.length ; i++) {
-    if(!map[array[i]]) map[array[i]] = 0
-    map[array[i]] ++
+// class HashTable {
+//   constructor(size){
+//     this.data = new Array(size);
+//   }
+
+//   _hash(key) {
+//     let hash = 0;
+//     for (let i =0; i < key.length; i++){
+//         hash = (hash + key.charCodeAt(i) * i) % this.data.length
+//     }
+//     return hash;
+//   }
+//   set(key, value) {
+//     let address = this._hash(key)
+//     if(!this.data[address]) this.data[address] = []
+//     this.data[address].push([key, value])
+//     return this
+//   }
+//   get(key) {
+//     console.count()
+//     let address = this._hash(key)
+//     if(!this.data[address]) return  false
+//     let currentBucket = this.data[address]
+//     if(currentBucket) {
+//       for(let i = 0 ; i < currentBucket.length ; i ++) {
+//         if(currentBucket[i][0] === key) return currentBucket[i][0]
+//       }
+//     }
+    
+//   }
+// }
+
+// const myHashTable = new HashTable(50);
+// console.log(myHashTable.set('grapes', 10000))
+// console.log(myHashTable.get('grape'))
+// console.log(myHashTable.set('apples', 9))
+// myHashTable.get('apples')
+
+class Node {
+  constructor(value){
+    this.left = null;
+    this.right = null;
+    this.value = value;
   }
-  console.log(map)
-  let maxNumber = 0
-  let modes = []
-  for(num in map) {
-    console.log(map[num])
-    if(map[num] > maxNumber){
-       maxNumber = map[num]
-    modes = num }
-  }
-  return modes 
 }
 
-console.log(mode([1,1,1,3,4,5,6,6,6,6,6,8,9,0,0,0]))
+class BinarySearchTree {
+  constructor(){
+    this.root = null;
+  }
+  insert(value){
+    let newNode = new Node(value)
+    if(this.root === null) {
+      this.root = newNode
+      return this
+    } else {
+    let currentNode = this.root
+    
+    while(true) {
+      // move left 
+      if(value < currentNode.value) {
+         if(!currentNode.left) 
+         {
+           currentNode.left = newNode
+           return this
+         }
+         currentNode = currentNode.left 
+      }
+      // move right
+      else (value > currentNode.value)
+      {
+        if(!currentNode.right) {
+          currentNode.right = newNode
+          return this
+        }
+        currentNode = currentNode.right
+      }
+    }
+  }
+}
+  lookup(value){
+    let currentNode = this.root
+ 
+     while(currentNode) {
+      //is a match
+      if(value === currentNode.value) {
+        return currentNode
+      }
+      //move left 
+      else if (value < currentNode.value) {
+          currentNode = currentNode.left 
+        }
+        // move right
+        else if(value > currentNode.value) 
+        {
+          currentNode = currentNode.right 
+        }
+      }
+      return null
+    }
+  
+
+}
+
+const tree = new BinarySearchTree();
+console.log(tree.insert(9))
+console.log(tree.insert(4))
+console.log(tree.insert(6))
+console.log(tree.insert(20))
+console.log(tree.insert(170))
+console.log(tree.insert(15))
+console.log(tree.insert(1))
+console.log(tree.lookup(15))
+// JSON.stringify(traverse(tree.root))
+
+//     9
+//  4     20
+//1  6  15  170
+
+function traverse(node) {
+  const tree = { value: node.value };
+  tree.left = node.left === null ? null : traverse(node.left);
+  tree.right = node.right === null ? null : traverse(node.right);
+  return tree;
+}
