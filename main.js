@@ -405,20 +405,67 @@
 // console.log(twoSum([1,2,3,4,5,5,6,7,8,9],10))
 
 
+/**
+ * THE RECURSIVE FUNCTION THAT RICHARD FOUNG AT THE MEETUP
+ */
+// function fib(n, memo) {
+//   console.log('this is the num before base', n)
+//   if (n < 2) {
+//     return n;
+//   }
+//   if(!memo[n]) {
+//     console.log('this is inside memo' , n)
+//     // when the object doesn't have the property of n
+//     // store the result of the call inside memo[n]
+//     memo[n] = fib(n - 1, memo) + fib(n - 2, memo);
+//     console.log('this is memo [n]', memo[n])
+//   }
+//   return memo[n];
+// }
+
+/**
+ * THE RECURSEVE MEOIZATION FROM THE COURSE
+ */
+//  function fibMemo(index, cache) {
+//   cache = cache || [];
+//   if (cache[index]) return cache[index];
+//   else {
+//     if (index < 3) return 1;
+//     else {
+//       cache[index] = fibMemo(index - 1, cache) + fibMemo(index - 2, cache);
+//     }
+//   }
+//   return cache[index];
+// }
+ 
+// fibMemo(500);
+
+
+
+// console.log(fib(6, {})); // 5
 
 // function recursiveStrReversing(str) {
+//   console.count()
+//   console.log('this is the str before base case', str)
 //     if(str === '') return ''
+//     console.log('this is the str before recursion', str)
 //     return recursiveStrReversing(str.substr(1)) + str.charAt(0)
 // }
 
 // console.log(recursiveStrReversing('abcdefghijklmn'))
 
 // const fibonacciRecorsion = (num) =>  {
+  
+//   console.count()
+//   console.log('num before base case', num)
 //     if(num < 2) return num
+//     console.log('num before recursion', num)
+  
 //     return fibonacciRecorsion(num -1) + fibonacciRecorsion(num - 2) 
+    
 // }
 
-// console.log(fibonacciRecorsion(8))
+// console.log(fibonacciRecorsion(6))
 
 // function factoralRecursion (num) {
 //     debugger
@@ -779,90 +826,330 @@
 // console.log(myHashTable.set('apples', 9))
 // myHashTable.get('apples')
 
-class Node {
-  constructor(value){
-    this.left = null;
-    this.right = null;
-    this.value = value;
-  }
-}
+// class Node {
+//   constructor(value){
+//     this.left = null;
+//     this.right = null;
+//     this.value = value;
+//   }
+// }
 
-class BinarySearchTree {
-  constructor(){
-    this.root = null;
-  }
-  insert(value){
-    let newNode = new Node(value)
-    if(this.root === null) {
-      this.root = newNode
-      return this
-    } else {
-    let currentNode = this.root
+// class BinarySearchTree {
+//   constructor(){
+//     this.root = null;
+//   }
+//   insert(value){
+//     let newNode = new Node(value)
+//     if(this.root === null) {
+//       this.root = newNode
+//       return this
+//     } else {
+//     let currentNode = this.root
     
-    while(true) {
-      // move left 
-      if(value < currentNode.value) {
-         if(!currentNode.left) 
-         {
-           currentNode.left = newNode
-           return this
-         }
-         currentNode = currentNode.left 
-      }
-      // move right
-      else (value > currentNode.value)
-      {
-        if(!currentNode.right) {
-          currentNode.right = newNode
-          return this
-        }
-        currentNode = currentNode.right
-      }
-    }
-  }
-}
-  lookup(value){
-    let currentNode = this.root
+//     while(true) {
+//       // move left 
+//       if(value < currentNode.value) {
+//          if(!currentNode.left) 
+//          {
+//            currentNode.left = newNode
+//            return this
+//          }
+//          currentNode = currentNode.left 
+//       }
+//       // move right
+//       else (value > currentNode.value)
+//       {
+//         if(!currentNode.right) {
+//           currentNode.right = newNode
+//           return this
+//         }
+//         currentNode = currentNode.right
+//       }
+//     }
+//   }
+// }
+// insert(value) {
+//   let newNode = new Node(value)
+//   if(this.root === null) {
+//     this.root = newNode
+//   }
+//   //
+// }
+//   lookup(value){
+//     let currentNode = this.root
  
-     while(currentNode) {
-      //is a match
-      if(value === currentNode.value) {
-        return currentNode
-      }
-      //move left 
-      else if (value < currentNode.value) {
-          currentNode = currentNode.left 
-        }
-        // move right
-        else if(value > currentNode.value) 
-        {
-          currentNode = currentNode.right 
-        }
-      }
-      return null
-    }
+//      while(currentNode) {
+//       //is a match
+//       if(value === currentNode.value) {
+//         return currentNode
+//       }
+//       //move left 
+//       else if (value < currentNode.value) {
+//           currentNode = currentNode.left 
+//         }
+//         // move right
+//         else if(value > currentNode.value) 
+//         {
+//           currentNode = currentNode.right 
+//         }
+//       }
+//       return null
+//     }
   
 
-}
+// }
 
-const tree = new BinarySearchTree();
-console.log(tree.insert(9))
-console.log(tree.insert(4))
-console.log(tree.insert(6))
-console.log(tree.insert(20))
-console.log(tree.insert(170))
-console.log(tree.insert(15))
-console.log(tree.insert(1))
-console.log(tree.lookup(15))
+// const tree = new BinarySearchTree();
+// console.log(tree.insert(9))
+// console.log(tree.insert(4))
+// console.log(tree.insert(6))
+// console.log(tree.insert(20))
+// console.log(tree.insert(170))
+// console.log(tree.insert(15))
+// console.log(tree.insert(1))
+// console.log(tree.lookup(15))
+// // JSON.stringify(traverse(tree.root))
+
+// //     9
+// //  4     20
+// //1  6  15  170
+
+// function traverse(node) {
+//   const tree = { value: node.value };
+//   tree.left = node.left === null ? null : traverse(node.left);
+//   tree.right = node.right === null ? null : traverse(node.right);
+//   return tree;
+// }
+
+// class Node {
+//   constructor(value){
+//     this.left = null;
+//     this.right = null;
+//     this.value = value;
+//   }
+// }
+
+// class BinarySearchTree {
+//   constructor(){
+//     this.root = null;
+//   }
+//   insert(value){
+//     let newNode = new Node(value)
+//     if(this.root === null) {
+//       this.root = newNode
+//       return this
+//     } else {
+//     let currentNode = this.root
+    
+//     while(true) {
+//     //going left
+//     if(value < currentNode.value) {
+//       if(!currentNode.left) 
+//       {
+//         currentNode.left = newNode 
+//         return this
+//       }
+//       else 
+//       {
+//          currentNode = currentNode.left
+//       }
+//     }
+//     if(value > currentNode.value) 
+//     {
+//       if(!currentNode.right) 
+//       {
+//         currentNode.right = newNode
+//         return this
+//       }
+//       else 
+//       {
+//         currentNode = currentNode.right 
+//       }
+//     }
+
+//   }
+//     }
+//   }
+//   lookup(value){
+//     //Code here
+//   }
+//   // remove
+// }
+
+// const tree = new BinarySearchTree();
+// console.log(tree.insert(9))
+// console.log(tree.insert(4))
+// console.log(tree.insert(6))
+// console.log(tree.insert(20))
+// console.log(tree.insert(170))
+// console.log(tree.insert(15))
+// console.log(tree.insert(1))
+// // JSON.stringify(traverse(tree.root))
+
+// //     9
+// //  4     20
+// //1  6  15  170
+
+// function traverse(node) {
+//   const tree = { value: node.value };
+//   tree.left = node.left === null ? null : traverse(node.left);
+//   tree.right = node.right === null ? null : traverse(node.right);
+//   return tree;
+// }
+
+
+// class Node {
+//   constructor(value){
+//     this.left = null;
+//     this.right = null;
+//     this.value = value;
+//   }
+// }
+
+// class BinarySearchTree {
+//   constructor(){
+//     this.root = null;
+//   }
+//   insert(value){
+//     const newNode = new Node(value);
+//     if (this.root === null) {
+//       this.root = newNode;
+//     } else {
+//       let currentNode = this.root;
+//       while(true){
+//         if(value < currentNode.value){
+//           //Left
+//           if(!currentNode.left){
+//             currentNode.left = newNode;
+//             return this;
+//           }
+//           currentNode = currentNode.left;
+//         } else {
+//           //Right
+//           if(!currentNode.right){
+//             currentNode.right = newNode;
+//             return this;
+//           } 
+//           currentNode = currentNode.right;
+//         }
+//       }
+//     }
+//   }
+//   lookup(value){
+//     if (!this.root) {
+//       return false;
+//     }
+//     let currentNode = this.root;
+//     while(currentNode){
+//       if(value < currentNode.value){
+//         currentNode = currentNode.left;
+//       } else if(value > currentNode.value){
+//         currentNode = currentNode.right;
+//       } else if (currentNode.value === value) {
+//         return currentNode;
+//       }
+//     }
+//     return null
+//   }
+//   remove(value) {
+//     if (!this.root) {
+//       return false;
+//     }
+//     let currentNode = this.root;
+//     let parentNode = null;
+//     while(currentNode){
+//       if(value < currentNode.value){
+//         parentNode = currentNode;
+//         currentNode = currentNode.left;
+//       } else if(value > currentNode.value){
+//         parentNode = currentNode;
+//         currentNode = currentNode.right;
+//       } else if (currentNode.value === value) {
+//         //We have a match, get to work!
+        
+//         //Option 1: No right child: 
+//         if (currentNode.right === null) {
+//           if (parentNode === null) {
+//             this.root = currentNode.left;
+//           } else {
+            
+//             //if parent > current value, make current left child a child of parent
+//             if(currentNode.value < parentNode.value) {
+//               parentNode.left = currentNode.left;
+            
+//             //if parent < current value, make left child a right child of parent
+//             } else if(currentNode.value > parentNode.value) {
+//               parentNode.right = currentNode.left;
+//             }
+//           }
+        
+//         //Option 2: Right child which doesnt have a left child
+//         } else if (currentNode.right.left === null) {
+//           currentNode.right.left = currentNode.left;
+//           if(parentNode === null) {
+//             this.root = currentNode.right;
+//           } else {
+            
+//             //if parent > current, make right child of the left the parent
+//             if(currentNode.value < parentNode.value) {
+//               parentNode.left = currentNode.right;
+            
+//             //if parent < current, make right child a right child of the parent
+//             } else if (currentNode.value > parentNode.value) {
+//               parentNode.right = currentNode.right;
+//             }
+//           }
+        
+//         //Option 3: Right child that has a left child
+//         } else {
+
+//           //find the Right child's left most child
+//           let leftmost = currentNode.right.left;
+//           let leftmostParent = currentNode.right;
+//           while(leftmost.left !== null) {
+//             leftmostParent = leftmost;
+//             leftmost = leftmost.left;
+//           }
+          
+//           //Parent's left subtree is now leftmost's right subtree
+//           leftmostParent.left = leftmost.right;
+//           leftmost.left = currentNode.left;
+//           leftmost.right = currentNode.right;
+
+//           if(parentNode === null) {
+//             this.root = leftmost;
+//           } else {
+//             if(currentNode.value < parentNode.value) {
+//               parentNode.left = leftmost;
+//             } else if(currentNode.value > parentNode.value) {
+//               parentNode.right = leftmost;
+//             }
+//           }
+//         }
+//       return true;
+//       }
+//     }
+//   }
+// }
+
+// const tree = new BinarySearchTree();
+// tree.insert(9)
+// tree.insert(4)
+// tree.insert(6)
+// tree.insert(20)
+// tree.insert(170)
+// tree.insert(15)
+// tree.insert(1)
+// tree.remove(170)
 // JSON.stringify(traverse(tree.root))
 
-//     9
-//  4     20
-//1  6  15  170
+// //     9
+// //  4     20
+// //1  6  15  170
 
-function traverse(node) {
-  const tree = { value: node.value };
-  tree.left = node.left === null ? null : traverse(node.left);
-  tree.right = node.right === null ? null : traverse(node.right);
-  return tree;
-}
+// function traverse(node) {
+//   const tree = { value: node.value };
+//   tree.left = node.left === null ? null : traverse(node.left);
+//   tree.right = node.right === null ? null : traverse(node.right);
+//   return tree;
+// }
