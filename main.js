@@ -1104,3 +1104,114 @@
   //     this.next = null 
   //   }
   // }
+
+
+  class Node {
+    constructor(value) {
+    this.value = value,
+    this.next = null
+  }
+  }
+
+  class RememberLinkedLists {
+    constructor(value) {
+      this.head =  {
+        value: value,
+        next: null
+      }
+      this.tail = this.head
+      this.length = 1
+    }
+    append(value) {
+      let newNode = new Node(value)
+    
+      
+        this.tail.next = newNode
+        this.tail = newNode
+        this.length ++
+        /* console.log('try this' , this.length) */
+        return this
+      
+      
+    }
+    prepend(value) {
+      let newNode = new Node(value)
+      newNode.next = this.head
+
+      this.head = newNode
+    
+      this.length ++
+      return this
+    }
+    printToList() {
+      let array = []
+      let currentNode = this.head 
+      console.log('this is the currentNode ',  currentNode)
+      while(currentNode) {
+        array.push(currentNode.value)
+        currentNode = currentNode.next
+
+      }
+      return array
+    }
+
+    traverse(index) {
+      let currentNode = this.head
+      let counter = 0
+      while(counter !== index) 
+      {
+        currentNode = currentNode.next 
+        counter ++
+      }
+      return currentNode
+    }
+    insert(index, value) {
+      let newNode = new Node(value)
+      let leader = this.traverse(index - 1)
+      let follower = leader.next 
+      leader.next = newNode
+      newNode.next = follower
+      return this
+    }
+    remove(index) {
+      let leader = this.traverse(index - 1)
+      let nodeToRemove = leader.next
+      let follower = nodeToRemove.next
+      leader.next = follower
+      
+    }
+    reverse() {
+      
+      let first = this.head
+      let second = first.next 
+      this.tail = this.head 
+    while(second) 
+    {
+      let tempVar = second.next 
+      second.next = first   
+      first = second
+      second = tempVar
+      
+
+    }
+    this.head.next = null
+    this.head = first 
+      return this
+      }
+    }
+  
+
+ const okToTry = new RememberLinkedLists(5)
+console.log(okToTry)
+ console.log(okToTry.append(50))
+ console.log(okToTry.append(500))
+ console.log(okToTry.append(5000))
+ console.log(okToTry.append(50000))
+ console.log(okToTry.prepend(5000000000))
+ console.log(okToTry.insert(4, 242))
+ console.log(okToTry.remove(3))
+ console.log('originalllll' , okToTry.printToList())
+//  console.log('original' , okToTry.printToList())
+ console.log(okToTry.reverse())
+ console.log('reversed print to list', okToTry.printToList())
+ 
