@@ -196,109 +196,6 @@
 // }
 
 
-// class Node {
-//   constructor(value) {
-//     this.value = value
-//     this.next = null
-//   }
-// }
-// class LinkedList {
-//   constructor(value) {
-//     this.head = {
-//       value,
-//       next: null
-//     }
-//     this.tail = this.head
-//     this.length = 1 
-//   }
-//   append(value) {
-//     const newNode = new Node(value)
-//     this.tail.next = newNode
-//     this.tail = newNode
-//     this.length++
-//     return this
-//   }
-//   prepend(value) {
-//     const newNode = new Node(value)
-//     newNode.next = this.head
-//     this.head = newNode
-//     this.length ++
-//     return this
-//   }
-//   printToList() {
-//     let currentNode = this.head
-//     let array = []
-//     while(currentNode !== null) {
-//       array.push(currentNode.value)
-//       currentNode = currentNode.next
-//     }
-//     return array 
-//   }
-//   insert(index, value) {
-//     const newNode = new Node(value) 
-//     const leader = this.traverse(index-1)
-//     const pointerHolder = leader.next
-//     leader.next = newNode
-//     newNode.next = pointerHolder
-//     return this.printToList()
-    
-//   }
-//   traverse(index) {
-//     let counter = 0 
-//     let currentNode = this.head
-//     while(counter !== index) {
-//       currentNode = currentNode.next
-//       counter++
-//     }
-//     return currentNode
-//   }
-//   append(value) {
-//     let newNode = new Node(value)
-//     this.tail.next = newNode
-//     this.tail = newNode
-//     this.length ++
-//     return this
-//   }
-//   prepend(value) {
-//     let newNode = new Node(value)
-//     newNode.next = this.head
-//     this.head = newNode
-//     this.length ++
-//     return this
-//   }
-//   printToList() {
-//     let array = []
-//     let currentNode = this.head
-//     console.log(currentNode)
-//     while(currentNode !== null) {
-//       array.push(currentNode.value)
-//       currentNode = currentNode.next
-//     }
-//     return array
-//   }
-//   traverse(index) {
-//     if(index < 1) {
-//       return this.head 
-//     }
-//     let counter = 0 
-//     let currentNode = this.head
-//     while(counter !== index) {
-//       currentNode = currentNode.next
-//       counter ++
-//     }
-//     return currentNode
-//   }
-//   insert(index, value) {
-   
-//     let currentNode = new Node(value)
-//     let leader = this.traverse(index-1)
-//     let afterNodeHolder = leader.next
-//     currentNode = leader.next
-//     currentNode.next = afterNodeHolder
-//     return currentNode
-//   }
-
-
 
    // }
     // reverse () {
@@ -405,29 +302,42 @@
 // console.log(twoSum([1,2,3,4,5,5,6,7,8,9],10))
 
 
-/**
- * THE RECURSIVE FUNCTION THAT RICHARD FOUNG AT THE MEETUP
- */
+
+
+
+
+
+
+  // THE RECURSIVE FUNCTION THAT RICHARD FOUNG AT THE MEETUP
+ 
 // function fib(n, memo) {
-//   console.log('this is the num before base', n)
+//   // console.log('this is the num before base', n)
 //   if (n < 2) {
 //     return n;
 //   }
 //   if(!memo[n]) {
-//     console.log('this is inside memo' , n)
+//     // console.log('this is inside memo' , n)
 //     // when the object doesn't have the property of n
 //     // store the result of the call inside memo[n]
 //     memo[n] = fib(n - 1, memo) + fib(n - 2, memo);
-//     console.log('this is memo [n]', memo[n])
+//     // console.log('this is memo [n]', memo[n])
 //   }
 //   return memo[n];
 // }
 
-/**
- * THE RECURSEVE MEOIZATION FROM THE COURSE
- */
+// fib(8,{})
+
+
+
+
+
+//  THE RECURSEVE MEOIZATION FROM THE COURSE + my version below
+ 
+
+
 //  function fibMemo(index, cache) {
 //   cache = cache || [];
+//   console.log(cache[index])
 //   if (cache[index]) return cache[index];
 //   else {
 //     if (index < 3) return 1;
@@ -437,8 +347,28 @@
 //   }
 //   return cache[index];
 // }
+
+
+
+// const fibMemo = (index, cache) => {
+//   cache = cache || []
+//   console.log('working my way up', index)
+//   if(cache[index]) {
+//     console.log('now returnning')
+//      return cache[index]
+//   }
+//   else 
+//   {
+//     if(index < 2) return index
+//     else {
+//       cache[index] = fibMemo(index - 1, cache) + fibMemo(index - 2, cache)
+//       console.log(cache[index])
+//     }
+//     return cache[index]
+//   }
+// }
  
-// fibMemo(500);
+// console.log(fibMemo(8))
 
 
 
@@ -1153,3 +1083,24 @@
 //   tree.right = node.right === null ? null : traverse(node.right);
 //   return tree;
 // }
+
+
+// }
+
+// /   printToList() {
+  //     let array = []
+  //     let currentNode = this.head
+  //     console.log(currentNode)
+  //     while(currentNode !== null) {
+  //       array.push(currentNode.value)
+  //       currentNode = currentNode.next
+  //     }
+  //     return array
+
+
+  // class Queue {
+  //   constructor(value) {
+  //     this.value = value
+  //     this.next = null 
+  //   }
+  // }
