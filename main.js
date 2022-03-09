@@ -1315,46 +1315,60 @@
 // console.log(myHashTable.get('grapes'))
 // console.log(myHashTable.get('apples'))
 
-class Node {
-  constructor(value) {
-    this.value = value,
-    this.next = null 
-  }
-}
-class Queue {
-  constructor() {
-   this.first = null
-   this.last = null 
-  this.length = 0 
-  }
+// class Node {
+//   constructor(value) {
+//     this.value = value,
+//     this.next = null 
+//   }
+// }
+// class Queue {
+//   constructor() {
+//    this.first = null
+//    this.last = null 
+//   this.length = 0 
+//   }
 
-peek() {
-  return this.first.value
-}
-enqueue(value) {
-  let newNode = new Node(value)
-  if(this.last === null) {
-    this.first = newNode
-    this.last = newNode
-    this.length ++
-    return this
+// peek() {
+//   return this.first.value
+// }
+// enqueue(value) {
+//   let newNode = new Node(value)
+//   if(this.last === null) {
+//     this.first = newNode
+//     this.last = newNode
+//     this.length ++
+//     return this
+//   }
+//   this.last.next = newNode
+//   this.last = newNode
+//   this.length ++
+//   return this
+// }
+// dequeue() {
+//   this.first = this.first.next 
+//   this.length --
+//   return this
+// }
+// }
+
+// const myQueue = new Queue()
+
+// console.log(myQueue.enqueue('david'))
+// console.log(myQueue.enqueue('peter'))
+// console.log(myQueue.enqueue('paul'))
+// console.log(myQueue.peek())
+// console.log(myQueue.dequeue())
+
+
+const reverseArray = array => {
+  for(let i = 0 ; i < array.length/2 ; i ++) 
+  {
+    let tempVar = array[i]
+    array[i] = array[array.length-1-i]
+    array[array.length-1-i] = tempVar
   }
-  this.last.next = newNode
-  this.last = newNode
-  this.length ++
-  return this
-}
-dequeue() {
-  this.first = this.first.next 
-  this.length --
-  return this
-}
+  return array
+  
 }
 
-const myQueue = new Queue()
-
-console.log(myQueue.enqueue('david'))
-console.log(myQueue.enqueue('peter'))
-console.log(myQueue.enqueue('paul'))
-console.log(myQueue.peek())
-console.log(myQueue.dequeue())
+console.log(reverseArray([1,2,3,4,5,6,7,8,9,0]))
