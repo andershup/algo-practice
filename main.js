@@ -1562,3 +1562,24 @@
 // }
 
 // console.log(recursiveString('abcd'))
+// class Node {
+//   constructor(value){
+//     this.value = value;
+//     this.next = null;
+//   }
+// }
+
+const twoSum = (array, sum) => {
+  let hashTable = []
+  let pairs = []
+  for(let i = 0 ; i < array.length ; i ++) {
+    let opposite = sum - array[i]
+    if(hashTable[opposite]) {
+      pairs.push([array[i], opposite])
+    }
+    hashTable.push(array[i])
+  }
+  return pairs
+
+}
+console.log(twoSum([1,2,3,4,5,6,7,8,9,0], 10))
