@@ -1439,3 +1439,32 @@
 
 // let result3 = myString.replace(/[^s]/g, "")
 // console.log(result)
+
+// const fibboMemo = (index, cache) => {
+//   cache = cache ||  []
+// if(cache[index]) return cache[index]
+// else {
+//   if(index < 2) return index
+//   else {
+// if(!cache[index]) {
+//   cache[index] = fibboMemo(index -1, cache) + fibboMemo(index - 2, cache)
+// }
+// }
+// } return cache[index]
+// }
+
+// console.log(fibboMemo(6))
+
+
+// function fibMemo(index, cache) {
+//   cache = cache || [];
+//   console.log(cache[index])
+//   if (cache[index]) return cache[index];
+//   else {
+//     if (index < 3) return 1;
+//     else {
+//       cache[index] = fibMemo(index - 1, cache) + fibMemo(index - 2, cache);
+//     }
+//   }
+//   return cache[index];
+// }
