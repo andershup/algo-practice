@@ -1360,15 +1360,26 @@
 // console.log(myQueue.dequeue())
 
 
-const reverseArray = array => {
-  for(let i = 0 ; i < array.length/2 ; i ++) 
+const array1 = ['a','b','f','d','h']
+const array2 = ['g','u','p']
+
+function contains(array1,array2) {
+let map = {}
+for(let i = 0 ; i < array1.length ; i ++) 
+{
+  if(!map[array1[i]]) 
   {
-    let tempVar = array[i]
-    array[i] = array[array.length-1-i]
-    array[array.length-1-i] = tempVar
+    const item = array1[i]
+    map[item] = true
   }
-  return array
-  
+}
+for(let j = 0 ; j < array2.length ; j ++) {
+  if(map[array2[j]]) 
+  {
+    return true
+  }
+}
+return false 
 }
 
-console.log(reverseArray([1,2,3,4,5,6,7,8,9,0]))
+console.log(contains(array1,array2))
