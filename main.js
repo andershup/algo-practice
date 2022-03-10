@@ -1360,26 +1360,72 @@
 // console.log(myQueue.dequeue())
 
 
-const array1 = ['a','b','f','d','h']
-const array2 = ['g','u','p']
+// const array1 = ['a','b','f','d','h']
+// const array2 = ['g','u','p']
 
-function contains(array1,array2) {
-let map = {}
-for(let i = 0 ; i < array1.length ; i ++) 
-{
-  if(!map[array1[i]]) 
-  {
-    const item = array1[i]
-    map[item] = true
+// function contains(array1,array2) {
+// let map = {}
+// for(let i = 0 ; i < array1.length ; i ++) 
+// {
+//   if(!map[array1[i]]) 
+//   {
+//     const item = array1[i]
+//     map[item] = true
+//   }
+// }
+// for(let j = 0 ; j < array2.length ; j ++) {
+//   if(map[array2[j]]) 
+//   {
+//     return true
+//   }
+// }
+// return false 
+// }
+
+// console.log(contains(array1,array2))
+
+const meanMedainMode = numbers => {
+  return {
+    mean: meanAlgo(numbers),
+    median: medianAlgo(numbers),
+    mode: modeAlgo(numbers)
   }
 }
-for(let j = 0 ; j < array2.length ; j ++) {
-  if(map[array2[j]]) 
-  {
-    return true
-  }
-}
-return false 
-}
 
-console.log(contains(array1,array2))
+const meanAlgo = numbers => {
+  console.log('this is mean')
+}
+const medianAlgo = numbers => {
+  console.log('this is median')
+}
+const modeAlgo = numbers => {
+  const map = {}
+  for(let i = 0 ; i < numbers.length ; i ++) 
+  {
+    if(!map[numbers[i]]) map[numbers[i]] = 0
+    map[numbers[i]] ++
+  }
+  // console.log('this is with for loop', map)
+  const map2 = {}
+  numbers.forEach(number => {
+    if(!map2[number]) map2[number] = 0
+    map2[number]++
+  
+    
+  });
+  let maxNumber = 0
+  let mode = []
+  for(let number in numbers) 
+  {
+    console.log('this is map[number]' , map[number])
+    if(map[number] >= maxNumber) 
+    {
+      mode = [number]
+      maxNumber = map[number]
+      console.log('this is the max number ', maxNumber)
+    }
+  }
+  return mode
+}
+// console.log(modeAlgo([1,2,3,4,5,6,7,8,9,0]))
+console.log(meanMedainMode([1,1,1,1,1,2,3,3,3,3,3,3,3,3,3,3,3,3,4,5,6,7,8,9]))
