@@ -1733,10 +1733,44 @@ const array2 = [1,23,5,10]
 
 // console.log(factoral(8))
 
-const recursiveReversal = string => {
-  if(string === '') return ''
-  return recursiveReversal(string.substr(1)) + string.charAt(0)
-}
+// const recursiveReversal = string => {
+//   if(string === '') return ''
+//   return recursiveReversal(string.substr(1)) + string.charAt(0)
+// }
 
-console.log(recursiveReversal('abcdefg'))
+// console.log(recursiveReversal('abcdefg'))
 
+
+
+
+// class Stack {
+//   constructor(){
+//    this.array = []
+//   } 
+//   peek() {
+//     return this.array[this.array.length-1]
+//   }
+//   push(value){
+//    this.array.push(value)
+//    return this
+//   }
+//   pop(){
+//    return this.array.pop()
+//   }
+//   //isEmpty
+// }
+
+// const myStack = new Stack();
+// console.log(myStack.push('google'))
+// console.log(myStack.push('udemy'))
+// console.log(myStack.push('discord'))
+// console.log(myStack.peek())
+// console.log(myStack.peek())
+// console.log(myStack.pop())
+// console.log(myStack.pop())
+// console.log(myStack.pop())
+
+
+//Discord
+//Udemy
+//google
