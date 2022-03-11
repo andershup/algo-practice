@@ -1700,3 +1700,22 @@
 // // 4-->3 2 5 
 // // 5-->4 6 
 // // 6-->5
+
+const array1 = [2,3,4]
+const array2 = [1,23,5,10]
+
+// const compare = (array1, array2) => {
+//   let map = {}
+//   for(i = 0 ; i < array1.length ; i ++) {
+//     if(!map[array1[i]]) {
+//       let item = array1[i]
+//       map[item] = true
+//     }
+//   }
+//   for(j = 0 ; j < array2.length ; j ++) {
+//     if(map[array2[j]]) return true
+//   }
+//   return false 
+// }
+
+// console.log(compare(array1, array2))
