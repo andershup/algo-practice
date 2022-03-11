@@ -1701,7 +1701,7 @@
 // // 5-->4 6 
 // // 6-->5
 
-const array1 = [2,3,4]
+const array1 = [2,23,4]
 const array2 = [1,23,5,10]
 
 // const compare = (array1, array2) => {
@@ -1718,4 +1718,25 @@ const array2 = [1,23,5,10]
 //   return false 
 // }
 
+
+// const compare = (array1,array2) => {
+//   return array1.some(element => array2.includes(element))
+// }
 // console.log(compare(array1, array2))
+
+
+
+// const factoral = (num) => {
+//     if(num < 2) return num
+//     return factoral(num -1) * num 
+// }
+
+// console.log(factoral(8))
+
+const recursiveReversal = string => {
+  if(string === '') return ''
+  return recursiveReversal(string.substr(1)) + string.charAt(0)
+}
+
+console.log(recursiveReversal('abcdefg'))
+
