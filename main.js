@@ -1823,7 +1823,7 @@ const array2 = [1,23,5,10]
   
   // insertionSort(numbers);
   // console.log(numbers);
-  const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
+ /*  const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
 
   const bubble = array => {
     const length = array.length
@@ -1850,4 +1850,62 @@ const array2 = [1,23,5,10]
     return array
   }
 
-  console.log(reverseArray(numbers))
+  console.log(reverseArray(numbers)) */
+
+  class Node {
+    constructor(value){
+      this.value = value;
+      this.next = null;
+    }
+  }
+  
+  class Stack {
+    constructor(){
+      this.top = null;
+      this.bottom = null;
+      this.length = 0;
+    }
+    peek() {
+      return this.top
+    }
+    push(value){
+      let newNode = new Node(value)
+      if(this.bottom === null) 
+      {
+        this.top = newNode
+        this.bottom = newNode
+        this.length ++
+        return this
+      }
+      else 
+      {
+        let temp = this.top
+        this.top = newNode
+        newNode.next = temp
+        this.length ++
+        return this
+      }
+    }
+    pop(){
+      this.top = this.next
+      this.length --
+      return this
+    }
+    //isEmpty
+  }
+  
+  const myStack = new Stack();
+
+  console.log(myStack.push(8))
+  console.log(myStack.push(80))
+  console.log(myStack.push(800))
+  console.log(myStack.peek())
+  console.log(myStack.pop())
+  console.log(myStack.pop())
+  
+  
+  
+  
+  //Discord
+  //Udemy
+  //google
