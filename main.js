@@ -1774,3 +1774,80 @@ const array2 = [1,23,5,10]
 //Discord
 //Udemy
 //google
+
+/**
+ * BUBBLESORT 
+ */
+// const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
+
+// const bubbleSort = array => {
+//   let length = array.length
+//   for(i = 0 ; i < length ; i ++) {
+//     for(j = 0 ; j < length ; j ++) {
+//       if(array[j] < array[j+1]) {
+//         let tempVar = array[j]
+//         array[j] = array[j+1]
+//         array[j+1] = tempVar
+//       }
+//     }
+//   }
+// }
+// bubbleSort(numbers);
+// console.log(numbers);
+// const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
+// const selectionSort = array => {
+//   for(let i = 0 ; i < array.length ; i ++) {
+//    let min = i
+//    let temp = array[i]
+//     for(let j = i+1 ; j < array.length ; j ++) {
+//       if(array[j] < array[min]) {
+//         min = j
+//       }
+//    // so now it has found the minimum for that first i iteration
+//   }
+//   array[i] = array[min]
+//   array[min] = temp
+
+//   }
+//   return array
+// }
+
+//   selectionSort(numbers)
+//   console.log([numbers])
+
+
+
+// function insertionSort(array) {
+  
+  // }
+  
+  // insertionSort(numbers);
+  // console.log(numbers);
+  const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
+
+  const bubble = array => {
+    const length = array.length
+    for(i = 0 ; i < length ; i ++) {
+      for(let j = 0 ; j < length ; j ++) {
+        if(array[j] > array[j+1]) {
+          let temp = array[j]
+          array[j] = array[j+1]
+          array[j+1] = temp
+        }
+      }
+    }
+    return array
+  }
+
+  // console.log(bubble(numbers))
+
+  const reverseArray = array => {
+    for(i = 0 ; i < array.length/2 ; i ++) {
+      let temp = array[i]
+      array[i] = array[array.length-1-i]
+      array[array.length-1-i] = temp
+    }
+    return array
+  }
+
+  console.log(reverseArray(numbers))
