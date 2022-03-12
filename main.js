@@ -21,23 +21,59 @@ const Array = [1,2,5,3,4,7,7,7,7,7,77,88,5]
 // console.log(selectionSort(Array))
 
 
-const Mode = array => {
+// const Mode = array => {
   
-  let map = {}
-  array.forEach(number => {
+//   let map = {}
+//   array.forEach(number => {
     
-    if(!map[number]) map[number] = 0
-    map[number] ++  
-  })
-  let maxMode = 0
-  let mode = []
-  for(let key in map) {
-    if(map[key] > maxMode) {
-      mode = key
-      maxMode = map[key]
-    }
+//     if(!map[number]) map[number] = 0
+//     map[number] ++  
+//   })
+//   let maxMode = 0
+//   let mode = []
+//   for(let key in map) {
+//     if(map[key] > maxMode) {
+//       mode = key
+//       maxMode = map[key]
+//     }
+//   }
+//   return mode
+// }
+
+// console.log(Mode(Array))
+
+
+
+
+class Stack {
+  constructor(){
+    this.array = []
   }
-  return mode
+  peek() {
+    return this.array[this.array.length-1]
+  }
+  push(value){
+    this.array.push(value)
+    return this;
+  }
+  pop(){
+    this.array.pop()
+    return this;
+  }
+  //isEmpty
 }
 
-console.log(Mode(Array))
+const myStack = new Stack();
+console.log(myStack.peek())
+console.log(myStack.push('google'))
+console.log(myStack.push('udemy'))
+console.log(myStack.push('discord'))
+console.log(myStack.peek())
+console.log(myStack.pop())
+console.log(myStack.pop())
+console.log(myStack.pop())
+
+
+//Discord
+//Udemy
+//google
