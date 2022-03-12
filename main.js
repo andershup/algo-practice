@@ -1856,72 +1856,74 @@ const array2 = [1,23,5,10]
 
   
   // add a method remove() to the linked list that deletes a node to the specified index.
-  class Node {
-    constructor(value){
-      this.left = null;
-      this.right = null;
-      this.value = value;
-    }
-  }
   
-  class BinarySearchTree {
-    constructor(){
-      this.root = null;
-    }
-    insert(value){
-      //Code here
-      let newNode = new Node(value)
-      let currentNode = this.root 
-      if(this.root === null) 
-      {
-        this.root = newNode
-        return this
-      } else {
-    while(true) {
-      if(value < currentNode.value) {
-      if(!currentNode.left){
-        currentNode.left = newNode
-        return this
-      }
-     currentNode = currentNode.left
-    }
-    else {
-        if(!currentNode.right) {
-          currentNode.right = newNode
-          return this
+  
+  class Graph { 
+    constructor() { 
+      this.numberOfNodes = 0;
+      this.adjacentList = {
+      }; 
+    } 
+    addVertex(node)  { 
+      if(!this.adjacentList[node]) this.adjacentList[node] = []
+      this.numberOfNodes ++
+    } 
+    addEdge(node1, node2) { 
+      //undirected Graph 
+      this.adjacentList[node1].push(node2)
+      this.adjacentList[node2].push(node1)
+    } 
+    showConnections() {
+      let allNodes = Object.keys(this.adjacentList)
+      for(let node of allNodes) {
+        let nodeConnections = this.adjacentList[node]
+        let connections = ''
+        let vertex
+        for(vertex in nodeConnections) {
+          connections += vertex + ' '
         }
-      
-          currentNode = currentNode.right
+        console.log(
+          'this is working ' + node + connections )
+      }
+      )
     }
-  }
-}
-     
-    }
-    lookup(value){
-      //Code here
-    }
-    // remove
-  }
+  //   showConnections() { 
+  //     const allNodes = Object.keys(this.adjacentList); 
+  //     for (let node of allNodes) { 
+  //       let nodeConnections = this.adjacentList[node]; 
+  //       let connections = ""; 
+  //       let vertex;
+  //       for (vertex of nodeConnections) {
+  //         connections += vertex + " ";
+  //       } 
+  //       console.log(node + "-->" + connections); 
+  //     } 
+  // } 
+  } 
   
-  const tree = new BinarySearchTree();
-  tree.insert(9)
-  tree.insert(4)
-  tree.insert(6)
-  tree.insert(20)
-  tree.insert(170)
-  tree.insert(15)
-  tree.insert(1)
-  JSON.stringify(traverse(tree.root))
+  const myGraph = new Graph();
+  myGraph.addVertex('0');
+  myGraph.addVertex('1');
+  myGraph.addVertex('2');
+  myGraph.addVertex('3');
+  myGraph.addVertex('4');
+  myGraph.addVertex('5');
+  myGraph.addVertex('6');
+  myGraph.addEdge('3', '1'); 
+  myGraph.addEdge('3', '4'); 
+  myGraph.addEdge('4', '2'); 
+  myGraph.addEdge('4', '5'); 
+  myGraph.addEdge('1', '2'); 
+  myGraph.addEdge('1', '0'); 
+  myGraph.addEdge('0', '2'); 
+  myGraph.addEdge('6', '5');
   
-  //     9
-  //  4     20
-  //1  6  15  170
-  
-  function traverse(node) {
-    const tree = { value: node.value };
-    tree.left = node.left === null ? null : traverse(node.left);
-    tree.right = node.right === null ? null : traverse(node.right);
-    return tree;
-  }
-  
-  
+  myGraph.showConnections(); 
+  //Answer:
+  // 0-->1 2 
+  // 1-->3 2 0 
+  // 2-->4 1 0 
+  // 3-->1 4 
+  // 4-->3 2 5 
+  // 5-->4 6 
+  // 6-->5
