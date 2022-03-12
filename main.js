@@ -1852,116 +1852,76 @@ const array2 = [1,23,5,10]
 
   console.log(reverseArray(numbers)) */
 
-  class Node {
-    constructor(value){
-      this.value = value;
-      this.next = null;
-    }
-  }
-  
+
 
   
   // add a method remove() to the linked list that deletes a node to the specified index.
-
-class LinkedList {
-  constructor(value) {
-    this.head = {
-      value: value,
-      next: null
-    };
-    this.tail = this.head;
-    this.length = 1;
-  }
-  append(value) {
-    const newNode = {
-      value: value,
-      next: null
+  class Node {
+    constructor(value){
+      this.left = null;
+      this.right = null;
+      this.value = value;
     }
-    this.tail.next = newNode;
-    this.tail = newNode;
-    this.length++;
-    return this;
   }
-  prepend(value) {
-    const newNode = {
-      value: value,
-      next: null
+  
+  class BinarySearchTree {
+    constructor(){
+      this.root = null;
     }
-    newNode.next = this.head;
-    this.head = newNode;
-    this.length++;
-    return this;
-  }
-  printList() {
-    const array = [];
-    let currentNode = this.head;
-    while(currentNode !== null){
-        array.push(currentNode.value)
-        currentNode = currentNode.next
+    insert(value){
+      //Code here
+      let newNode = new Node(value)
+      let currentNode = this.root 
+      if(this.root === null) 
+      {
+        this.root = newNode
+        return this
+      } else {
+    while(true) {
+      if(value < currentNode.value) {
+      if(!currentNode.left){
+        currentNode.left = newNode
+        return this
+      }
+     currentNode = currentNode.left
     }
-    return array;
-  }
-  insert(index, value){
-    //Check for proper parameters;
-    if(index >= this.length) {
-     
-      return this.append(value);
+    else {
+        if(!currentNode.right) {
+          currentNode.right = newNode
+          return this
+        }
+      
+          currentNode = currentNode.right
     }
-    
-    const newNode = {
-      value: value,
-      next: null
-    }
-    const leader = this.traverseToIndex(index-1);
-    const holdingPointer = leader.next;
-    leader.next = newNode;
-    newNode.next = holdingPointer;
-    this.length++;
-    return this.printList();
-  }
-  traverseToIndex(index) {
-    //Check parameters
-    let counter = 0;
-    let currentNode = this.head;
-    while(counter !== index){
-      currentNode = currentNode.next;
-      counter++;
-    }
-    return currentNode;
-  }
-  remove(index) {
-    // Check Parameters      
-    const leader = this.traverseToIndex(index-1);
-    const unwantedNode = leader.next;
-    leader.next = unwantedNode.next;
-    this.length--;
-    return this.printList();
-  }
-  reverse() {
-    let first = this.head 
-    let second = first.next
-    this.tail = this.head 
-     
-    while(second) {
-      let temp = second.next 
-      second.next = first 
-      first = second
-      second = temp
-
-    }
-    this.head.next = null 
-    this.head = first 
-    return this
   }
 }
-
-let myLinkedList = new LinkedList(10);
-console.log(myLinkedList.append(5))
-console.log(myLinkedList.append(16))
-console.log(myLinkedList.prepend(1))
-console.log(myLinkedList.insert(2, 99))
-console.log(myLinkedList.insert(20, 88))
-console.log(myLinkedList.reverse())
-
+     
+    }
+    lookup(value){
+      //Code here
+    }
+    // remove
+  }
+  
+  const tree = new BinarySearchTree();
+  tree.insert(9)
+  tree.insert(4)
+  tree.insert(6)
+  tree.insert(20)
+  tree.insert(170)
+  tree.insert(15)
+  tree.insert(1)
+  JSON.stringify(traverse(tree.root))
+  
+  //     9
+  //  4     20
+  //1  6  15  170
+  
+  function traverse(node) {
+    const tree = { value: node.value };
+    tree.left = node.left === null ? null : traverse(node.left);
+    tree.right = node.right === null ? null : traverse(node.right);
+    return tree;
+  }
   
   
