@@ -45,35 +45,53 @@ const Array = [1,2,5,3,4,7,7,7,7,7,77,88,5]
 
 
 
-class Stack {
-  constructor(){
-    this.array = []
-  }
-  peek() {
-    return this.array[this.array.length-1]
-  }
-  push(value){
-    this.array.push(value)
-    return this;
-  }
-  pop(){
-    this.array.pop()
-    return this;
-  }
-  //isEmpty
-}
+// class Stack {
+//   constructor(){
+//     this.array = []
+//   }
+//   peek() {
+//     return this.array[this.array.length-1]
+//   }
+//   push(value){
+//     this.array.push(value)
+//     return this;
+//   }
+//   pop(){
+//     this.array.pop()
+//     return this;
+//   }
+//   //isEmpty
+// }
 
-const myStack = new Stack();
-console.log(myStack.peek())
-console.log(myStack.push('google'))
-console.log(myStack.push('udemy'))
-console.log(myStack.push('discord'))
-console.log(myStack.peek())
-console.log(myStack.pop())
-console.log(myStack.pop())
-console.log(myStack.pop())
+// const myStack = new Stack();
+// console.log(myStack.peek())
+// console.log(myStack.push('google'))
+// console.log(myStack.push('udemy'))
+// console.log(myStack.push('discord'))
+// console.log(myStack.peek())
+// console.log(myStack.pop())
+// console.log(myStack.pop())
+// console.log(myStack.pop())
 
 
 //Discord
 //Udemy
 //google
+
+const array1 = [1,2,3,4,5,6,7,8,9,0]
+const array2 = [1,20,30,40,50]
+
+const compare = (array1, array2) => {
+  let map = {}
+  array1.forEach(element => {
+    if(!map[element]) map[element] = []
+    let item = map[element]
+    item = true
+  })
+  array2.forEach(element => {
+    if(map[element] === true) return true
+  })
+  return false
+}
+
+console.log(compare(array1,array2))
