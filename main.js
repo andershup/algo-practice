@@ -1,4 +1,4 @@
-const Array = [1,2,5,3,4,7,7,7,7,7,77,88,5]
+// const Array = [1,2,5,3,4,7,7,7,7,7,77,88,5]
 
 // const selectionSort = array => {
 //   const length = array.length
@@ -78,20 +78,54 @@ const Array = [1,2,5,3,4,7,7,7,7,7,77,88,5]
 //Udemy
 //google
 
-const array1 = [1,2,3,4,5,6,7,8,9,0]
-const array2 = [1,20,30,40,50]
+// const array1 = [1,2,3,4,5,6,7,8,9,0]
+// const array2 = [1,20,30,40,50]
 
-const compare = (array1, array2) => {
-  let map = {}
-  array1.forEach(element => {
-    if(!map[element]) map[element] = []
-    let item = map[element]
-    item = true
-  })
-  array2.forEach(element => {
-    if(map[element] === true) return true
-  })
-  return false
+// const compare = (array1, array2) => {
+//   let map = {}
+//   array1.forEach(element => {
+//     if(!map[element]) map[element] = []
+//     let item = map[element]
+//     item = true
+//   })
+//   array2.forEach(element => {
+//     if(map[element] === true) return true
+//   })
+//   return false
+// }
+
+// console.log(compare(array1,array2))\
+
+class HashTable {
+  constructor(size){
+    this.data = new Array(size);
+  }
+
+  _hash(key) {
+    let hash = 0;
+    for (let i =0; i < key.length; i++){
+        hash = (hash + key.charCodeAt(i) * i) % this.data.length
+    }
+    return hash;
+  }
+  set(key, value) {
+    let address = this._hash(key)
+    if(!this.data[address]) this.data[address] = []
+    this.data.push([key, value])
+    return this.data
+  }
+  // set(key, value) {
+  //   let address = this._hash(key);
+  //   if (!this.data[address]) {
+  //     this.data[address] = [];
+  //   }
+  //   this.data[address].push([key, value]);
+  //   return this.data;
+  // }
 }
 
-console.log(compare(array1,array2))
+const myHashTable = new HashTable(50);
+console.log(myHashTable.set('grapes', 10000))
+console.log(myHashTable.set('apples', 9))
+// console.log(myHashTable.get('grapes'))
+// console.log(myHashTable.get('apples'))
