@@ -96,36 +96,144 @@
 
 // console.log(compare(array1,array2))\
 
-class HashTable {
-  constructor(size){
-    this.data = new Array(size);
-  }
+// class HashTable {
+//   constructor(size){
+//     this.data = new Array(size);
+//   }
 
-  _hash(key) {
-    let hash = 0;
-    for (let i =0; i < key.length; i++){
-        hash = (hash + key.charCodeAt(i) * i) % this.data.length
-    }
-    return hash;
-  }
-  set(key, value) {
-    let address = this._hash(key)
-    if(!this.data[address]) this.data[address] = []
-    this.data.push([key, value])
-    return this.data
-  }
+//   _hash(key) {
+//     let hash = 0;
+//     for (let i =0; i < key.length; i++){
+//         hash = (hash + key.charCodeAt(i) * i) % this.data.length
+//     }
+//     return hash;
+//   }
+//   set(key, value) {
+//     let address = this._hash(key)
+//     console.log(key)
+//     console.log(address)
+//     if(!this.data[address]){
+//        this.data[address] = [] }
+//     this.data[address].push([key, value])
+//     return this.data
+//   }
   // set(key, value) {
-  //   let address = this._hash(key);
+  //   let address = this._hash(key)
+  //   console.log(key)
+  //   console.log(address)
   //   if (!this.data[address]) {
   //     this.data[address] = [];
   //   }
   //   this.data[address].push([key, value]);
   //   return this.data;
   // }
+//   get(key) {
+//     const address = this._hash(key)
+//     console.log(key)
+//     console.log(address)
+//     if(!this.data[address]) {
+//        return 'ooops does not excist' }
+//      else  { return this.data[address].value } 
+    
+//   }
+// }
+
+// const myHashTable = new HashTable(50);
+// console.log(myHashTable.set('grapes', 10000))
+// console.log(myHashTable.get('grapes'))
+// console.log(myHashTable.set('apples', 9))
+// console.log(myHashTable.get('apples'))
+
+
+// class HashTable {
+//   constructor(size){
+//     this.data = new Array(size);
+//     // this.data = [];
+//   }
+
+//   _hash(key) {
+//     let hash = 0;
+//     for (let i =0; i < key.length; i++){
+//         hash = (hash + key.charCodeAt(i) * i) % this.data.length
+//     }
+//     return hash;
+//   }
+
+//   set(key, value) {
+//     let address = this._hash(key);
+//     console.log(address)
+//     if (!this.data[address]) {
+//       this.data[address] = [];
+//     }
+//     this.data[address].push([key, value]);
+//     return this.data;
+//   }
+
+//   get(key){
+//     const address = this._hash(key);
+//     console.log(address)
+//     const currentBucket = this.data[address]
+//     if (currentBucket) {
+//       for(let i = 0; i < currentBucket.length; i++){
+//         if(currentBucket[i][0] === key) {
+//           return currentBucket[i][1]
+//         }
+//       }
+//     }
+//     return undefined;
+//   }
+// }
+
+// const myHashTable = new HashTable(50);
+// console.log(myHashTable.set('grapes', 10000))
+// console.log(myHashTable.get('grapes'))
+// console.log(myHashTable.set('apples', 9))
+// console.log(myHashTable.get('apples'))
+
+class Node {
+  constructor(value) {
+    this.value = value,
+    this.next = null
+  }
 }
 
-const myHashTable = new HashTable(50);
-console.log(myHashTable.set('grapes', 10000))
-console.log(myHashTable.set('apples', 9))
-// console.log(myHashTable.get('grapes'))
-// console.log(myHashTable.get('apples'))
+class Stack {
+  constructor() {
+    this.top = null,
+    this.bottom = null
+    this.length = 0
+  }
+  push(value) {
+    let newNode = new Node(value)
+    if(this.bottom === null) {
+      this.top = newNode
+      this.bottom = newNode
+      this.length ++
+      return this
+    }
+    else 
+    {
+      this.bottom.next = newNode
+      this.bottom = newNode
+      this.length ++
+      return this
+    }
+  }
+  peek() {
+    return this.top.value
+  }
+  pop() {
+    this.top = this.top.next
+    return this
+  }
+}
+
+const myStack = new Stack()
+
+console.log(myStack.push(3))
+console.log(myStack.push(30))
+console.log(myStack.push(300))
+console.log(myStack.push(3000))
+console.log(myStack.push(30000))
+console.log(myStack.peek())
+console.log(myStack.pop())
