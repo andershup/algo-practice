@@ -190,50 +190,93 @@
 // console.log(myHashTable.set('apples', 9))
 // console.log(myHashTable.get('apples'))
 
-class Node {
-  constructor(value) {
-    this.value = value,
-    this.next = null
-  }
-}
+// const fibbonacciRecursive = num => {
+  
+//   if(num < 3) return 1 
+//   return fibbonacciRecursive(num - 1) + fibbonacciRecursive(num - 2)
+// }
 
-class Stack {
-  constructor() {
-    this.top = null,
-    this.bottom = null
-    this.length = 0
-  }
-  push(value) {
-    let newNode = new Node(value)
-    if(this.bottom === null) {
-      this.top = newNode
-      this.bottom = newNode
-      this.length ++
-      return this
-    }
-    else 
-    {
-      this.bottom.next = newNode
-      this.bottom = newNode
-      this.length ++
-      return this
-    }
-  }
-  peek() {
-    return this.top.value
-  }
-  pop() {
-    this.top = this.top.next
+// console.log(fibbonacciRecursive(8))
+
+class Graph { 
+  constructor() { 
+    this.numberOfNodes = 0;
+    this.adjacentList = {
+    }; 
+  } 
+  addVertex(node)  { 
+   if(!this.adjacentList[node]) this.adjacentList[node] = []
     return this
-  }
+  } 
+  addEdge(node1, node2) { 
+    //undirected Graph 
+    this.adjacentList[node1].push(node2)
+    this.adjacentList[node2].push(node1)
+    return this
+  } 
+//   showConnections() { 
+//     const allNodes = Object.keys(this.adjacentList); 
+//     for (let node of allNodes) { 
+//       let nodeConnections = this.adjacentList[node]; 
+//       let connections = ""; 
+//       let vertex;
+//       for (vertex of nodeConnections) {
+//         connections += vertex + " ";
+//       } 
+//       console.log(node + "-->" + connections); 
+//     } 
+// } 
+showConnections() {
+  let allNodes = Object.keys(this.adjacentList)
+  
+  for(let node of allNodes) {
+   let nodeConnections = this.adjacentList[node]
+   let connections = ''
+  let vertex 
+    for(vertex of nodeConnections)
+    
+      connections += vertex + " "
+      
+      console.log(node + '-->' + connections)
+    }
+}
+}
+ 
+
+const myGraph = new Graph();
+console.log(myGraph.addVertex('0'))
+console.log(myGraph.addVertex('1'))
+console.log(myGraph.addVertex('2'))
+console.log(myGraph.addVertex('3'))
+console.log(myGraph.addVertex('4'))
+console.log(myGraph.addVertex('5'))
+console.log(myGraph.addVertex('6'))
+console.log(myGraph.addEdge('3', '1'))
+console.log(myGraph.addEdge('3', '4'))
+console.log(myGraph.addEdge('4', '2'))
+console.log(myGraph.addEdge('4', '5'))
+console.log(myGraph.addEdge('1', '2'))
+console.log(myGraph.addEdge('1', '0'))
+console.log(myGraph.addEdge('0', '2'))
+console.log(myGraph.addEdge('6', '5'))
+
+myGraph.showConnections(); 
+//Answer:
+// 0-->1 2 
+// 1-->3 2 0 
+// 2-->4 1 0 
+// 3-->1 4 
+// 4-->3 2 5 
+// 5-->4 6 
+// 6-->5
+
+const arr = [3, 5, 7];
+arr.foo = 'hello';
+
+for (let i in arr) {
+   console.log(i); // logs "0", "1", "2", "foo"
 }
 
-const myStack = new Stack()
-
-console.log(myStack.push(3))
-console.log(myStack.push(30))
-console.log(myStack.push(300))
-console.log(myStack.push(3000))
-console.log(myStack.push(30000))
-console.log(myStack.peek())
-console.log(myStack.pop())
+for (let i of arr) {
+   console.log(i); // logs 3, 5, 7
+}
