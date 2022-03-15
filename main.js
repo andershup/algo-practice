@@ -198,85 +198,197 @@
 
 // console.log(fibbonacciRecursive(8))
 
-class Graph { 
-  constructor() { 
-    this.numberOfNodes = 0;
-    this.adjacentList = {
-    }; 
-  } 
-  addVertex(node)  { 
-   if(!this.adjacentList[node]) this.adjacentList[node] = []
-    return this
-  } 
-  addEdge(node1, node2) { 
-    //undirected Graph 
-    this.adjacentList[node1].push(node2)
-    this.adjacentList[node2].push(node1)
-    return this
-  } 
-//   showConnections() { 
-//     const allNodes = Object.keys(this.adjacentList); 
-//     for (let node of allNodes) { 
-//       let nodeConnections = this.adjacentList[node]; 
-//       let connections = ""; 
-//       let vertex;
-//       for (vertex of nodeConnections) {
-//         connections += vertex + " ";
-//       } 
-//       console.log(node + "-->" + connections); 
-//     } 
-// } 
-showConnections() {
-  let allNodes = Object.keys(this.adjacentList)
+// class Graph { 
+//   constructor() { 
+//     this.numberOfNodes = 0;
+//     this.adjacentList = {
+//     }; 
+//   } 
+//   addVertex(node)  { 
+//    if(!this.adjacentList[node]) this.adjacentList[node] = []
+//     return this
+//   } 
+//   addEdge(node1, node2) { 
+//     //undirected Graph 
+//     this.adjacentList[node1].push(node2)
+//     this.adjacentList[node2].push(node1)
+//     return this
+//   } 
+// //   showConnections() { 
+// //     const allNodes = Object.keys(this.adjacentList); 
+// //     for (let node of allNodes) { 
+// //       let nodeConnections = this.adjacentList[node]; 
+// //       let connections = ""; 
+// //       let vertex;
+// //       for (vertex of nodeConnections) {
+// //         connections += vertex + " ";
+// //       } 
+// //       console.log(node + "-->" + connections); 
+// //     } 
+// // } 
+//  showConnections() {
+//   let allNodes = Object.keys(this.adjacentList)
   
-  for(let node of allNodes) {
-   let nodeConnections = this.adjacentList[node]
-   let connections = ''
-  let vertex 
-    for(vertex of nodeConnections)
+//   for(let node of allNodes) {
+
+//    let nodeConnections = this.adjacentList[node]
+//    let connections = ''
+//   let vertex 
+//     for(vertex of nodeConnections)
     
-      connections += vertex + " "
+//       connections += vertex + " "
       
-      console.log(node + '-->' + connections)
-    }
-}
-}
+//       console.log(node + '-->' + connections)
+//     }
+// }
+
  
 
-const myGraph = new Graph();
-console.log(myGraph.addVertex('0'))
-console.log(myGraph.addVertex('1'))
-console.log(myGraph.addVertex('2'))
-console.log(myGraph.addVertex('3'))
-console.log(myGraph.addVertex('4'))
-console.log(myGraph.addVertex('5'))
-console.log(myGraph.addVertex('6'))
-console.log(myGraph.addEdge('3', '1'))
-console.log(myGraph.addEdge('3', '4'))
-console.log(myGraph.addEdge('4', '2'))
-console.log(myGraph.addEdge('4', '5'))
-console.log(myGraph.addEdge('1', '2'))
-console.log(myGraph.addEdge('1', '0'))
-console.log(myGraph.addEdge('0', '2'))
-console.log(myGraph.addEdge('6', '5'))
+// const myGraph = new Graph();
+// console.log(myGraph.addVertex('0'))
+// console.log(myGraph.addVertex('1'))
+// console.log(myGraph.addVertex('2'))
+// console.log(myGraph.addVertex('3'))
+// console.log(myGraph.addVertex('4'))
+// console.log(myGraph.addVertex('5'))
+// console.log(myGraph.addVertex('6'))
+// console.log(myGraph.addEdge('3', '1'))
+// console.log(myGraph.addEdge('3', '4'))
+// console.log(myGraph.addEdge('4', '2'))
+// console.log(myGraph.addEdge('4', '5'))
+// console.log(myGraph.addEdge('1', '2'))
+// console.log(myGraph.addEdge('1', '0'))
+// console.log(myGraph.addEdge('0', '2'))
+// console.log(myGraph.addEdge('6', '5'))
 
-myGraph.showConnections(); 
-//Answer:
-// 0-->1 2 
-// 1-->3 2 0 
-// 2-->4 1 0 
-// 3-->1 4 
-// 4-->3 2 5 
-// 5-->4 6 
-// 6-->5
+// myGraph.showConnections(); 
+// //Answer:
+// // 0-->1 2 
+// // 1-->3 2 0 
+// // 2-->4 1 0 
+// // 3-->1 4 
+// // 4-->3 2 5 
+// // 5-->4 6 
+// // 6-->5
 
-const arr = [3, 5, 7];
-arr.foo = 'hello';
+// const arr = [3, 5, 7];
+// arr.foo = 'hello';
 
-for (let i in arr) {
-   console.log(i); // logs "0", "1", "2", "foo"
+// for (let i in arr) {
+//    console.log(i); // logs "0", "1", "2", "foo"
+// }
+
+// for (let i of arr) {
+//    console.log(i); // logs 3, 5, 7
+// }
+
+
+// const months = ['Jan', 'March', 'April', 'June'];
+
+// const trial = months.splice(2,1)[0]
+// console.log(trial)
+
+// const numbers = [99,44,6,2,1,5,63,87,283,4,0]
+
+// function insertionSort(array) {
+//   const length = array.length
+//   for(let i = 0 ; i < length ; i ++) {
+//     if(array[i] < array[0]) {
+//       console.log('this is i before shifting' ,array[i], array)
+//       array.unshift(array.splice(i,1)[0])
+//       console.log('this is i in the first condition after shifting', array[i],array)
+//   } else 
+//   {
+//     if(array[i] < array[i-1]) {
+//       console.log('goes to the second condition')
+//       for(let j = 1 ; j < i ; j ++) {
+//         console.log('this is j value', array[j])
+//         console.log('this is i value', array[i])
+
+//         if(array[i] >= array[j-1] && array[i] < array[j]) {
+//         array.splice(j,0,array.splice(i,1)[0])
+//       }
+//     }
+//   }
+// }
+
+// }
+// }
+
+// console.log(insertionSort(numbers))
+
+// add a method insert() to the linked list that adds a node to the specified index.
+
+class LinkedList {
+  constructor(value) {
+    this.head = {
+      value: value,
+      next: null
+    };
+    this.tail = this.head;
+    this.length = 1;
+  }
+  append(value) {
+    const newNode = {
+      value: value,
+      next: null
+    }
+    this.tail.next = newNode;
+    this.tail = newNode;
+    this.length++;
+    return this;
+  }
+  prepend(value) {
+    const newNode = {
+      value: value,
+      next: null
+    }
+    newNode.next = this.head;
+    this.head = newNode;
+    this.length++;
+    return this;
+  }
+  printList() {
+    const array = [];
+    let currentNode = this.head;
+    while(currentNode !== null){
+        array.push(currentNode.value)
+        currentNode = currentNode.next
+    }
+    return array;
+  }
+  traverse(index) {
+    let currentNode = this.head
+  
+    let counter = 0
+    if(currentNode.next === null) {
+      this.tail.next = currentNode
+    } else {
+    while(counter !== index) {
+      
+      currentNode = currentNode.next
+      counter ++
+    }
+    return currentNode
+  }}
+  insert(index, value){
+    //Code here
+    const newNode = {
+      value: value,
+      next: null
+    }
+    let leader = this.traverse(index-1)
+    let follower = leader.next
+    leader.next = newNode
+    newNode.next = follower
+
+    return this.printList();
+  }
 }
 
-for (let i of arr) {
-   console.log(i); // logs 3, 5, 7
-}
+let myLinkedList = new LinkedList(10);
+myLinkedList.append(5);
+myLinkedList.append(16);
+myLinkedList.prepend(1)
+console.log(myLinkedList.insert(2, 99))
+console.log(myLinkedList.insert(30, 88))
