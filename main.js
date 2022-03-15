@@ -404,22 +404,44 @@
 // }
 // console.log(bubbleSort([1,6,7,89,3,5,6,7]))
 
-const numbers = [99,44,6,2,1,5,63,87,283,4,0]
+// const numbers = [99,44,6,2,1,5,63,87,283,4,0]
 
-function selectionSort(array) {
-  const length = array.length
-  for(i = 0; i < length ; i ++) {
-    let min = i
-    let temp = array[i]
-    for(j = i + 1 ; j < length ; j ++) {
-      if(array[j] < array[min]) {
-        min = j
-      }
+// function selectionSort(array) {
+//   const length = array.length
+//   for(i = 0; i < length ; i ++) {
+//     let min = i
+//     let temp = array[i]
+//     for(j = i + 1 ; j < length ; j ++) {
+//       if(array[j] < array[min]) {
+//         min = j
+//       }
+//     }
+//     array[i] = array[min]
+//     array[min] = temp 
+//   }
+//   return array 
+// }
+
+// console.log(selectionSort(numbers))
+
+const array1 = [1,2,3,4,5,6,77,88,99,0]
+const array2 = [2,50,66]
+
+const arrayCompare = (array1, array2) => {
+  let map = {}
+
+  for(i = 0 ; i < array1.length ; i ++) {
+    if(!map[array1[i]]) {
+      let item = array1[i]
+       map[item] = true
     }
-    array[i] = array[min]
-    array[min] = temp 
   }
-  return array 
+  for(j = 0 ; j < array2.length ; j ++) {
+    if(map[array2[j]]) {
+      console.log('this is true')
+    }
+  }
+  return false
 }
 
-console.log(selectionSort(numbers))
+console.log(arrayCompare(array1,array2))
