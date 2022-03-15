@@ -319,76 +319,69 @@
 
 // add a method insert() to the linked list that adds a node to the specified index.
 
-class LinkedList {
-  constructor(value) {
-    this.head = {
-      value: value,
-      next: null
-    };
-    this.tail = this.head;
-    this.length = 1;
-  }
-  append(value) {
-    const newNode = {
-      value: value,
-      next: null
-    }
-    this.tail.next = newNode;
-    this.tail = newNode;
-    this.length++;
-    return this;
-  }
-  prepend(value) {
-    const newNode = {
-      value: value,
-      next: null
-    }
-    newNode.next = this.head;
-    this.head = newNode;
-    this.length++;
-    return this;
-  }
-  printList() {
-    const array = [];
-    let currentNode = this.head;
-    while(currentNode !== null){
-        array.push(currentNode.value)
-        currentNode = currentNode.next
-    }
-    return array;
-  }
-  traverse(index) {
-    let currentNode = this.head
-  
-    let counter = 0
-    if(currentNode.next === null) {
-      this.tail.next = currentNode
-    } else {
-    while(counter !== index) {
-      
-      currentNode = currentNode.next
-      counter ++
-    }
-    return currentNode
-  }}
-  insert(index, value){
-    //Code here
-    const newNode = {
-      value: value,
-      next: null
-    }
-    let leader = this.traverse(index-1)
-    let follower = leader.next
-    leader.next = newNode
-    newNode.next = follower
+// const reverseStringRecursive = str => {
+//   if(str === '') return ''
+//   return reverseStringRecursive(str.substr(1)) + str.charAt(0)
 
-    return this.printList();
+
+// }
+
+// console.log(reverseStringRecursive('abcdefg'))
+
+// const factoralRecursive = num => {
+//   if(num < 3) return num 
+//   return factoralRecursive(num - 1) * num 
+// }
+
+// console.log(factoralRecursive(8))
+class Node {
+  constructor(value) {
+    this.value = value
+    this.left = null,
+    this.right = null
+  }
+}
+class BinaryTree {
+  constructor() {
+    this.root = null
+    this.left = null,
+    this.right = null
+  }
+  insert(value)  {
+    let newNode = new Node(value)
+    if(this.root === null) {
+      this.root = newNode
+      return this
+    }
+    else {
+      // Going left
+      let currentNode = this.root
+      while(true) {
+      if(value < currentNode.value) {
+        if(!currentNode.left) {
+          currentNode.left = newNode
+          return this
+        }
+        else currentNode = currentNode.left
+      } else {
+        //going right
+        if(!currentNode.right) {
+          currentNode.right = newNode
+          return this
+        }
+        else {
+          currentNode = currentNode.right
+        }
+      }
+    }
+    }
   }
 }
 
-let myLinkedList = new LinkedList(10);
-myLinkedList.append(5);
-myLinkedList.append(16);
-myLinkedList.prepend(1)
-console.log(myLinkedList.insert(2, 99))
-console.log(myLinkedList.insert(30, 88))
+const myTree = new BinaryTree()
+
+console.log(myTree.insert(8))
+console.log(myTree.insert(3))
+console.log(myTree.insert(1))
+console.log(myTree.insert(10))
+console.log(myTree.insert(11))
