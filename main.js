@@ -334,54 +334,92 @@
 // }
 
 // console.log(factoralRecursive(8))
-class Node {
-  constructor(value) {
-    this.value = value
-    this.left = null,
-    this.right = null
-  }
-}
-class BinaryTree {
-  constructor() {
-    this.root = null
-    this.left = null,
-    this.right = null
-  }
-  insert(value)  {
-    let newNode = new Node(value)
-    if(this.root === null) {
-      this.root = newNode
-      return this
-    }
-    else {
-      // Going left
-      let currentNode = this.root
-      while(true) {
-      if(value < currentNode.value) {
-        if(!currentNode.left) {
-          currentNode.left = newNode
-          return this
-        }
-        else currentNode = currentNode.left
-      } else {
-        //going right
-        if(!currentNode.right) {
-          currentNode.right = newNode
-          return this
-        }
-        else {
-          currentNode = currentNode.right
-        }
+// class Node {
+//   constructor(value) {
+//     this.value = value
+//     this.left = null,
+//     this.right = null
+//   }
+// }
+// class BinaryTree {
+//   constructor() {
+//     this.root = null
+//     this.left = null,
+//     this.right = null
+//   }
+//   insert(value)  {
+//     let newNode = new Node(value)
+//     if(this.root === null) {
+//       this.root = newNode
+//       return this
+//     }
+//     else {
+//       // Going left
+//       let currentNode = this.root
+//       while(true) {
+//       if(value < currentNode.value) {
+//         if(!currentNode.left) {
+//           currentNode.left = newNode
+//           return this
+//         }
+//         else currentNode = currentNode.left
+//       } else {
+//         //going right
+//         if(!currentNode.right) {
+//           currentNode.right = newNode
+//           return this
+//         }
+//         else {
+//           currentNode = currentNode.right
+//         }
+//       }
+//     }
+//     }
+//   }
+// }
+
+// const myTree = new BinaryTree()
+
+// console.log(myTree.insert(8))
+// console.log(myTree.insert(3))
+// console.log(myTree.insert(1))
+// console.log(myTree.insert(10))
+// console.log(myTree.insert(11))
+
+// const bubbleSort = array => {
+//   for(i = 0 ; i < array.length ; i ++) {
+//     console.log(i)
+//     for(j = 0 ; j < array.length ; j ++) {
+//       console.log('this is j', j)
+//       if(array[j] < array[j-1]) {
+//         let temp = array[j-1]
+//         array[j-1] = array[j]
+//         array[j] = temp 
+//         console.log(array)
+
+//       }
+//     }
+//   }
+//   return array 
+// }
+// console.log(bubbleSort([1,6,7,89,3,5,6,7]))
+
+const numbers = [99,44,6,2,1,5,63,87,283,4,0]
+
+function selectionSort(array) {
+  const length = array.length
+  for(i = 0; i < length ; i ++) {
+    let min = i
+    let temp = array[i]
+    for(j = i + 1 ; j < length ; j ++) {
+      if(array[j] < array[min]) {
+        min = j
       }
     }
-    }
+    array[i] = array[min]
+    array[min] = temp 
   }
+  return array 
 }
 
-const myTree = new BinaryTree()
-
-console.log(myTree.insert(8))
-console.log(myTree.insert(3))
-console.log(myTree.insert(1))
-console.log(myTree.insert(10))
-console.log(myTree.insert(11))
+console.log(selectionSort(numbers))
