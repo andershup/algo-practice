@@ -478,24 +478,21 @@
 //Udemy
 //google
 
-// const numbers = [99,44,6,2,1,1,1,1,1,5,5,5,5,5,5,5,5,5,63,87,283,282,,4,0,0,0,0]
 
-// const mode = array => {
-//   let map = {}
-//   array.forEach(element => {
-//     if(!map[element]) map[element] = 0
-//     map[element] ++
-//   })
-//   let mode = []
-//   let maxSoFar = 0
-//   for(element in map) {
-//     console.log(map[element])
-//     if(map[element] > maxSoFar) {
-//       mode = element
-//       maxSoFar = map[element]
-//     }
-//   }
-//   return mode
-// }
+const numbers = [99,44,6,2,1,5,63,87,283,4,0]
 
-// console.log(mode(numbers))
+const reverseArray = array => {
+  for(i = 0 ; i < array.length/2 ; i++) {
+    let temp = array[i]
+    let opposite = array[array.length - 1 - i]
+    array[i] = opposite
+    array[array.length - 1 - i] = temp 
+  }
+  return array
+}
+
+console.log(reverseArray(numbers))
+
+
+
+
