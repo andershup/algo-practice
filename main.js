@@ -404,7 +404,7 @@
 // }
 // console.log(bubbleSort([1,6,7,89,3,5,6,7]))
 
-// const numbers = [99,44,6,2,1,5,63,87,283,4,0]
+
 
 // function selectionSort(array) {
 //   const length = array.length
@@ -424,20 +424,23 @@
 
 // console.log(selectionSort(numbers))
 
-const array1 = [1,4,6,2,3,4,20,88,700]
+const numbers = [99,44,6,2,1,5,63,87,283,4,0]
 
-const bubbleSort = array => {
-  for(let i = 0 ; i < array.length ; i ++) {
-    for(let j = 0 ; j < array.length ; j ++) {
-      if(array[j] < array[j-1]) {
-        let temp = array[j-1]
-        array[j-1] = array[j]
-        array[j] = temp
+const selectionSort = array => {
+  const length = array.length
+  for(i = 0 ; i < length ; i ++) {
+    let red = i
+    let temp = array[i]
+    for(let j = i + 1 ; j < length ; j ++) {
+      if(array[j] < array[red]) {
+        red = j 
       }
     }
+    array[i] = array[red]
+    array[red] = temp 
+
   }
   return array 
 }
 
-  
-  console.log(bubbleSort(array1))
+console.log(selectionSort(numbers))
