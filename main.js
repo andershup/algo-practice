@@ -424,24 +424,20 @@
 
 // console.log(selectionSort(numbers))
 
-const array1 = [1,2,3,4,5,6,77,88,99,0]
-const array2 = [2,50,66]
+const array1 = [1,4,6,2,3,4,20,88,700]
 
-const arrayCompare = (array1, array2) => {
-  let map = {}
-
-  for(i = 0 ; i < array1.length ; i ++) {
-    if(!map[array1[i]]) {
-      let item = array1[i]
-       map[item] = true
+const bubbleSort = array => {
+  for(let i = 0 ; i < array.length ; i ++) {
+    for(let j = 0 ; j < array.length ; j ++) {
+      if(array[j] < array[j-1]) {
+        let temp = array[j-1]
+        array[j-1] = array[j]
+        array[j] = temp
+      }
     }
   }
-  for(j = 0 ; j < array2.length ; j ++) {
-    if(map[array2[j]]) {
-      console.log('this is true')
-    }
-  }
-  return false
+  return array 
 }
 
-console.log(arrayCompare(array1,array2))
+  
+  console.log(bubbleSort(array1))
