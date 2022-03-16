@@ -405,9 +405,11 @@
 // console.log(bubbleSort([1,6,7,89,3,5,6,7]))
 
 
+// const numbers = [99,44,6,2,1,5,63,87,283,4,0]
 
 // function selectionSort(array) {
 //   const length = array.length
+  
 //   for(i = 0; i < length ; i ++) {
 //     let min = i
 //     let temp = array[i]
@@ -416,6 +418,7 @@
 //         min = j
 //       }
 //     }
+   
 //     array[i] = array[min]
 //     array[min] = temp 
 //   }
@@ -424,23 +427,53 @@
 
 // console.log(selectionSort(numbers))
 
-const numbers = [99,44,6,2,1,5,63,87,283,4,0]
 
-const selectionSort = array => {
-  const length = array.length
-  for(i = 0 ; i < length ; i ++) {
-    let red = i
-    let temp = array[i]
-    for(let j = i + 1 ; j < length ; j ++) {
-      if(array[j] < array[red]) {
-        red = j 
-      }
-    }
-    array[i] = array[red]
-    array[red] = temp 
+// const selectionSort = array => {
+//   const length = array.length
+//   for(i = 0 ; i < length ; i ++) {
+//     let red = i
+//     let temp = array[i]
+//     for(let j = i + 1 ; j < length ; j ++) {
+//       if(array[j] < array[red]) {
+//         red = j 
+//       }
+//     }
+//     array[i] = array[red]
+//     array[red] = temp 
 
+//   }
+//   return array 
+// }
+
+
+class Stack {
+  constructor(){
+    this.array = []
   }
-  return array 
+  peek() {
+    return this.array[this.array.length-1]
+  }
+  push(value){
+  this.array.push(value)
+  return this
+  }
+  pop(){
+    return this.array.pop()
+  }
+  //isEmpty
 }
 
-console.log(selectionSort(numbers))
+const myStack = new Stack();
+console.log(myStack.push('google'))
+console.log(myStack.push('udemy'))
+console.log(myStack.push('discord'))
+console.log(myStack.peek())
+console.log(myStack.peek())
+console.log(myStack.pop())
+console.log(myStack.pop())
+console.log(myStack.pop())
+
+
+//Discord
+//Udemy
+//google
