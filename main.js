@@ -446,34 +446,56 @@
 // }
 
 
-class Stack {
-  constructor(){
-    this.array = []
-  }
-  peek() {
-    return this.array[this.array.length-1]
-  }
-  push(value){
-  this.array.push(value)
-  return this
-  }
-  pop(){
-    return this.array.pop()
-  }
-  //isEmpty
-}
+// class Stack {
+//   constructor(){
+//     this.array = []
+//   }
+//   peek() {
+//     return this.array[this.array.length-1]
+//   }
+//   push(value){
+//   this.array.push(value)
+//   return this
+//   }
+//   pop(){
+//     return this.array.pop()
+//   }
+//   //isEmpty
+// }
 
-const myStack = new Stack();
-console.log(myStack.push('google'))
-console.log(myStack.push('udemy'))
-console.log(myStack.push('discord'))
-console.log(myStack.peek())
-console.log(myStack.peek())
-console.log(myStack.pop())
-console.log(myStack.pop())
-console.log(myStack.pop())
+// const myStack = new Stack();
+// console.log(myStack.push('google'))
+// console.log(myStack.push('udemy'))
+// console.log(myStack.push('discord'))
+// console.log(myStack.peek())
+// console.log(myStack.peek())
+// console.log(myStack.pop())
+// console.log(myStack.pop())
+// console.log(myStack.pop())
 
 
 //Discord
 //Udemy
 //google
+
+// const numbers = [99,44,6,2,1,1,1,1,1,5,5,5,5,5,5,5,5,5,63,87,283,282,,4,0,0,0,0]
+
+// const mode = array => {
+//   let map = {}
+//   array.forEach(element => {
+//     if(!map[element]) map[element] = 0
+//     map[element] ++
+//   })
+//   let mode = []
+//   let maxSoFar = 0
+//   for(element in map) {
+//     console.log(map[element])
+//     if(map[element] > maxSoFar) {
+//       mode = element
+//       maxSoFar = map[element]
+//     }
+//   }
+//   return mode
+// }
+
+// console.log(mode(numbers))
