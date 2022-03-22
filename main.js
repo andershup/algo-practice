@@ -494,22 +494,22 @@
 // console.log(reverseArray(numbers))
 
 
-class Graph { 
-  constructor() { 
-    this.numberOfNodes = 0;
-    this.adjacentList = {
-    }; 
-  } 
-  addVertex(node)  {
-    if(!this.adjacentList[node]) this.adjacentList[node] = []
-    return this
+// class Graph { 
+//   constructor() { 
+//     this.numberOfNodes = 0;
+//     this.adjacentList = {
+//     }; 
+//   } 
+//   addVertex(node)  {
+//     if(!this.adjacentList[node]) this.adjacentList[node] = []
+//     return this
 
-  } 
-  addEdge(node1, node2) { 
-    //undirected Graph 
-    this.adjacentList[node1].push(node2)
-    this.adjacentList[node2].push(node1)
-  } 
+//   } 
+//   addEdge(node1, node2) { 
+//     //undirected Graph 
+//     this.adjacentList[node1].push(node2)
+//     this.adjacentList[node2].push(node1)
+  
 //   showConnections() { 
 //     const allNodes = Object.keys(this.adjacentList); 
 //     for (let node of allNodes) { 
@@ -538,13 +538,13 @@ class Graph {
 // } 
 
 // const myGraph = new Graph();
-// console.log(myGraph.addVertex('0'))
-// console.log(myGraph.addVertex('1'))
-// console.log(myGraph.addVertex('2'))
-// console.log(myGraph.addVertex('3'))
-// console.log(myGraph.addVertex('4'))
-// console.log(myGraph.addVertex('5'))
-// console.log(myGraph.addVertex('6'))
+// console.log(myGraph.addvertex('0'))
+// console.log(myGraph.addvertex('1'))
+// console.log(myGraph.addvertex('2'))
+// console.log(myGraph.addvertex('3'))
+// console.log(myGraph.addvertex('4'))
+// console.log(myGraph.addvertex('5'))
+// console.log(myGraph.addvertex('6'))
 
 // console.log(myGraph.addEdge('3', '1'))
 // console.log(myGraph.addEdge('3', '4'))
@@ -556,7 +556,7 @@ class Graph {
 // console.log(myGraph.addEdge('6', '5'))
 
 // console.log(myGraph.showConnections())
-//Answer:
+// //Answer:
 // 0-->1 2 
 // 1-->3 2 0 
 // 2-->4 1 0 
@@ -565,3 +565,18 @@ class Graph {
 // 5-->4 6 
 // 6-->5
 
+const numbers = [99,44,6,2,1,5,63,87,283,4,0]
+
+const bubbleSort = array => {
+  for(i = 0 ; i < array.length ; i ++) {
+    for(j = 0 ; j < array.length ; j ++) {
+      if(array[j] < array[i]) {
+        let temp = array[i]
+        array[i] =  array[j]
+        array[j] = temp
+      }
+    }
+  }
+  return array
+}
+console.log(bubbleSort(numbers))
