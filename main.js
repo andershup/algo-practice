@@ -634,3 +634,23 @@
 // console.log(myQueue.enqueue('peter'))
 // console.log(myQueue.enqueue('steve'))
 // console.log(myQueue.enqueue('eddie'))
+const array1 = [11,2,3,4,5,6,7,8,9,55]
+const array2 = [10,11,12,13,14,15]
+
+const twoArrays = (array1, array2) => {
+  let map = {}
+  for(let i = 0 ; i < array1.length ; i ++) {
+    if(!map[array1[i]]) {
+      const item = array1[i]
+      map[item] = true
+    }
+  }
+  for(let j = 0 ; j < array2.length ; j ++) {
+    if(map[array2[j]]) return true
+  }
+
+  console.log(map)
+  return false 
+}
+
+console.log(twoArrays(array1, array2))
