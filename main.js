@@ -598,9 +598,39 @@
 // console.log(myHashTable.get('apples'))
 
 
-// const factoralRecursive = num => {
-//   if(num < 3) return num 
-//   return factoralRecursive(num -1) * num 
+// class Node {
+//   constructor(value) {
+//     this.value = value,
+//     this.next = null
+//   }
 // }
 
-// console.log(factoralRecursive(8))
+// class Queue {
+//   constructor() {
+//     this.front = null,
+//     this.back = null,
+//     this.length = 0
+//   }
+//   enqueue(value) {
+//     let newNode = new Node(value)
+//     if(this.front === null) {
+//       this.front = newNode
+//       this.back = newNode
+//       this.length ++
+//       return this
+//     } else {
+//       this.back.next = newNode
+//       this.back = newNode
+//       this.length ++
+//       return this
+//     }
+
+//   }
+// }
+
+// const myQueue = new Queue()
+
+// console.log(myQueue.enqueue('tony'))
+// console.log(myQueue.enqueue('peter'))
+// console.log(myQueue.enqueue('steve'))
+// console.log(myQueue.enqueue('eddie'))
