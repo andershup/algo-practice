@@ -673,22 +673,97 @@
         // }
         
         // console.log(bubbleSort(array1))
-        const array1 = [10,45,67,32,88,2]
+        // const array1 = [10,45,67,32,88,2]
 
 
         
-        const insertionSort = array1 =>
-        {
-          let length = array1.length
-          for(let i = 0 ; i < length ; i ++)
-          {
-            if(array1[i] < array1[i + 1]) 
-            {
-              console.log('hurray')
-              array1.unshift(array1.splice(i,1)[0])
-             }
-          } 
-         return array1
-        }
+        // const insertionSort = array1 =>
+        // {
+        //   let length = array1.length
+        //   for(let i = 0 ; i < length ; i ++)
+        //   {
+        //     if(array1[i] < array1[i + 1]) 
+        //     {
+        //       console.log('hurray')
+        //       array1.unshift(array1.splice(i,1)[0])
+        //      }
+        //   } 
+        //  return array1
+        // }
 
-        console.log(insertionSort(array1))
+        // console.log(insertionSort(array1))
+
+        class Node {
+          constructor(value){
+            this.left = null;
+            this.right = null;
+            this.value = value;
+          }
+        }
+        
+        class BinarySearchTree {
+          constructor(){
+            this.root = null;
+          }
+          insert(value){
+            //Code here
+            let newNode = new Node(value)
+            let currentNode = this.root 
+            if(this.root === null)
+            {
+              this.root = newNode
+              return this
+            } else {
+              //turning left
+              while(true) {
+                if(value < currentNode.value) {
+                if(currentNode.left === null) 
+                {
+                  currentNode.left = newNode
+                  return this
+                }
+                else 
+                {
+                  currentNode = currentNode.left 
+                }
+              }
+                // turning right 
+                if(value > currentNode.value) {
+                if(currentNode.right === null) 
+                {
+                  currentNode.right = newNode
+                  return  this
+                } else 
+                {
+                  currentNode = currentNode.right 
+                }
+              }
+            }
+            }
+          }
+          lookup(value){
+            //Code here
+          }
+          // remove
+        }
+        
+        const tree = new BinarySearchTree();
+        console.log(tree.insert(9))
+        console.log(tree.insert(4))
+        console.log(tree.insert(6))
+        console.log(tree.insert(20))
+        console.log(tree.insert(170))
+        console.log(tree.insert(15))
+        console.log(tree.insert(1))
+        JSON.stringify(traverse(tree.root))
+        
+        //     9
+        //  4     20
+        //1  6  15  170
+        
+        function traverse(node) {
+          const tree = { value: node.value };
+          tree.left = node.left === null ? null : traverse(node.left);
+          tree.right = node.right === null ? null : traverse(node.right);
+          return tree;
+        }
