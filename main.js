@@ -634,23 +634,61 @@
 // console.log(myQueue.enqueue('peter'))
 // console.log(myQueue.enqueue('steve'))
 // console.log(myQueue.enqueue('eddie'))
-const array1 = [11,2,3,4,5,6,7,8,9,55]
-const array2 = [10,11,12,13,14,15]
+// const array1 = [11,2,3,4,5,6,7,8,9,55]
+// const array2 = [10,11,12,13,14,15]
 
-const twoArrays = (array1, array2) => {
-  let map = {}
-  for(let i = 0 ; i < array1.length ; i ++) {
-    if(!map[array1[i]]) {
-      const item = array1[i]
-      map[item] = true
-    }
-  }
-  for(let j = 0 ; j < array2.length ; j ++) {
-    if(map[array2[j]]) return true
-  }
+// const twoArrays = (array1, array2) => {
+//   let map = {}
+//   for(let i = 0 ; i < array1.length ; i ++) {
+//     if(!map[array1[i]]) {
+//       const item = array1[i]
+//       map[item] = true
+//     }
+//   }
+//   for(let j = 0 ; j < array2.length ; j ++) {
+//     if(map[array2[j]]) return true
+//   }
 
-  console.log(map)
-  return false 
-}
+//   console.log(map)
+//   return false 
+// }
 
-console.log(twoArrays(array1, array2))
+// console.log(twoArrays(array1, array2))
+// console.log(new Float32Array(10))
+// const bubbleSort = array => {
+  //   const length = array.length
+  //   for(i = 0 ; i < length ; i ++) 
+  //   {
+    //     for(j = 0 ; j < length ; j ++) 
+    //     {
+      //       if(array[j] > array[j+1])
+      //       {
+        //         let temp = array[j]
+        //         array[j] = array[j+1]
+        //         array[j+1] = temp
+        //       }
+        //     }
+        //   }
+        //   return array
+        // }
+        
+        // console.log(bubbleSort(array1))
+        const array1 = [10,45,67,32,88,2]
+
+
+        
+        const insertionSort = array1 =>
+        {
+          let length = array1.length
+          for(let i = 0 ; i < length ; i ++)
+          {
+            if(array1[i] < array1[i + 1]) 
+            {
+              console.log('hurray')
+              array1.unshift(array1.splice(i,1)[0])
+             }
+          } 
+         return array1
+        }
+
+        console.log(insertionSort(array1))
