@@ -777,18 +777,40 @@
         // 4-->3 2 5 
         // 5-->4 6 
         // 6-->5
- const numbers = [9,4,6,2,1,5,6,8,3,4,0]
-const twoSum = (array, sum) =>
+//  const numbers = [9,4,6,2,1,5,6,8,3,4,0]
+// const twoSum = (array, sum) =>
+// {
+//   let resultArray = []
+//   let hashTable = []
+//   for(let i = 0 ; i < array.length ; i ++) 
+//   {
+//     hashTable.push(array[i])
+//     let opposite = sum - array[i]
+    
+//     if(hashTable.indexOf(opposite) !== -1) resultArray.push([array[i], opposite])
+//   }
+//   return resultArray
+// }
+// console.log(twoSum(numbers, 11))
+const numbers = [9,4,6,2,1,5,6,8,3,4,0]
+
+const selectionSort = array => 
 {
-  let resultArray = []
-  let hashTable = []
   for(let i = 0 ; i < array.length ; i ++) 
   {
-    hashTable.push(array[i])
-    let opposite = sum - array[i]
-    
-    if(hashTable.indexOf(opposite) !== -1) resultArray.push([array[i], opposite])
+    let min = i
+    let temp = array[i]
+    for(j = i + 1 ; j < array.length ; j ++) 
+    {
+      if(array[j] < array[min])
+      {
+        min = j 
+      }
+    }
+    array[i] = array[min]
+    array[min] = temp
   }
-  return resultArray
+  return array 
 }
-console.log(twoSum(numbers, 11))
+
+console.log(selectionSort(numbers))
