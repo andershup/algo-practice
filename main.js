@@ -777,11 +777,18 @@
         // 4-->3 2 5 
         // 5-->4 6 
         // 6-->5
-
-const stringRecursive = str => 
+ const numbers = [9,4,6,2,1,5,6,8,3,4,0]
+const twoSum = (array, sum) =>
 {
-  if(str === '') return ''
-  return stringRecursive(str.substr(1)) + str.charAt(0)
+  let resultArray = []
+  let hashTable = []
+  for(let i = 0 ; i < array.length ; i ++) 
+  {
+    hashTable.push(array[i])
+    let opposite = sum - array[i]
+    
+    if(hashTable.indexOf(opposite) !== -1) resultArray.push([array[i], opposite])
+  }
+  return resultArray
 }
-
-console.log(stringRecursive('abcdefg'))
+console.log(twoSum(numbers, 11))
