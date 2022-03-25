@@ -792,21 +792,121 @@
 //   return resultArray
 // }
 // console.log(twoSum(numbers, 11))
-const numbers = [9,4,6,2,1,5,6,8,3,4,0]
 
-const twoSum = (array, sum) => 
-{
-  let pairs = []
-  let hashTable = []
-  for(let i = 0 ; i < array.length ; i ++) 
-  {
-    let counter = sum - array[i]
-    let currentNumber = array[i]
-    if(hashTable.indexOf(counter) !== -1) pairs.push([currentNumber, counter])
-    hashTable.push(currentNumber)
-  }
-  return pairs 
-}
+// const twoSum = (array, sum) => 
+// {
+  //   let pairs = []
+  //   let hashTable = []
+  //   for(let i = 0 ; i < array.length ; i ++) 
+  //   {
+    //     let counter = sum - array[i]
+    //     let currentNumber = array[i]
+    //     if(hashTable.indexOf(counter) !== -1) pairs.push([currentNumber, counter])
+    //     hashTable.push(currentNumber)
+    //   }
+    //   return pairs 
+    // }
+    
+    // console.log(twoSum(numbers, 10))
+    
+    // const bubbleSort = array =>
+    // {
+      //   for(i = 0 ; i < array.length ; i ++) 
+      //   {
+        //     for(j = 0 ; j < array.length ; j ++)
+        //     {
+          //       if(array[j] < array[j-1])
+          //         {
+            //           let temp = array[j]
+            //           array[j] = array[j - 1]
+            //           array[j - 1] = temp
+            //         }
+            //     }
+            //   } return array
+            // }
+            
+            // console.log(bubbleSort(numbers))
+            
+            // const selectionSort = array => 
+            // {
+              //   let length = array.length
+              //   for(i = 0 ; i < length ; i ++)
+              //   {
+                //     let min = i 
+                //     let temp = array[i]
+                //     for(j = i + 1 ; j < length ; j ++)
+                //     {
+                  //       if(array[j] < array[min])
+                  //       {
+                    //         min = j
+                    //       }
+                    //     }
+                    //     array[i] = array[min]
+                    //     array[min] = temp 
+                    
+                    //   }
+                    //   return array
+                    // }
+                    
+                    // console.log(selectionSort(numbers))
+                    
+//    const numbers = [9,4,6,2,1,5,6,8,3,4,0]
+// const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
+//    const insertionSort = array =>
+//      {
+//     const length = array.length
+//   for(let i = 0 ; i < length ; i ++)
+//   {
+//     console.log('this is i ', i,'at',array[i], array)
+//     if(array[i] < array[0])
+//     {
+//       array.unshift(array.splice(i,1)[0])
+//       // console.log(array)
+//     } else 
+//     {
+//       if(array[i] < array[i -1])
+//       {
+//         for(let j = 1; j < i ; j ++)
+//         {
+//           console.log('this is j', j,'at',array[j], array)
+//           if(array[i] >= array[j-1] && array[i] < array[j])
+//           {
+           
+//             array.splice(j,0,array.splice(i,1)[0]);
 
-console.log(twoSum(numbers, 10))
+//             console.log('this is j after splice', j,'at',array[j], array)
+//           }
+//         }
+//       }
+//     }
+//   }
 
+// }
+// insertionSort(numbers)
+// console.log(numbers)
+
+
+
+// function insertionSort(array) {
+//   const length = array.length;
+// 	for (let i = 0; i < length; i++) {
+// 		if (array[i] < array[0]) {
+//       //move number to the first position
+//       array.unshift(array.splice(i,1)[0]);
+//     } else {
+//       // only sort number smaller than number on the left of it. This is the part of insertion sort that makes it fast if the array is almost sorted.
+//       if (array[i] < array[i-1]) {
+//         //find where number should go
+//         for (var j = 1; j < i; j++) {
+//           if (array[i] >= array[j-1] && array[i] < array[j]) {
+//             //move number to the right spot
+            // array.splice(j,0,array.splice(i,1)[0]);
+//           }
+//         }
+//       }
+//     }
+// 	}
+// }
+
+// insertionSort(numbers);
+// console.log(numbers);
