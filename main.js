@@ -794,23 +794,19 @@
 // console.log(twoSum(numbers, 11))
 const numbers = [9,4,6,2,1,5,6,8,3,4,0]
 
-const selectionSort = array => 
+const twoSum = (array, sum) => 
 {
+  let pairs = []
+  let hashTable = []
   for(let i = 0 ; i < array.length ; i ++) 
   {
-    let min = i
-    let temp = array[i]
-    for(j = i + 1 ; j < array.length ; j ++) 
-    {
-      if(array[j] < array[min])
-      {
-        min = j 
-      }
-    }
-    array[i] = array[min]
-    array[min] = temp
+    let counter = sum - array[i]
+    let currentNumber = array[i]
+    if(hashTable.indexOf(counter) !== -1) pairs.push([currentNumber, counter])
+    hashTable.push(currentNumber)
   }
-  return array 
+  return pairs 
 }
 
-console.log(selectionSort(numbers))
+console.log(twoSum(numbers, 10))
+
