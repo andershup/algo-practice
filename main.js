@@ -939,33 +939,57 @@
 
 // console.log(compareArrays(array1,array2))
 
-  const numbers = [9,40,1,200,1,55,6,89,3,4,0]
-const selectionSort = array => 
-{
-  for(i = 0 ; i < array.length ; i ++)
-  {
-    console.log('this is i', array[i])
-    let min = i
-    let temp = array[i]
-    for(let j = i + 1 ; j < array.length ; j ++)
-    {
-      console.log('first tick of j', j)
-      if(array[j] < array[min])
-      {
-        console.log('this is j','index',j, array[j])
-        min = j
-        console.log('this is array[min]', array[min])
+  const numbers = [9,40,1,200,1,55,6,6,6,6,89,3,3,3,3,3,3,4,0]
+// const selectionSort = array => 
+// {
+//   for(i = 0 ; i < array.length ; i ++)
+//   {
+//     console.log('this is i', array[i])
+//     let min = i
+//     let temp = array[i]
+//     for(let j = i + 1 ; j < array.length ; j ++)
+//     {
+//       console.log('first tick of j', j)
+//       if(array[j] < array[min])
+//       {
+//         console.log('this is j','index',j, array[j])
+//         min = j
+//         console.log('this is array[min]', array[min])
         
-      }
+//       }
       
       
       
-    }
-    array[i] = array[min]
-    array[min] = temp 
+//     }
+//     array[i] = array[min]
+//     array[min] = temp 
     
-  }
-  return array 
-}
+//   }
+//   return array 
+// }
 
-console.log(selectionSort(numbers))
+// console.log(selectionSort(numbers))
+
+const modeSelect = array =>
+{
+//   let map = {}
+//   for(i = 0 ; i < array.length ; i ++) 
+//   {
+//     if(!map[array[i]]) map[array[i]] = 0
+//     map[array[i]] ++
+//   }
+//   let maxOccurence = 0
+//   let mode = []
+//   console.log(map)
+//   for(let p in map) {
+//     console.log(map[p])
+//     if(map[p]  > maxOccurence)
+//     {
+//       maxOccurence = map[p]
+//       mode = p
+//     }
+//   }
+//   return mode 
+// }
+
+// console.log(modeSelect(numbers))
