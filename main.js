@@ -850,7 +850,7 @@
                     
                     // console.log(selectionSort(numbers))
                     
-//    const numbers = [9,4,6,2,1,5,6,8,3,4,0]
+  //  const numbers = [9,4,6,2,1,5,6,8,3,4,0]
 // const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
 //    const insertionSort = array =>
 //      {
@@ -872,7 +872,7 @@
 //           if(array[i] >= array[j-1] && array[i] < array[j])
 //           {
            
-//             array.splice(j,0,array.splice(i,1)[0]);
+//             array.splice(j,0,array.splice(i,1)[0])
 
 //             console.log('this is j after splice', j,'at',array[j], array)
 //           }
@@ -910,3 +910,62 @@
 
 // insertionSort(numbers);
 // console.log(numbers);
+
+// const fibbonacciRecursive = num =>
+// {
+//   if(num < 2) return num 
+//   return fibbonacciRecursive(num -1) + fibbonacciRecursive(num - 2)
+// }
+
+// console.log(fibbonacciRecursive(8))
+
+// const array1 = [1,2,3,4,5,6,7,8,9]
+// const array2 = [11,12,13,14]
+
+// const compareArrays = (array1, array2) =>
+// {
+//   let map = {}
+//   for(i = 0 ; i < array1.length ; i ++)
+//   {
+//     if(!map[array1[i]]) 
+//     {
+      
+//       const item = array1[i]
+//       map[item] = true
+//     }
+//   }
+//   return map
+// }
+
+// console.log(compareArrays(array1,array2))
+
+  const numbers = [9,40,1,200,1,55,6,89,3,4,0]
+const selectionSort = array => 
+{
+  for(i = 0 ; i < array.length ; i ++)
+  {
+    console.log('this is i', array[i])
+    let min = i
+    let temp = array[i]
+    for(let j = i + 1 ; j < array.length ; j ++)
+    {
+      console.log('first tick of j', j)
+      if(array[j] < array[min])
+      {
+        console.log('this is j','index',j, array[j])
+        min = j
+        console.log('this is array[min]', array[min])
+        
+      }
+      
+      
+      
+    }
+    array[i] = array[min]
+    array[min] = temp 
+    
+  }
+  return array 
+}
+
+console.log(selectionSort(numbers))
