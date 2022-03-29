@@ -971,32 +971,54 @@
 // console.log(selectionSort(numbers))
 
 
-const array1 = [3,6,44,333,22,9,0]
 
 
-  
-  const insertionSort = array =>
+
+//   const insertionSort = array =>
+//   {
+  //     for(i = 0 ; i < array.length ; i ++) 
+  //     {
+    //       if(array[i] < array[0]) 
+    //       {
+      //         array.unshift(array.splice(i,1)[0])
+      //       } else 
+      //       {
+        //         if(array[i] < array[i-1])
+        //         {
+          //           for(j = 1 ; j < i ; j ++)
+          //           {
+            //             if(array[i] >= array[j - 1] && array[i] < array[j])
+            //             {
+              //               array.splice(j,0,array.splice(i,1)[0])
+              //             }
+              //           }
+              //         }
+              //       }
+              //     }
+              //   return array 
+              //   }
+              
+              //   console.log(insertionSort(array1))
+              
+ const array1 = [3,6,44,333,22,9,0]
+
+const selectionSort = array =>
+{
+  for(i = 0 ; i < array.length ; i ++)
   {
-    for(i = 0 ; i < array.length ; i ++) 
+    let min = i
+    let temp = array[i]
+    for(j = i + 1 ; j < array.length ; j ++)
     {
-      if(array[i] < array[0]) 
+      if(array[j] < array[min])
       {
-        array.unshift(array.splice(i,1)[0])
-      } else 
-      {
-        if(array[i] < array[i-1])
-        {
-          for(j = 1 ; j < i ; j ++)
-          {
-            if(array[i] >= array[j - 1] && array[i] < array[j])
-            {
-              array.splice(j,0,array.splice(i,1)[0])
-            }
-          }
-        }
+        min = j
       }
     }
-  return array 
+    array[i] = array[min]
+    array[min] = temp 
   }
+  return array 
+}
 
-  console.log(insertionSort(array1))
+console.log(selectionSort(array1))
