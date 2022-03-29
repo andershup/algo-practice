@@ -939,7 +939,7 @@
 
 // console.log(compareArrays(array1,array2))
 
-  const numbers = [9,40,1,200,1,55,6,6,6,6,89,3,3,3,3,3,3,4,0]
+  // const numbers = [9,40,1,200,1,55,6,6,6,6,89,3,3,3,3,3,3,4,0]
 // const selectionSort = array => 
 // {
 //   for(i = 0 ; i < array.length ; i ++)
@@ -1000,25 +1000,71 @@
               
               //   console.log(insertionSort(array1))
               
- const array1 = [3,6,44,333,22,9,0]
+//  const array1 = [3,6,44,333,22,9,0]
 
-const selectionSort = array =>
-{
-  for(i = 0 ; i < array.length ; i ++)
-  {
-    let min = i
-    let temp = array[i]
-    for(j = i + 1 ; j < array.length ; j ++)
-    {
-      if(array[j] < array[min])
-      {
-        min = j
-      }
-    }
-    array[i] = array[min]
-    array[min] = temp 
-  }
-  return array 
-}
+// const selectionSort = array =>
+// {
+//   for(i = 0 ; i < array.length ; i ++)
+//   {
+//     let min = i
+//     let temp = array[i]
+//     for(j = i + 1 ; j < array.length ; j ++)
+//     {
+//       if(array[j] < array[min])
+//       {
+//         min = j
+//       }
+//     }
+//     array[i] = array[min]
+//     array[min] = temp 
+//   }
+//   return array 
+// }
 
-console.log(selectionSort(array1))
+// console.log(selectionSort(array1))
+
+
+// const numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
+
+// function mergeSort (array) {
+//   if (array.length === 1) {
+//     return array
+//   }
+//   // Split Array in into right and left
+//   const length = array.length
+//   const middle = Math.floor(length/2)
+//   const left = array.slice(0,middle)
+//   const right = array.slice(middle)
+//   console.log('left', left)
+//   console.log('right', right)
+
+
+//   return merge(
+//     mergeSort(left),
+//     mergeSort(right)
+//   )
+// }
+
+// function merge(left, right){
+//   const result = []
+//   let leftIndex = 0
+//   let rightIndex = 0
+//   while(leftIndex < left.length && rightIndex < right.length)
+//   {
+//     if(left[leftIndex] < right[rightIndex])
+//     {
+//       result.push(left[leftIndex])
+//       leftIndex ++
+//     } else 
+//     {
+//       result.push(right[rightIndex])
+//       rightIndex ++
+//     }
+//   }
+//   console.log(left, right)
+//   return result.concat(left.slice(leftIndex).concat(right.slice(rightIndex)))
+// }
+
+
+// const answer = mergeSort(numbers);
+// console.log(answer);
