@@ -1068,3 +1068,54 @@
 
 // const answer = mergeSort(numbers);
 // console.log(answer);
+
+ class Node {
+  constructor(value) {
+    this.value = value,
+    this.next = null
+  }
+ }
+
+ class LinkedList {
+   constructor() {
+    this.head = null,
+    // this.next = null,
+    this.tail = this.head 
+  }
+  insert(value) {
+    let newNode = new Node(value)
+    if(this.tail === null) 
+    {
+      this.head = newNode
+      this.tail = newNode
+      return this
+    }
+    else 
+    {
+      this.tail.next = newNode
+      this.tail =  newNode
+      return this
+    }
+  }
+  remove(index)  {
+    let currentNode = this.head
+    let counter = 0
+    while(counter !== index-1)
+    {
+      currentNode = currentNode.next
+      counter ++
+    }
+    let oneToDelete = currentNode.next
+    let newNest = oneToDelete.next
+    currentNode.next = newNest
+    return this
+  }
+ }
+
+ const myList = new LinkedList()
+
+ console.log(myList.insert(8))
+ console.log(myList.insert(80))
+ console.log(myList.insert(800))
+ console.log(myList.insert(8000))
+ console.log(myList.remove(2))
