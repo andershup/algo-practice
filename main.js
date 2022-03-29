@@ -970,26 +970,33 @@
 
 // console.log(selectionSort(numbers))
 
-const modeSelect = array =>
-{
-//   let map = {}
-//   for(i = 0 ; i < array.length ; i ++) 
-//   {
-//     if(!map[array[i]]) map[array[i]] = 0
-//     map[array[i]] ++
-//   }
-//   let maxOccurence = 0
-//   let mode = []
-//   console.log(map)
-//   for(let p in map) {
-//     console.log(map[p])
-//     if(map[p]  > maxOccurence)
-//     {
-//       maxOccurence = map[p]
-//       mode = p
-//     }
-//   }
-//   return mode 
-// }
 
-// console.log(modeSelect(numbers))
+const array1 = [3,6,44,333,22,9,0]
+
+
+  
+  const insertionSort = array =>
+  {
+    for(i = 0 ; i < array.length ; i ++) 
+    {
+      if(array[i] < array[0]) 
+      {
+        array.unshift(array.splice(i,1)[0])
+      } else 
+      {
+        if(array[i] < array[i-1])
+        {
+          for(j = 1 ; j < i ; j ++)
+          {
+            if(array[i] >= array[j - 1] && array[i] < array[j])
+            {
+              array.splice(j,0,array.splice(i,1)[0])
+            }
+          }
+        }
+      }
+    }
+  return array 
+  }
+
+  console.log(insertionSort(array1))
