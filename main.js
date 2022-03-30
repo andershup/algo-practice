@@ -1069,76 +1069,25 @@
 // const answer = mergeSort(numbers);
 // console.log(answer);
 
-//  class Node {
-//   constructor(value) {
-//     this.value = value,
-//     this.next = null
-//   }
-//  }
-
-//  class LinkedList {
-//    constructor() {
-//     this.head = null,
-//     // this.next = null,
-//     this.tail = this.head 
-//   }
-//   insert(value) {
-//     let newNode = new Node(value)
-//     if(this.tail === null) 
-//     {
-//       this.head = newNode
-//       this.tail = newNode
-//       return this
-//     }
-//     else 
-//     {
-//       this.tail.next = newNode
-//       this.tail =  newNode
-//       return this
-//     }
-//   }
-//   remove(index)  {
-//     let currentNode = this.head
-//     let counter = 0
-//     while(counter !== index-1)
-//     {
-//       currentNode = currentNode.next
-//       counter ++
-//     }
-//     let oneToDelete = currentNode.next
-//     let newNest = oneToDelete.next
-//     currentNode.next = newNest
-//     return this
-//   }
-//  }
-
-//  const myList = new LinkedList()
-
-//  console.log(myList.insert(8))
-//  console.log(myList.insert(80))
-//  console.log(myList.insert(800))
-//  console.log(myList.insert(8000))
-//  console.log(myList.remove(2))
-
-const array = [2,77,88,99,0,4,33]
-
-const selectionSort = array => 
+const array = [3,5,6,43,6,76,9]
+const bubbleSort = array =>
 {
-  for(i = 0 ; i < array.length ; i ++)
+  let length = array.length
+  for(i = 0 ; i < length ; i ++)
   {
-    let min = i
-    let temp = array[i]
-    for(j = i + 1 ; j < array.length ; j++)
+    for(j = i +1 ; j < length ; j ++)
     {
-      if(array[j] < array[min])
+      console.log('this is i', i, 'this is j', j)
+      if(array[j] < array[i])
       {
-        min = j
+        let temp = array[i]
+        array[i] = array[j]
+        array[j] = temp 
       }
     }
-    array[i] = array[min]
-    array[min] = temp
   }
-  return array 
+  return array
 }
-selectionSort(array)
-console.log(array)
+
+result = bubbleSort(array)
+console.log(result)
