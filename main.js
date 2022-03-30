@@ -1069,25 +1069,29 @@
 // const answer = mergeSort(numbers);
 // console.log(answer);
 
-const array = [3,5,6,43,6,76,9]
-const bubbleSort = array =>
+const array1 = [11,2,3,4,5,6,7,8,9]
+const array2 = [1111,22,3333,44,55,66,7]
+
+const compareArrays = (array1, array2)  => 
 {
-  let length = array.length
-  for(i = 0 ; i < length ; i ++)
+  let map = {}
+  for(i = 0 ; i < array1.length ; i ++)
   {
-    for(j = i +1 ; j < length ; j ++)
+    if(!map[array1[i]])
     {
-      console.log('this is i', i, 'this is j', j)
-      if(array[j] < array[i])
-      {
-        let temp = array[i]
-        array[i] = array[j]
-        array[j] = temp 
-      }
+      let item = array1[i]
+      map[item] = true
     }
   }
-  return array
+  for(j = 0 ; j < array2.length ; j ++)
+  {
+    if(map[array2[j]])
+    {
+      return console.log('there is a match')
+    } 
+ 
+  }
+  return false 
 }
 
-result = bubbleSort(array)
-console.log(result)
+console.log(compareArrays(array1,array2))
