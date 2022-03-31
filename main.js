@@ -1071,23 +1071,25 @@
 
 const array = [55,77,33,99,4,1,5,7]
 
-const bubbleSort = array =>
+const selectionSort = array =>
 {
   const length = array.length
   for(i = 0 ; i < length ; i ++)
   {
-    for(j = 1 ; j < length ; j ++)
+    let min = i 
+    let temp = array[i]
+    for(j = i + 1 ; j < length ; j ++)
     {
-      if(array[j] < array[j-1])
+      if( array[j] < array[min])
       {
-        let temp = array[j]
-        array[j] = array[j-1]
-        array[j-1] = temp 
+        min = j
       }
     }
+    array[i] = array[min]
+    array[min] = temp 
   }
   return array 
 }
 
-const result = bubbleSort(array)
+const result = selectionSort(array)
 console.log(result)
