@@ -1068,28 +1068,30 @@
 
 // const answer = mergeSort(numbers);
 // console.log(answer);
-
-const array = [55,77,33,99,4,1,5,7]
-
-const selectionSort = array =>
+const array = [22,55,33,2,88,0]
+const insertionSort = array =>
 {
-  const length = array.length
+  let length = array.length
   for(i = 0 ; i < length ; i ++)
   {
-    let min = i 
-    let temp = array[i]
-    for(j = i + 1 ; j < length ; j ++)
+    if(array[i] < array[0])
     {
-      if( array[j] < array[min])
+      array.unshift(array.splice(i,1)[0])
+    } else
+    {
+    if(array[i]  < array[i-1])
+    {
+      for(j = 1 ; j < i ; j ++)
       {
-        min = j
+        if(array[i] >= array[j-1] && array[i] < array[j])
+        {
+          array.splice(j,0,array.splice(i,1)[0])
+        }
       }
     }
-    array[i] = array[min]
-    array[min] = temp 
+  }
   }
   return array 
 }
 
-const result = selectionSort(array)
-console.log(result)
+console.log(insertionSort(array))
