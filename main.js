@@ -1068,27 +1068,51 @@
 
 // const answer = mergeSort(numbers);
 // console.log(answer);
-const array = [223,55,33,2,2,2,2,2,88,0]
+const array = [223,55,33,2,21,24,2,2,88,0]
 const array2 = [1,3,4,5,88,6]
 const str = ('this is my little string')
 
 
-const bubbleSort = array =>
+const mergeSort = array =>
 {
-  let length = array.length
-  for(i = 0 ; i < length ; i ++)
+  if(array.length === 1)
   {
-    for(j = 0 ; j < length ; j ++)
-    {
-      if(array[j] > array[i])
-    {
-      let temp = array[i]
-      array[i] = array[j]
-      array[j] = temp 
-    }
-    }
+    return  array 
   }
-  return array
+  const length = array.length
+  const middle = Math.floor(length / 2)
+  const left = array.slice(0, middle)
+  const right = array.slice(middle)
+  console.log('left', left)
+  console.log('right', right)
+
+  return merge(
+    mergeSort(left), 
+    mergeSort(right)
+  )
 }
 
-console.log(bubbleSort(array))
+const merge = (left, right) => 
+{
+  const result = []
+  let leftIndex = 0
+  let rightIndex = 0 
+  while(leftIndex < left.length && rightIndex < right.length) 
+  {
+    if(left[leftIndex] < right[rightIndex])
+    {
+      result.push(left[leftIndex])
+      console.log('this is result', result)
+      leftIndex ++
+      console.log('this is the leftindex', leftIndex)
+    } else 
+    {
+      result.push(right[rightIndex])
+      rightIndex ++
+      console.log('this is the right index', rightIndex)
+    }
+  }
+  return result.concat(left.slice(leftIndex).concat(right.slice(rightIndex)))
+}
+
+console.log(mergeSort(array))
