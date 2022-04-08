@@ -1073,31 +1073,24 @@ const array2 = [1,3,4,5,88,6]
 const str = ('this is my little string')
 
 
-const insertionSort = array => 
+const selectionSort = array => 
 {
-  const length = array.length 
-  for(i = 0 ; i < length ; i ++)
+  const length = array.length
+  for( i = 0 ; i < length ; i ++)
   {
-    if(array[i] < array[0])
+    let min = i 
+    let temp = array[i]
+    for(j = i + 1 ; j < length ; j ++)
     {
-      array.unshift(array.splice(i,1)[0])
-    }
-  
-  {
-    if(array[i] < array[i - 1])
-    {
-      for(j = 1 ; j < i ; j ++)
+      if(array[j] < array[min])
       {
-      if(array[i] >= array[j-1] && array[i] <  array[j])
-      {
-        array.splice(j, 0 , array.splice(i, 1)[0])
+        min = j
       }
     }
+    array[i] = array[min]
+    array[min] = temp 
   }
-  }
-}
-  return array 
+  return array
 }
 
-
-console.log(insertionSort(array))
+console.log(selectionSort(array))
