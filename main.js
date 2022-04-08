@@ -1068,44 +1068,16 @@
 
 // const answer = mergeSort(numbers);
 // console.log(answer);
-const array = [223,55,33,2,88,0]
+const array = [223,55,33,2,2,2,2,2,88,0]
 const array2 = [1,3,4,5,88,6]
 const str = ('this is my little string')
 
-function stringRecursive (str) {
-  if(str === '') return ''
-  return stringRecursive(str.substr(1)) + str.charAt(0)
-}
 
-console.log(stringRecursive(str))
 
-function reverseArray (array) {
-  for(i = 0 ; i < array.length/2 ; i ++)
-  {
-    let temp = array[i]
-    let opposingNumber = array[array.length - 1 - i]
-    array[i] = opposingNumber
-    array[array.length - 1 - i] = temp 
-  }
-  return array
-}
-console.log(reverseArray(array))
+console.log(array.map((element) => {if(element < 50) {return element}}))
 
-const compareArrays = (array, array2) =>
-{
-  let map = {}
-  for(i = 0 ; i < array.length ; i ++)
-  {
-    if(!map[array[i]]) {
-      let item = array[i]
-      map[item] = true
-    }
-  }
-  for(j = 0 ; j < array2.length ; j++)
-  {
-    if(map[array2[j]]) return true
-  }
-  return false 
-}
+console.log(array.find(element => element < 30))
 
-console.log(compareArrays(array,array2))
+console.log(array2.reduce((previousValue, currentValue) => { previousValue * currentValue, 100000 } ))
+
+console.log(array.filter(element => element > 30))
