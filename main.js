@@ -1075,7 +1075,14 @@ const str = ('this is my little string')
 
 function fibMemo(index, cache) {
   cache = cache || []
-  if(index < 2) return index 
+  if(cache[index]) return cache[index] 
+ else {
+  //calculate the number at given index
+  if(index < 3) return 1
+  else {
+    cache[index] = fibMemo(index - 1, cache) + fibMemo(index - 2, cache)
+  }
+}
 }
 
 console.log(fibMemo(20))
