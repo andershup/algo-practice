@@ -1072,23 +1072,48 @@ const array = [223,55,33,2,21,24,2,2,88,0]
 const array2 = [1,3,4,5,88,6]
 const str = ('this is my little string')
 
-const selectionSort = array =>
+// const selectionSort = array =>
+// {
+//   for(i = 0 ; i < array.length ; i ++)
+//   {
+//     let min = i 
+//     let temp = array[i]
+//     for(j = i + 1 ; j < array.length ; j ++)
+//     {
+//       if(array[j] < array[min])
+//       {
+//         min = j
+//       }
+//     }
+//     array[i] = array[min]
+//     array[min] = temp 
+//   }
+//   return array 
+// }
+
+// console.log(selectionSort(array))
+
+// const reverseArray = array =>
+// {
+//   for(i = 0 ; i < array.length / 2 ; i ++)
+//   {
+//     let opposite = array[array.length -1 - i]
+//     let temp = array[i]
+//     array[i] = opposite
+//     console.log(opposite)
+//     opposite = array[i]
+//     // array[array.length - 1 - i] = temp 
+//   }
+//   return array 
+// }
+
+// console.log(reverseArray(array))
+
+const recursiveStringArray = string =>
 {
-  for(i = 0 ; i < array.length ; i ++)
-  {
-    let min = i 
-    let temp = array[i]
-    for(j = i + 1 ; j < array.length ; j ++)
-    {
-      if(array[j] < array[min])
-      {
-        min = j
-      }
-    }
-    array[i] = array[min]
-    array[min] = temp 
-  }
-  return array 
+  if(string === '') return ''
+  return recursiveStringArray(string.substr(1)) + string.charAt(0)
+
 }
 
-console.log(selectionSort(array))
+console.log(recursiveStringArray(str))
