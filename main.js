@@ -1072,58 +1072,98 @@ const array = [223,55,33,2,21,24,2,2,88,0]
 const array2 = [1,3,4,5,88,6]
 const str = ('this is my little string')
 
-// const selectionSort = array =>
-// {
-//   for(i = 0 ; i < array.length ; i ++)
-//   {
-//     let min = i 
-//     let temp = array[i]
-//     for(j = i + 1 ; j < array.length ; j ++)
-//     {
-//       if(array[j] < array[min])
-//       {
-//         min = j
-//       }
-//     }
-//     array[i] = array[min]
-//     array[min] = temp 
-//   }
-//   return array 
-// }
 
-// console.log(selectionSort(array))
+class Node {
+  constructor(value){
+    this.left = null;
+    this.right = null;
+    this.value = value;
+  }
+}
 
-// const reverseArray = array =>
-// {
-//   for(i = 0 ; i < array.length / 2 ; i ++)
-//   {
-//     let opposite = array[array.length -1 - i]
-//     let temp = array[i]
-//     array[i] = opposite
-//     console.log(opposite)
-//     opposite = array[i]
-//     // array[array.length - 1 - i] = temp 
-//   }
-//   return array 
-// }
-
-// console.log(reverseArray(array))
-
-const bubbleSort = array =>
-{
-  for(i = 0 ; i < array.length ; i ++)
-  {
-    for(j = 0 ; j < array.length ; j ++)
+class BinarySearchTree {
+  constructor(){
+    this.root = null;
+  }
+  insert(value){
+    //Code here
+    let newNode = new Node(value)
+    let currentNode = this.root
+    if(currentNode === null)
+    { 
+      this.root = newNode
+      return this
+    }
+    else 
     {
-      if(array[j] > array[i])
+      while(true)
       {
-        let temp = array[i]
-        array[i] = array[j]
-        array[j] = temp 
+        if(value < currentNode.value)
+        {
+          if(!currentNode.left)
+          {
+          currentNode.left = newNode
+          return this
+          }
+          currentNode = currentNode.left
+        } else {
+        if(value > currentNode.value)
+        {
+          if(!currentNode.right) 
+          {
+            currentNode.right = newNode
+            return this
+          }
+          currentNode = currentNode.right 
+        }
+     
+      }
       }
     }
   }
-  return array 
+  lookup(value){
+    //Code here
+    let currentNode = this.root
+    while(currentNode)
+    {
+      if(value < currentNode.value)
+      {
+        currentNode = currentNode.left
+      } 
+      else if (value > currentNode.value)
+      {
+        currentNode = currentNode.right
+      } 
+      else if(value === currentNode.value)
+      {
+        return currentNode
+      }
+     
+    }
+    return null 
+  // remove
 }
+}
+const tree = new BinarySearchTree();
+console.log(tree.insert(9))
+console.log(tree.insert(4))
+console.log(tree.insert(6))
+console.log(tree.insert(20))
+console.log(tree.insert(170))
+console.log(tree.insert(15))
+console.log(tree.insert(1))
+console.log(tree.lookup(1))
+console.log(tree.lookup(4))
+console.log(tree.lookup(9))
+JSON.stringify(traverse(tree.root))
 
-console.log(bubbleSort(array))
+//     9
+//  4     20
+//1  6  15  170
+
+function traverse(node) {
+  const tree = { value: node.value };
+  tree.left = node.left === null ? null : traverse(node.left);
+  tree.right = node.right === null ? null : traverse(node.right);
+  return tree;
+}
