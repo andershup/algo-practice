@@ -1072,20 +1072,23 @@ const array = [223,55,33,2,21,24,2,2,88,0]
 const array2 = [1,3,4,5,88,6]
 const str = ('this is my little string')
 
-const sieveOfEratosthenes = num =>
+const selectionSort = array =>
 {
-  let hashTable = {}
-  for(i = 0 ; i < num + 1 ; i ++)
+  for(i = 0 ; i < array.length ; i ++)
   {
-   let key = i
-   hashTable[key] = true
-   
+    let min = i 
+    let temp = array[i]
+    for(j = i + 1 ; j < array.length ; j ++)
+    {
+      if(array[j] < array[min])
+      {
+        min = j
+      }
+    }
+    array[i] = array[min]
+    array[min] = temp 
   }
-  if(i % 2 !== 0 || i/i !== 1) 
-  {
-    hashTable
-  }
-  return hashTable
+  return array 
 }
 
-console.log(sieveOfEratosthenes(20))
+console.log(selectionSort(array))
