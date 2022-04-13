@@ -1072,28 +1072,28 @@ const array = [223,55,33,2,21,24,2,2,88,0]
 const array2 = [1,3,4,5,88,6]
 const str = ('this is my little string')
 
-const mergeSort = arr => 
+const insertionSort = array =>
 {
-  if(arr.length < 2) return arr
-  let middleIndex = Math.floor(arr.length/2)
-  let firstHalf = arr.slice(0, middleIndex)
-  let secondHalf = arr.slice(middleIndex)
-
-  return merge(mergeSort(firstHalf), mergeSort(secondHalf))
-}
-
-function merge(array1, array2) {
-  let result = []
-  while(array1.length && array2.length)
+  for(i = 0 ; i < array.length ; i ++)
   {
-    let minElement
-    if(array1[0] < array2[0]) minElement = array1.shift()
-   else  minElement = array2.shift() 
-   result.push(minElement)
+    if(array[i] < array[0]) 
+    {
+      array.unshift(array.splice(i, 1)[0])
+    }
+    if(array[i] < array[i - 1]) 
+    {
+      //find out where it should go
+      for(j = 1 ; j < i ; j ++)
+      {
+        if(array[i] >= array[j - 1] && array[i] < array[j])
+        {
+          array.splice(j, 0, array.splice(i,1)[0])
+        }
+      }
+    }
   }
-  if(array1.length) result = result.concat(array1)
-  else result = result.concat(array2)
-  return result 
+  return array 
 }
 
-console.log(mergeSort(array))
+console.log(insertionSort(array))
+
