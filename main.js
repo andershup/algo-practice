@@ -1069,31 +1069,25 @@
 // const answer = mergeSort(numbers);
 // console.log(answer);
 const array = [223,55,33,2,21,24,2,2,88,0]
-const array2 = [1,3,4,5,88,6]
+const array2 = [1,6]
 const str = ('this is my little string')
 
-const insertionSort = array =>
-{
+const bubbleSort = array => {
   for(i = 0 ; i < array.length ; i ++)
   {
-    if(array[i] < array[0]) 
+    for(j = 0 ; j < array.length ; j ++)
     {
-      array.unshift(array.splice(i, 1)[0])
-    }
-    if(array[i] < array[i - 1]) 
-    {
-      //find out where it should go
-      for(j = 1 ; j < i ; j ++)
+      if(array[j] > array[i])
       {
-        if(array[i] >= array[j - 1] && array[i] < array[j])
-        {
-          array.splice(j, 0, array.splice(i,1)[0])
-        }
+        let temp = array[i]
+        array[i] = array[j]
+        array[j] = temp 
       }
     }
   }
   return array 
 }
 
-console.log(insertionSort(array))
+console.log(bubbleSort(array))
+
 
