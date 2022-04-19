@@ -1072,22 +1072,25 @@ const array = [223,55,33,2,21,24,2,2,88,0]
 const array2 = [1,6]
 const str = ('this is my little string')
 
-const bubbleSort = array => {
+
+const selectionSort = array => 
+{
   for(i = 0 ; i < array.length ; i ++)
   {
-    for(j = 0 ; j < array.length ; j ++)
+    let min = i
+    let temp = array[i]
+    for(j = i + 1 ; j < array.length ; j ++)
     {
-      if(array[j] > array[i])
+      if(array[j] < array[min])
       {
-        let temp = array[i]
-        array[i] = array[j]
-        array[j] = temp 
+        min = j 
       }
     }
+    array[i] = array[min]
+    array[min] = temp 
   }
   return array 
 }
 
-console.log(bubbleSort(array))
-
+console.log(selectionSort(array ))
 
