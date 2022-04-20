@@ -1069,8 +1069,47 @@
 // const answer = mergeSort(numbers);
 // console.log(answer);
 const array = [223,55,33,2,21,24,2,2,88,0]
-const array2 = [1,6]
+const array5 = [11,61,200,0]
 const str = ('this is my little string')
+
+
+const mergeSort = array =>
+{
+ if(array.length < 2) return array 
+    let middleIndex = Math.floor(array.length/2)
+    let firstSection = array.slice(0,middleIndex)
+    let secondSection = array.slice(middleIndex)
+  
+  return merge(mergeSort(firstSection), mergeSort(secondSection))
+}
+
+const merge = (array1, array2) =>
+{
+  let result = []
+  while(array1.length && array2.length)
+  {
+    let popOff 
+    if(array1[0] < array2[0])
+    {
+     popOff =  array1.shift()
+    } else 
+    {
+     popOff = array2.shift()
+    }
+    result.push(popOff)
+  }
+  if(array1.length) 
+  {
+    result = result.concat(array1)
+  } else 
+  {
+    result = result.concat(array2)
+  }
+  return result 
+}
+
+console.log(mergeSort(array))
+
 
 
 const insertionSort = array =>
@@ -1079,20 +1118,22 @@ const insertionSort = array =>
   {
     if(array[i] < array[0])
     {
-    array.unshift(array.splice(i,1)[0])
-    }
-    if(array[i] < array[i-1])
+      array.unshift(array.splice(i,1)[0])
+    } else 
     {
-      for(j = 1 ; j < i ; j ++)
+      if(array[i] < array[i - 1])
       {
-        if(array[i] >= array[j-1] && array[i] < array[j])
+        for(j = 1 ; j < i ; j ++)
         {
-          array.splice(j,0, array.splice(i,1)[0])
+          if(array[i] >= array[j-1] && array[i] < array[j])
+          {
+            array.splice(j,0, array.splice(i,1)[0])
+          }
         }
       }
     }
-  }
-  return array 
+  } 
+  return array
 }
 
 console.log(insertionSort(array))
