@@ -319,72 +319,72 @@
 
 // add a method insert() to the linked list that adds a node to the specified index.
 
-// const reverseStringRecursive = str => {
-//   if(str === '') return ''
-//   return reverseStringRecursive(str.substr(1)) + str.charAt(0)
+const reverseStringRecursive = str => {
+  if(str === '') return ''
+  return reverseStringRecursive(str.substr(1)) + str.charAt(0)
 
 
-// }
+}
 
-// console.log(reverseStringRecursive('abcdefg'))
+console.log(reverseStringRecursive('abcdefg'))
 
-// const factoralRecursive = num => {
-//   if(num < 3) return num 
-//   return factoralRecursive(num - 1) * num 
-// }
+const factoralRecursive = num => {
+  if(num < 3) return num 
+  return factoralRecursive(num - 1) * num 
+}
 
-// console.log(factoralRecursive(8))
-// class Node {
-//   constructor(value) {
-//     this.value = value
-//     this.left = null,
-//     this.right = null
-//   }
-// }
-// class BinaryTree {
-//   constructor() {
-//     this.root = null
-//     this.left = null,
-//     this.right = null
-//   }
-//   insert(value)  {
-//     let newNode = new Node(value)
-//     if(this.root === null) {
-//       this.root = newNode
-//       return this
-//     }
-//     else {
-//       // Going left
-//       let currentNode = this.root
-//       while(true) {
-//       if(value < currentNode.value) {
-//         if(!currentNode.left) {
-//           currentNode.left = newNode
-//           return this
-//         }
-//         else currentNode = currentNode.left
-//       } else {
-//         //going right
-//         if(!currentNode.right) {
-//           currentNode.right = newNode
-//           return this
-//         }
-//         else {
-//           currentNode = currentNode.right
-//         }
-//       }
-//     }
-//     }
-//   }
-// }
+console.log(factoralRecursive(8))
+class Node {
+  constructor(value) {
+    this.value = value
+    this.left = null,
+    this.right = null
+  }
+}
+class BinaryTree {
+  constructor() {
+    this.root = null
+    this.left = null,
+    this.right = null
+  }
+  insert(value)  {
+    let newNode = new Node(value)
+    if(this.root === null) {
+      this.root = newNode
+      return this
+    }
+    else {
+      // Going left
+      let currentNode = this.root
+      while(true) {
+      if(value < currentNode.value) {
+        if(!currentNode.left) {
+          currentNode.left = newNode
+          return this
+        }
+        else currentNode = currentNode.left
+      } else {
+        //going right
+        if(!currentNode.right) {
+          currentNode.right = newNode
+          return this
+        }
+        else {
+          currentNode = currentNode.right
+        }
+      }
+    }
+    }
+  }
+}
 
-// const myTree = new BinaryTree()
+const myTree = new BinaryTree()
 
-// console.log(myTree.insert(8))
-// console.log(myTree.insert(3))
-// console.log(myTree.insert(1))
-// console.log(myTree.insert(10))
-// console.log(myTree.insert(11))
+console.log(myTree.insert(8))
+console.log(myTree.insert(3))
+console.log(myTree.insert(1))
+console.log(myTree.insert(10))
+console.log(myTree.insert(11))
 
 // const bubbleSort = array => {
 //   for(i = 0 ; i < array.length ; i ++) {
@@ -955,7 +955,7 @@
 //         console.log('this is j','index',j, array[j])
 //         min = j
 //         console.log('this is array[min]', array[min])
-        
+  /*       
 //       }
       
       
@@ -1062,7 +1062,7 @@
 //     }
 //   }
 //   console.log(left, right)
-//   return result.concat(left.slice(leftIndex).concat(right.slice(rightIndex)))
+//   return result.concat(left.slice(leftIndex).concat(right.slice(rightIndex))) */
 // }
 
 
@@ -1072,23 +1072,95 @@ const array = [223,55,33,2,21,24,2,2,88,0]
 const array5 = [11,61,200,0]
 const str = ('this is my little string')
 
-const selectionSort = array =>
+const insertionSort = array =>
 {
   for(i = 0 ; i < array.length ; i ++)
   {
-    let min = i 
-    let temp = array[i]
-    for(j = 1 ; j < array.length ; j ++)
+    if(array[i] < array[0])
     {
-      if(array[j] < array[min])
+      array.unshift(array.splice(i,1)[0])
+    } else 
+    {
+      if(array[i] < array[i-1])
       {
-        min = j 
+        for(j = 0 ; j < i ; j ++)
+        {
+          if(array[i] >= array[j-1] && array[i] < array[j])
+          {
+            array.splice(j,0,array.splice(i,1)[0])
+          }
+        }
       }
-      array[i] = array[min]
-      array[min] = temp
     }
   }
   return array
 }
 
-console.log(selectionSort(array))
+console.log(insertionSort(array))
+
+const reverseStringRecursive = str => {
+  if(str === '') return ''
+  return reverseStringRecursive(str.substr(1)) + str.charAt(0)
+
+
+}
+
+console.log(reverseStringRecursive('abcdefg'))
+
+const factoralRecursive = num => {
+  if(num < 3) return num 
+  return factoralRecursive(num - 1) * num 
+}
+
+console.log(factoralRecursive(8))
+class Node {
+  constructor(value) {
+    this.value = value
+    this.left = null,
+    this.right = null
+  }
+}
+class BinaryTree {
+  constructor() {
+    this.root = null
+    this.left = null,
+    this.right = null
+  }
+  insert(value)  {
+    let newNode = new Node(value)
+    if(this.root === null) {
+      this.root = newNode
+      return this
+    }
+    else {
+      // Going left
+      let currentNode = this.root
+      while(true) {
+      if(value < currentNode.value) {
+        if(!currentNode.left) {
+          currentNode.left = newNode
+          return this
+        }
+        else currentNode = currentNode.left
+      } else {
+        //going right
+        if(!currentNode.right) {
+          currentNode.right = newNode
+          return this
+        }
+        else {
+          currentNode = currentNode.right
+        }
+      }
+    }
+    }
+  }
+}
+
+const myTree = new BinaryTree()
+
+console.log(myTree.insert(8))
+console.log(myTree.insert(3))
+console.log(myTree.insert(1))
+console.log(myTree.insert(10))
+console.log(myTree.insert(11))
