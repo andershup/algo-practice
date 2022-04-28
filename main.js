@@ -22,3 +22,24 @@ const insertionSort = array =>
 }
 
 console.log(insertionSort(array))
+
+const selectionSort = array =>
+{
+    for(i = 0 ; i < array.length ; i ++)
+    {
+        let min = i
+        let temp = array[i]
+        for(j = i + 1 ; j < array.length ; j ++)
+        {
+            if(array[j] < array[min])
+            {
+                min = j 
+            }
+        }
+        array[i] = min
+        array[min] = temp
+    }
+    return array 
+}
+
+console.log(selectionSort(array))
