@@ -43,3 +43,22 @@ const selectionSort = array =>
 }
 
 console.log(selectionSort(array))
+
+const bubbleSort = array =>
+{
+    for(i = 0 ; i < array.length ; i++)
+    {
+        for(j= 0; j < array.length ; j ++)
+        {
+            if(array[j] > array[i])
+            {
+                let temp = array[i]
+                array[i] = array[j]
+                array[j] = temp
+            }
+        }
+    }
+    return array
+}
+
+console.log(bubbleSort(array))
