@@ -260,8 +260,16 @@
 // console.log(bubbleSort(array))
 
 
-const scores = (...scores) => {
-  console.log(scores)
+let shrlock = { surname: 'Holmes', age: 64}
+let propertyName = prompt('What you want to know?')
+alert(shrlock[propertyName])
+
+let president = {
+    name: 'Pooh',
+    next: null
 }
 
-scores([2, 3, 44, 1, 5, 2])
+president.next = {
+    name: 'Paddington',
+    next: president
+}
